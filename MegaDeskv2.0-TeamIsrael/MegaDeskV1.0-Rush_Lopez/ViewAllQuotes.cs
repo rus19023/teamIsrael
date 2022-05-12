@@ -21,5 +21,10 @@ namespace MegaDeskV1._0_Rush_Lopez
         {
 
         }
+
+        private void lvAllQuotes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

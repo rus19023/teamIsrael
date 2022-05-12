@@ -146,7 +146,7 @@
             this.BackColor = System.Drawing.Color.DarkKhaki;
             this.BackgroundImage = global::MegaDeskV1._0_Rush_Lopez.Properties.Resources.mainmenu600x900;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1178, 701);
+            this.ClientSize = new System.Drawing.Size(1178, 644);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
@@ -156,11 +156,11 @@
             this.Controls.Add(this.lblMainMenu);
             this.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MegaDeskMainMenu";
-            this.Text = "MegaDesk Main Menu";
+            this.Text = "MegaDeskv2.0: Main Menu";
             this.Load += new System.EventHandler(this.MegaDeskMainMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -44,7 +44,7 @@
             this.lvAllQuotes.GridLines = true;
             this.lvAllQuotes.HideSelection = false;
             this.lvAllQuotes.Location = new System.Drawing.Point(50, 105);
-            this.lvAllQuotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvAllQuotes.Margin = new System.Windows.Forms.Padding(4);
             this.lvAllQuotes.MultiSelect = false;
             this.lvAllQuotes.Name = "lvAllQuotes";
             this.lvAllQuotes.ShowItemToolTips = true;
@@ -52,6 +52,7 @@
             this.lvAllQuotes.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lvAllQuotes.TabIndex = 0;
             this.lvAllQuotes.UseCompatibleStateImageBehavior = false;
+            this.lvAllQuotes.SelectedIndexChanged += new System.EventHandler(this.lvAllQuotes_SelectedIndexChanged);
             // 
             // labelViewAllQuotes
             // 
@@ -63,25 +64,26 @@
             this.labelViewAllQuotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelViewAllQuotes.Name = "labelViewAllQuotes";
             this.labelViewAllQuotes.Padding = new System.Windows.Forms.Padding(10);
-            this.labelViewAllQuotes.Size = new System.Drawing.Size(370, 69);
+            this.labelViewAllQuotes.Size = new System.Drawing.Size(539, 97);
             this.labelViewAllQuotes.TabIndex = 1;
             this.labelViewAllQuotes.Text = "View All Quotes";
             // 
             // ViewAllQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 39F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1104, 701);
             this.Controls.Add(this.labelViewAllQuotes);
             this.Controls.Add(this.lvAllQuotes);
             this.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ViewAllQuotes";
-            this.Text = "MegaDesk - View All Quotes";
+            this.Text = "MegaDeskvw.0: View All Quotes";
             this.Load += new System.EventHandler(this.ViewAllQuotes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
