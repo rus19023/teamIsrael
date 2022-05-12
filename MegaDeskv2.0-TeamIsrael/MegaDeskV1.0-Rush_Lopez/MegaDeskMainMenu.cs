@@ -36,23 +36,25 @@ namespace MegaDeskV1._0_Rush_Lopez
         {
             
             {
-                AddQuote addQuote = new AddQuote();
-                addQuote.ShowDialog();
+               
             }
 
         }
 
         private void btnViewQuotes_Click(object sender, EventArgs e)
         {
-            ViewAllQuotes viewAllQuotes = new ViewAllQuotes();
-            viewAllQuotes.ShowDialog();
+            
 
         }
 
         private void btnSearchQuotes_Click(object sender, EventArgs e)
         {
-            SearchQuotes searchQuotes = new SearchQuotes();
-            searchQuotes.ShowDialog();
+            
+        }
+
+        private void MegaDeskMainMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

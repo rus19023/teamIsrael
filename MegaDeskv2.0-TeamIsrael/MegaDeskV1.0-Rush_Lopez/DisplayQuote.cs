@@ -12,22 +12,10 @@ namespace MegaDeskV1._0_Rush_Lopez
 {
     public partial class DisplayQuote : Form
     {
-        public DisplayQuote(string firstName, string lastName)
-        {
-            InitializeComponent();
-            lblLastName.Text = firstName;
-            lblLastName.Text = lastName;
-            //lblWidth.Text = width;
-            //lblDepth.Text = depth;
-            //lblDrawers.Text = drawers;
-            //lblSurface.Text = surface;
-            //lblMaterial.Text = material;
-            //lblPrice.Text = price;
-            
-        }
-
         public DisplayQuote()
         {
+            InitializeComponent();
+            
         }
 
         private void label5_Click(object sender, EventArgs e)

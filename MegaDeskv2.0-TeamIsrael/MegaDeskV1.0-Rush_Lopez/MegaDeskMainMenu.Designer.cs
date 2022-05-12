@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MegaDeskMainMenu));
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblMainMenu = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSearchQuotes = new System.Windows.Forms.Button();
             this.btnViewQuotes = new System.Windows.Forms.Button();
             this.btnAddQuote = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label2
+            // lblMainMenu
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(186, 273);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(355, 70);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Main Menu";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblMainMenu.AutoSize = true;
+            this.lblMainMenu.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblMainMenu.Font = new System.Drawing.Font("Century Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblMainMenu.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.lblMainMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMainMenu.Location = new System.Drawing.Point(186, 273);
+            this.lblMainMenu.Name = "lblMainMenu";
+            this.lblMainMenu.Size = new System.Drawing.Size(355, 70);
+            this.lblMainMenu.TabIndex = 3;
+            this.lblMainMenu.Text = "Main Menu";
+            this.lblMainMenu.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnExit
             // 
@@ -125,19 +125,19 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "MegaDesk V1.0";
             // 
-            // label3
+            // lblTitle
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(652, 451);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(479, 70);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "MegaDesk v1.0";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTitle.Location = new System.Drawing.Point(650, 450);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(479, 70);
+            this.lblTitle.TabIndex = 11;
+            this.lblTitle.Text = "MegaDesk v1.0";
+            this.lblTitle.Click += new System.EventHandler(this.label3_Click);
             // 
             // MegaDeskMainMenu
             // 
@@ -147,13 +147,13 @@
             this.BackgroundImage = global::MegaDeskV1._0_Rush_Lopez.Properties.Resources.mainmenu600x900;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1178, 701);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSearchQuotes);
             this.Controls.Add(this.btnViewQuotes);
             this.Controls.Add(this.btnAddQuote);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblMainMenu);
             this.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -161,6 +161,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MegaDeskMainMenu";
             this.Text = "MegaDesk Main Menu";
+            this.Load += new System.EventHandler(this.MegaDeskMainMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,12 +169,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMainMenu;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnSearchQuotes;
         private System.Windows.Forms.Button btnViewQuotes;
         private System.Windows.Forms.Button btnAddQuote;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
