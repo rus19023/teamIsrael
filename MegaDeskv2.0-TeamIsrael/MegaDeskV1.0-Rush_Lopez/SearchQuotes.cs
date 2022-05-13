@@ -15,6 +15,8 @@ namespace MegaDeskV1._0_Rush_Lopez
         public SearchQuotes()
         {
             InitializeComponent();
+            var materials = Enum.GetValues(typeof(surfaceMaterials)).Cast<surfaceMaterials>().ToList();
+            cbMaterial.DataSource = materials;
         }
 
         private void returnToMenu(object sender, FormClosingEventArgs e)

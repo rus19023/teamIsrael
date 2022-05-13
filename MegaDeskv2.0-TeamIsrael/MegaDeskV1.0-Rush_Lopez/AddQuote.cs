@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MegaDeskV1._0_Rush_Lopez     
@@ -13,10 +9,13 @@ namespace MegaDeskV1._0_Rush_Lopez
         public partial class AddQuote : Form
         {
             private bool displayingQuote;
+            
 
         public AddQuote()
         {
             InitializeComponent();
+            var materials = Enum.GetValues(typeof(surfaceMaterials)).Cast<surfaceMaterials>().ToList();
+            cbMaterial.DataSource = materials;
             displayingQuote = false;
         }
 
