@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft;
 
 namespace MegaDeskV1._0_Rush_Lopez     
 {
@@ -53,13 +54,10 @@ namespace MegaDeskV1._0_Rush_Lopez
         {
             if (char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
-
                 this.errProviderDepth.Clear();
-
             }
             else
             {
-
                 this.errProviderDepth.SetError(tbDesktopDepth, "Please enter a digit between 0 - 9");
             }
         }
@@ -120,6 +118,11 @@ namespace MegaDeskV1._0_Rush_Lopez
                 mainMenu.Show();
             }
             
+        }
+
+        private void tbFirstName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }        
  }
