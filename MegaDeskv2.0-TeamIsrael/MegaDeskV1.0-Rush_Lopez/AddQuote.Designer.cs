@@ -312,7 +312,7 @@
             this.BackColor = System.Drawing.Color.DarkKhaki;
             this.BackgroundImage = global::MegaDeskV1._0_Rush_Lopez.Properties.Resources.addQuote;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(941, 548);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.cbDrawers);
             this.Controls.Add(this.lblMaterial);
             this.Controls.Add(this.lblNumDrawers);

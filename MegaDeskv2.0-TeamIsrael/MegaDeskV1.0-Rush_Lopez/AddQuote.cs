@@ -101,7 +101,11 @@ namespace MegaDeskV1._0_Rush_Lopez
             displayingQuote = true;
 
             DeskQuote deskQuote = new DeskQuote(width, depth, drawers, surfaceMaterial, rushDays, customerFirstName, customerLastName);
+
             deskQuote.calcTotalPrice();
+
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(deskQuote);
+            Console.WriteLine(json);
 
             DisplayQuote formDisplayQuote = new DisplayQuote(deskQuote);
             formDisplayQuote.Tag = (MegaDeskMainMenu)Tag;

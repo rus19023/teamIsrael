@@ -67,7 +67,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkKhaki;
-            this.ClientSize = new System.Drawing.Size(754, 548);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.lblMaterial);
             this.Controls.Add(this.cbMaterial);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
