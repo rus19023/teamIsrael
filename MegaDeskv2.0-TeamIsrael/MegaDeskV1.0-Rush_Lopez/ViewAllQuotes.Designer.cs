@@ -63,15 +63,15 @@
             this.labelViewAllQuotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelViewAllQuotes.Name = "labelViewAllQuotes";
             this.labelViewAllQuotes.Padding = new System.Windows.Forms.Padding(10);
-            this.labelViewAllQuotes.Size = new System.Drawing.Size(459, 84);
+            this.labelViewAllQuotes.Size = new System.Drawing.Size(370, 69);
             this.labelViewAllQuotes.TabIndex = 1;
             this.labelViewAllQuotes.Text = "View All Quotes";
             // 
             // ViewAllQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 701);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.labelViewAllQuotes);
             this.Controls.Add(this.lvAllQuotes);
             this.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

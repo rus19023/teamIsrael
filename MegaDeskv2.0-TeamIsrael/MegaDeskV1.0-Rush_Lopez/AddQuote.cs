@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft;
 
 namespace MegaDeskV1._0_Rush_Lopez     
 {
         public partial class AddQuote : Form
         {
             private bool displayingQuote;
+            
 
         public AddQuote()
         {
             InitializeComponent();
+            var materials = Enum.GetValues(typeof(surfaceMaterials)).Cast<surfaceMaterials>().ToList();
+            cbMaterial.DataSource = materials;
             displayingQuote = false;
         }
 
@@ -53,13 +53,10 @@ namespace MegaDeskV1._0_Rush_Lopez
         {
             if (char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
-
                 this.errProviderDepth.Clear();
-
             }
             else
             {
-
                 this.errProviderDepth.SetError(tbDesktopDepth, "Please enter a digit between 0 - 9");
             }
         }
@@ -104,7 +101,11 @@ namespace MegaDeskV1._0_Rush_Lopez
             displayingQuote = true;
 
             DeskQuote deskQuote = new DeskQuote(width, depth, drawers, surfaceMaterial, rushDays, customerFirstName, customerLastName);
+
             deskQuote.calcTotalPrice();
+
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(deskQuote);
+            Console.WriteLine(json);
 
             DisplayQuote formDisplayQuote = new DisplayQuote(deskQuote);
             formDisplayQuote.Tag = (MegaDeskMainMenu)Tag;
@@ -120,6 +121,11 @@ namespace MegaDeskV1._0_Rush_Lopez
                 mainMenu.Show();
             }
             
+        }
+
+        private void tbFirstName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }        
  }

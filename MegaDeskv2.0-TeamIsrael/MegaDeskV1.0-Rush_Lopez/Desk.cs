@@ -41,7 +41,7 @@
 
         public int calcSurfaceArea()
         {
-            return width * depth * 1;
+            return width * depth;
         }
     }
 

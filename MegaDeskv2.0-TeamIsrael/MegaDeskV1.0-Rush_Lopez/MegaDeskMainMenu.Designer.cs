@@ -144,7 +144,7 @@
             this.BackColor = System.Drawing.Color.DarkKhaki;
             this.BackgroundImage = global::MegaDeskV1._0_Rush_Lopez.Properties.Resources.mainmenu600x900;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1178, 644);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
