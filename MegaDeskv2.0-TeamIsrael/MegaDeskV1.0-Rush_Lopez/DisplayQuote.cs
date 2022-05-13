@@ -12,35 +12,16 @@ namespace MegaDeskV1._0_Rush_Lopez
 {
     public partial class DisplayQuote : Form
     {
-        public DisplayQuote()
+        public DisplayQuote(DeskQuote deskQuote)
         {
             InitializeComponent();
-            
+            lblQuote.Text = deskQuote.displayQuote();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void returnToMenu(object sender, FormClosingEventArgs e)
         {
-
-        }
-
-        private void DisplayQuote_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblClientName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            var mainMenu = (MegaDeskMainMenu)Tag;
+            mainMenu.Show();
         }
     }
 }

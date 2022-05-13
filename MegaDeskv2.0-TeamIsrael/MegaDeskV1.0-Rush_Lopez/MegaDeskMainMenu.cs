@@ -16,45 +16,32 @@ namespace MegaDeskV1._0_Rush_Lopez
         {
             InitializeComponent();
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private void btnAddQuote_Click_1(object sender, EventArgs e)
+        private void navAddQuote(object sender, EventArgs e)
         {
-            
-            {
-               
-            }
-
+            AddQuote formAddQuote = new AddQuote();
+            formAddQuote.Tag = this;
+            formAddQuote.Show(this);
+            Hide();
         }
 
-        private void btnViewQuotes_Click(object sender, EventArgs e)
+        private void navViewQuotes(object sender, EventArgs e)
         {
-            
-
+            ViewAllQuotes formViewAllQuotes = new ViewAllQuotes();
+            formViewAllQuotes.Tag = this;
+            formViewAllQuotes.Show(this);
+            Hide();
         }
 
-        private void btnSearchQuotes_Click(object sender, EventArgs e)
+        private void navSearchQuotes(object sender, EventArgs e)
         {
-            
-        }
-
-        private void MegaDeskMainMenu_Load(object sender, EventArgs e)
-        {
-
+            SearchQuotes formSearchQuotes = new SearchQuotes();
+            formSearchQuotes.Tag = this;
+            formSearchQuotes.Show(this);
+            Hide();
         }
     }
 }

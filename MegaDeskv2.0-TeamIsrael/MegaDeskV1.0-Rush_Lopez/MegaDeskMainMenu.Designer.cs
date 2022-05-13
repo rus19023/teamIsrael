@@ -50,7 +50,6 @@
             this.lblMainMenu.Size = new System.Drawing.Size(355, 70);
             this.lblMainMenu.TabIndex = 3;
             this.lblMainMenu.Text = "Main Menu";
-            this.lblMainMenu.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnExit
             // 
@@ -80,7 +79,7 @@
             this.btnSearchQuotes.TabIndex = 8;
             this.btnSearchQuotes.Text = "Search Quotes";
             this.btnSearchQuotes.UseVisualStyleBackColor = false;
-            this.btnSearchQuotes.Click += new System.EventHandler(this.btnSearchQuotes_Click);
+            this.btnSearchQuotes.Click += new System.EventHandler(this.navSearchQuotes);
             // 
             // btnViewQuotes
             // 
@@ -95,7 +94,7 @@
             this.btnViewQuotes.TabIndex = 7;
             this.btnViewQuotes.Text = "View Quotes";
             this.btnViewQuotes.UseVisualStyleBackColor = false;
-            this.btnViewQuotes.Click += new System.EventHandler(this.btnViewQuotes_Click);
+            this.btnViewQuotes.Click += new System.EventHandler(this.navViewQuotes);
             // 
             // btnAddQuote
             // 
@@ -110,7 +109,7 @@
             this.btnAddQuote.TabIndex = 6;
             this.btnAddQuote.Text = "Add Quote";
             this.btnAddQuote.UseVisualStyleBackColor = false;
-            this.btnAddQuote.Click += new System.EventHandler(this.btnAddQuote_Click_1);
+            this.btnAddQuote.Click += new System.EventHandler(this.navAddQuote);
             // 
             // label1
             // 
@@ -137,7 +136,6 @@
             this.lblTitle.Size = new System.Drawing.Size(479, 70);
             this.lblTitle.TabIndex = 11;
             this.lblTitle.Text = "MegaDesk v1.0";
-            this.lblTitle.Click += new System.EventHandler(this.label3_Click);
             // 
             // MegaDeskMainMenu
             // 
@@ -161,7 +159,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MegaDeskMainMenu";
             this.Text = "MegaDeskv2.0: Main Menu";
-            this.Load += new System.EventHandler(this.MegaDeskMainMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

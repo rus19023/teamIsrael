@@ -17,9 +17,10 @@ namespace MegaDeskV1._0_Rush_Lopez
             InitializeComponent();
         }
 
-        private void SearchQuotes_Load(object sender, EventArgs e)
+        private void returnToMenu(object sender, FormClosingEventArgs e)
         {
-
+            var mainMenu = (MegaDeskMainMenu)Tag;
+            mainMenu.Show();
         }
     }
 }
