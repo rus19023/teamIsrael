@@ -4,11 +4,11 @@ namespace MegaDeskV1._0_Rush_Lopez
 {
     public class DeskQuote : Desk
     {
-        private int rushDays;
-        private string customerFirstName;
-        private string customerLastName;
-        private DateTime quoteDate;
-        private int totalPrice;
+        private int rushDays { get; set; }
+        private string customerFirstName { get; set; }
+        private string customerLastName { get; set; }
+        private DateTime quoteDate { get; set; }
+        private int totalPrice { get; set; }
         public DeskQuote(int width, int depth, int drawers, string surfaceMaterial, int rushDays, string customerFirstName, string customerLastName) :
             base(width, depth, drawers, surfaceMaterial)
         {
@@ -16,56 +16,6 @@ namespace MegaDeskV1._0_Rush_Lopez
             this.customerFirstName = customerFirstName;
             this.customerLastName = customerLastName;
             quoteDate = DateTime.Today;
-        }
-
-        public int getRushDays()
-        {
-            return rushDays;
-        }
-
-        public void setRushDays(int rushDays)
-        {
-            this.rushDays = rushDays;
-        }
-
-        public string getCustomerFirstName()
-        {
-            return customerFirstName;
-        }
-
-        public void setCustomerFirstName(string customerFirstName)
-        {
-            this.customerFirstName = customerFirstName;
-        }
-
-        public string getCustomerLastName()
-        {
-            return customerLastName;
-        }
-
-        public void setCustomerLastName(string customerLastName)
-        {
-            this.customerLastName = customerLastName;
-        }
-
-        public DateTime getQuoteDate()
-        {
-            return quoteDate;
-        }
-
-        public void setQuoteDate(DateTime quoteDate)
-        {
-            this.quoteDate = quoteDate;
-        }
-
-        public int getTotalPrice()
-        {
-            return totalPrice;
-        }
-
-        public void setTotalPrice(int totalPrice)
-        {
-            this.totalPrice = totalPrice;
         }
 
         public int calcRushPrice()
@@ -100,7 +50,7 @@ namespace MegaDeskV1._0_Rush_Lopez
 
         public int calcDrawerPrice()
         {
-            return 50 * getDrawers();
+            return 50 * drawers;
         }
 
         public int calcAreaPrice()
@@ -118,7 +68,7 @@ namespace MegaDeskV1._0_Rush_Lopez
 
         public int calcMaterialPrice()
         {
-            string material = getSurfaceMaterial();
+            string material = surfaceMaterial;
             int materialPrice = 0;
 
             switch (material)
@@ -151,8 +101,8 @@ namespace MegaDeskV1._0_Rush_Lopez
         public string displayQuote()
         {
             string quote =
-                $"Customer: {customerFirstName} {customerLastName} - Date of Quote: {quoteDate}\nDesk Width: {getWidth()}\nDesk Depth: {getDepth()}\n"
-                + $"Surface Area: {calcSurfaceArea()}\nSurface Material: {getSurfaceMaterial()}\nNumber of Drawers: {getDrawers()}\n"
+                $"Customer: {customerFirstName} {customerLastName} - Date of Quote: {quoteDate}\nDesk Width: {width}\nDesk Depth: {depth}\n"
+                + $"Surface Area: {calcSurfaceArea()}\nSurface Material: {surfaceMaterial}\nNumber of Drawers: {drawers}\n"
                 + $"Rush Days: {rushDays}\nTotal Price for Desk: ${totalPrice}";
             return quote;
         }

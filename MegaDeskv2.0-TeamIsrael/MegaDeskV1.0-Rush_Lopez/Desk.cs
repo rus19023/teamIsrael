@@ -2,60 +2,20 @@
 {
     public class Desk
     {
-        private int width;
-        private int depth;
-        private int drawers;
-        private string surfaceMaterial;
-        private const int minWidth = 24;
-        private const int maxWidth = 96;
-        private const int minDepth = 12;
-        private const int maxDepth = 48;
+        protected int width { get; set; }
+        protected int depth { get; set; }
+        protected int drawers { get; set; }
+        protected string surfaceMaterial { get; set; }
+        protected const int minWidth = 24;
+        protected const int maxWidth = 96;
+        protected const int minDepth = 12;
+        protected const int maxDepth = 48;
 
         public Desk(int width, int depth, int drawers, string surfaceMaterial)
         {
             this.width = width;
             this.depth = depth;
             this.drawers = drawers;
-            this.surfaceMaterial = surfaceMaterial;
-        }
-
-        public int getWidth()
-        {
-            return width;
-        }
-
-        public void setWidth(int width)
-        {
-            this.width = width;
-        }
-
-        public int getDepth()
-        {
-            return depth;
-        }
-
-        public void setDepth(int depth)
-        {
-            this.depth = depth;
-        }
-
-        public int getDrawers()
-        {
-            return drawers;
-        }
-
-        public void setDrawers(int drawers)
-        {
-            this.drawers = drawers;
-        }
-
-        public string getSurfaceMaterial()
-        {
-            return surfaceMaterial;
-        }
-
-        public void setSurfaceMaterial(string surfaceMaterial)
-        {
             this.surfaceMaterial = surfaceMaterial;
         }
 
