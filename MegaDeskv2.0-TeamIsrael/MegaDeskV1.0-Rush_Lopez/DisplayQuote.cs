@@ -16,12 +16,18 @@ namespace MegaDeskV1._0_Rush_Lopez
         {
             InitializeComponent();
             lblQuote.Text = deskQuote.displayQuote();
+            displayFirstName.Text = deskQuote.customerFirstName;
         }
 
         private void returnToMenu(object sender, FormClosingEventArgs e)
         {
             var mainMenu = (MegaDeskMainMenu)Tag;
             mainMenu.Show();
+        }
+
+        private void lblQuote_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

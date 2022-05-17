@@ -89,7 +89,6 @@ namespace MegaDeskV1._0_Rush_Lopez
                     materialPrice = 125;
                     break;
             }
-
             return materialPrice;
         }
 

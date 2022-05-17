@@ -42,7 +42,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.FirstName = new System.Windows.Forms.Label();
+            this.displayFirstName = new System.Windows.Forms.Label();
             this.lblQuote = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -191,15 +191,15 @@
             this.lblFirstName.TabIndex = 13;
             this.lblFirstName.Text = "First Name";
             // 
-            // FirstName
+            // displayFirstName
             // 
-            this.FirstName.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.FirstName.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.FirstName.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.FirstName.Location = new System.Drawing.Point(590, 206);
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Size = new System.Drawing.Size(183, 23);
-            this.FirstName.TabIndex = 12;
+            this.displayFirstName.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.displayFirstName.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.displayFirstName.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.displayFirstName.Location = new System.Drawing.Point(590, 206);
+            this.displayFirstName.Name = "displayFirstName";
+            this.displayFirstName.Size = new System.Drawing.Size(183, 23);
+            this.displayFirstName.TabIndex = 12;
             // 
             // lblQuote
             // 
@@ -211,6 +211,7 @@
             this.lblQuote.Size = new System.Drawing.Size(35, 13);
             this.lblQuote.TabIndex = 14;
             this.lblQuote.Text = "label1";
+            this.lblQuote.Click += new System.EventHandler(this.lblQuote_Click);
             // 
             // DisplayQuote
             // 
@@ -221,7 +222,7 @@
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.lblQuote);
             this.Controls.Add(this.lblFirstName);
-            this.Controls.Add(this.FirstName);
+            this.Controls.Add(this.displayFirstName);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
@@ -259,7 +260,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.Label FirstName;
+        private System.Windows.Forms.Label displayFirstName;
         private System.Windows.Forms.Label lblQuote;
     }
 }
