@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace MegaDeskV1._0_Rush_Lopez
 {
@@ -22,23 +23,29 @@ namespace MegaDeskV1._0_Rush_Lopez
         {
             int surfaceArea = calcSurfaceArea();
             int rushPrice;
+            int[,] rushPrices = getRushOrder();
+
+            if (rushPrices == null)
+            {
+                return 0;
+            }
 
             switch (rushDays)
             {
                 case 3:
-                    if (surfaceArea < 1000) rushPrice = 60;
-                    else if (surfaceArea <= 2000) rushPrice = 70;
-                    else rushPrice = 80;
+                    if (surfaceArea < 1000) rushPrice = rushPrices[0,0];
+                    else if (surfaceArea <= 2000) rushPrice = rushPrices[0, 1];
+                    else rushPrice = rushPrices[0, 2];
                     break;
                 case 5:
-                    if (surfaceArea < 1000) rushPrice = 40;
-                    else if (surfaceArea <= 2000) rushPrice = 50;
-                    else rushPrice = 60;
+                    if (surfaceArea < 1000) rushPrice = rushPrices[1, 0];
+                    else if (surfaceArea <= 2000) rushPrice = rushPrices[1, 1];
+                    else rushPrice = rushPrices[1, 2];
                     break;
                 case 7:
-                    if (surfaceArea < 1000) rushPrice = 30;
-                    else if (surfaceArea <= 2000) rushPrice = 35;
-                    else rushPrice = 40;
+                    if (surfaceArea < 1000) rushPrice = rushPrices[2, 0];
+                    else if (surfaceArea <= 2000) rushPrice = rushPrices[2, 1];
+                    else rushPrice = rushPrices[2, 2];
                     break;
                 default:
                     rushPrice = 0;
@@ -46,6 +53,33 @@ namespace MegaDeskV1._0_Rush_Lopez
             }
 
             return rushPrice;
+        }
+
+        public int[,] getRushOrder()
+        {
+            try
+            {
+                StreamReader reader = new StreamReader("Resources/rushOrderPrices.txt");
+                int i1 = 0;
+                int[,] rushPrices = new int[3, 3];
+                while (reader.EndOfStream == false)
+                {
+                    for (int i2 = 0; i2 < 3; i2++)
+                    {
+                        rushPrices[i1,i2] = Convert.ToInt32(reader.ReadLine());
+                    }
+
+                    i1++;
+                }
+                reader.Close();
+                return rushPrices;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+
         }
 
         public int calcDrawerPrice()

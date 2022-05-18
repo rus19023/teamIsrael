@@ -128,5 +128,10 @@
   <ItemGroup>
     <None Include="Resources\displayQuote.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\rushOrderPrices.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
