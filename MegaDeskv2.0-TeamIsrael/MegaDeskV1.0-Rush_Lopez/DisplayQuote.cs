@@ -15,8 +15,14 @@ namespace MegaDeskV1._0_Rush_Lopez
         public DisplayQuote(DeskQuote deskQuote)
         {
             InitializeComponent();
-            lblQuote.Text = deskQuote.displayQuote();
-            displayFirstName.Text = deskQuote.customerFirstName;
+            displayCustomerName.Text = deskQuote.displayCustomerName();
+            displayQuoteDate.Text = deskQuote.displayQuoteDate();
+            displayQuoteTotal.Text = deskQuote.displayQuoteTotal();
+            displayWidth.Text = deskQuote.displayWidth();
+            displayDepth.Text = deskQuote.displayDepth();
+            displayDrawers.Text = deskQuote.displayDrawers();
+            displayMaterial.Text = deskQuote.displayMaterial();
+            displayRushDays.Text = deskQuote.displayRushDays();
         }
 
         private void returnToMenu(object sender, FormClosingEventArgs e)
@@ -26,6 +32,16 @@ namespace MegaDeskV1._0_Rush_Lopez
         }
 
         private void lblQuote_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DisplayQuote_Load(object sender, EventArgs e)
         {
 
         }

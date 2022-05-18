@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
-using Newtonsoft;
+using Newtonsoft.Json;
 
 namespace MegaDeskV1._0_Rush_Lopez     
 {
@@ -15,6 +15,7 @@ namespace MegaDeskV1._0_Rush_Lopez
         public AddQuote()
         {
             InitializeComponent();
+            // Initialize the combo box with the list of materials
             var materials = Enum.GetValues(typeof(surfaceMaterials)).Cast<surfaceMaterials>().ToList();
             cbMaterial.DataSource = materials;
             displayingQuote = false;
@@ -22,6 +23,7 @@ namespace MegaDeskV1._0_Rush_Lopez
 
         private void widthValidating(object sender, CancelEventArgs e)
         {
+            // Validate the width input
             string errMessage;
             int width;
             try
@@ -35,17 +37,19 @@ namespace MegaDeskV1._0_Rush_Lopez
 
             if (width < 24 || width > 96)
             {
+                // If the width is not between 24 and 96, display an error message
                 e.Cancel = true;
+                
+                // todo: Why use Select()?
                 tbDesktopWidth.Select(0, tbDesktopWidth.Text.Length);
-
                 errMessage = "Please enter a number between 24 and 96";
-
                 this.errProviderWidth.SetError(tbDesktopWidth, errMessage);
             }
         }
 
         private void widthValidated(object sender, EventArgs e)
         {
+            // Clear the error message when the width is valid
             errProviderWidth.Clear();
         }
 
@@ -63,6 +67,7 @@ namespace MegaDeskV1._0_Rush_Lopez
 
         private void depthValidating(object sender, CancelEventArgs e)
         {
+            // Get the depth user input from AddQuote form
             int depth = Convert.ToInt32(tbDesktopDepth.Text);
 
             if (depth < 12 || depth > 48)
@@ -91,25 +96,26 @@ namespace MegaDeskV1._0_Rush_Lopez
 
         private void saveQuote(object sender, EventArgs e)
         {
-            string customerFirstName = tbFirstName.Text;
-            string customerLastName = tbLastName.Text;
-            int rushDays = Convert.ToInt32(cbRushDays.SelectedItem);
+            // Get info from AddQuote form
             int width = Convert.ToInt32(tbDesktopWidth.Text);
             int depth = Convert.ToInt32(tbDesktopDepth.Text);
-            string surfaceMaterial = Convert.ToString(cbMaterial.SelectedItem);
             int drawers = Convert.ToInt32(cbDrawers.SelectedItem);
+            string surfaceMaterial = Convert.ToString(cbMaterial.SelectedItem);
+            int rushDays = Convert.ToInt32(cbRushDays.SelectedItem);
+            string customerFirstName = tbFirstName.Text;
+            string customerLastName = tbLastName.Text;
             displayingQuote = true;
 
+            
+            // Create new DeskQuote object
             DeskQuote deskQuote = new DeskQuote(width, depth, drawers, surfaceMaterial, rushDays, customerFirstName, customerLastName);
-
-            deskQuote.calcTotalPrice();
-
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(deskQuote);
-            Console.WriteLine(json);
-
+            
+            // Create new DeskQuote object
             DisplayQuote formDisplayQuote = new DisplayQuote(deskQuote);
             formDisplayQuote.Tag = (MegaDeskMainMenu)Tag;
             formDisplayQuote.Show((MegaDeskMainMenu)Tag);
+            
+            // todo: what does this close?
             Close();
         }
 

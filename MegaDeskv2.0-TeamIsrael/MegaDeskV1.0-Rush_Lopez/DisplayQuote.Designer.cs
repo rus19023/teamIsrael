@@ -29,44 +29,47 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayQuote));
-            this.LastName = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
+            this.displayQuoteDate = new System.Windows.Forms.Label();
+            this.lblQuoteDate = new System.Windows.Forms.Label();
             this.lblWidth = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.displayWidth = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.displayDepth = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.displayDrawers = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.displayMaterial = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.displayRushDays = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.displayFirstName = new System.Windows.Forms.Label();
-            this.lblQuote = new System.Windows.Forms.Label();
+            this.displayCustomerName = new System.Windows.Forms.Label();
+            this.lblQuoteTotal = new System.Windows.Forms.Label();
+            this.displayQuoteTotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // LastName
+            // displayQuoteDate
             // 
-            this.LastName.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.LastName.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.LastName.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.LastName.Location = new System.Drawing.Point(590, 240);
-            this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(183, 23);
-            this.LastName.TabIndex = 0;
+            this.displayQuoteDate.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.displayQuoteDate.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.displayQuoteDate.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.displayQuoteDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.displayQuoteDate.Location = new System.Drawing.Point(590, 440);
+            this.displayQuoteDate.Name = "displayQuoteDate";
+            this.displayQuoteDate.Size = new System.Drawing.Size(120, 25);
+            this.displayQuoteDate.TabIndex = 0;
             // 
-            // lblLastName
+            // lblQuoteDate
             // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.BackColor = System.Drawing.Color.Transparent;
-            this.lblLastName.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblLastName.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblLastName.Location = new System.Drawing.Point(456, 240);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(113, 23);
-            this.lblLastName.TabIndex = 1;
-            this.lblLastName.Text = "Last Name";
+            this.lblQuoteDate.AutoSize = true;
+            this.lblQuoteDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuoteDate.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblQuoteDate.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblQuoteDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblQuoteDate.Location = new System.Drawing.Point(462, 440);
+            this.lblQuoteDate.Name = "lblQuoteDate";
+            this.lblQuoteDate.Size = new System.Drawing.Size(123, 23);
+            this.lblQuoteDate.TabIndex = 1;
+            this.lblQuoteDate.Text = "Quote Date";
             // 
             // lblWidth
             // 
@@ -74,21 +77,21 @@
             this.lblWidth.BackColor = System.Drawing.Color.Transparent;
             this.lblWidth.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblWidth.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblWidth.Location = new System.Drawing.Point(466, 283);
+            this.lblWidth.Location = new System.Drawing.Point(462, 240);
             this.lblWidth.Name = "lblWidth";
             this.lblWidth.Size = new System.Drawing.Size(118, 23);
             this.lblWidth.TabIndex = 3;
             this.lblWidth.Text = "Desk Width";
             // 
-            // label2
+            // displayWidth
             // 
-            this.label2.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label2.Location = new System.Drawing.Point(590, 283);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 23);
-            this.label2.TabIndex = 2;
+            this.displayWidth.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.displayWidth.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.displayWidth.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.displayWidth.Location = new System.Drawing.Point(590, 240);
+            this.displayWidth.Name = "displayWidth";
+            this.displayWidth.Size = new System.Drawing.Size(110, 25);
+            this.displayWidth.TabIndex = 2;
             // 
             // label3
             // 
@@ -96,21 +99,21 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label3.Location = new System.Drawing.Point(463, 327);
+            this.label3.Location = new System.Drawing.Point(459, 280);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 23);
             this.label3.TabIndex = 5;
             this.label3.Text = "Desk Depth";
             // 
-            // label4
+            // displayDepth
             // 
-            this.label4.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label4.Location = new System.Drawing.Point(590, 327);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 23);
-            this.label4.TabIndex = 4;
+            this.displayDepth.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.displayDepth.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.displayDepth.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.displayDepth.Location = new System.Drawing.Point(590, 280);
+            this.displayDepth.Name = "displayDepth";
+            this.displayDepth.Size = new System.Drawing.Size(110, 25);
+            this.displayDepth.TabIndex = 4;
             // 
             // label5
             // 
@@ -118,21 +121,21 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label5.Location = new System.Drawing.Point(393, 373);
+            this.label5.Location = new System.Drawing.Point(389, 320);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(196, 23);
             this.label5.TabIndex = 7;
             this.label5.Text = "Number of Drawers";
             // 
-            // label6
+            // displayDrawers
             // 
-            this.label6.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label6.Location = new System.Drawing.Point(590, 373);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 23);
-            this.label6.TabIndex = 6;
+            this.displayDrawers.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.displayDrawers.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.displayDrawers.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.displayDrawers.Location = new System.Drawing.Point(590, 320);
+            this.displayDrawers.Name = "displayDrawers";
+            this.displayDrawers.Size = new System.Drawing.Size(110, 25);
+            this.displayDrawers.TabIndex = 6;
             // 
             // label7
             // 
@@ -140,21 +143,21 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label7.Location = new System.Drawing.Point(414, 413);
+            this.label7.Location = new System.Drawing.Point(410, 360);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(175, 23);
             this.label7.TabIndex = 9;
             this.label7.Text = "Desktop Material";
             // 
-            // label8
+            // displayMaterial
             // 
-            this.label8.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label8.Location = new System.Drawing.Point(590, 413);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 23);
-            this.label8.TabIndex = 8;
+            this.displayMaterial.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.displayMaterial.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.displayMaterial.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.displayMaterial.Location = new System.Drawing.Point(590, 360);
+            this.displayMaterial.Name = "displayMaterial";
+            this.displayMaterial.Size = new System.Drawing.Size(110, 25);
+            this.displayMaterial.TabIndex = 8;
             // 
             // label9
             // 
@@ -162,22 +165,21 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label9.Location = new System.Drawing.Point(472, 457);
+            this.label9.Location = new System.Drawing.Point(475, 400);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(109, 23);
+            this.label9.Size = new System.Drawing.Size(116, 23);
             this.label9.TabIndex = 11;
-            this.label9.Text = "Rush Days";
+            this.label9.Text = "Rush Order";
             // 
-            // label10
+            // displayRushDays
             // 
-            this.label10.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label10.Location = new System.Drawing.Point(586, 457);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(110, 23);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Rush days here";
+            this.displayRushDays.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.displayRushDays.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.displayRushDays.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.displayRushDays.Location = new System.Drawing.Point(590, 400);
+            this.displayRushDays.Name = "displayRushDays";
+            this.displayRushDays.Size = new System.Drawing.Size(110, 25);
+            this.displayRushDays.TabIndex = 10;
             // 
             // lblFirstName
             // 
@@ -185,33 +187,46 @@
             this.lblFirstName.BackColor = System.Drawing.Color.Transparent;
             this.lblFirstName.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblFirstName.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblFirstName.Location = new System.Drawing.Point(456, 206);
+            this.lblFirstName.Location = new System.Drawing.Point(414, 200);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(112, 23);
+            this.lblFirstName.Size = new System.Drawing.Size(170, 23);
             this.lblFirstName.TabIndex = 13;
-            this.lblFirstName.Text = "First Name";
+            this.lblFirstName.Text = "Customer Name";
             // 
-            // displayFirstName
+            // displayCustomerName
             // 
-            this.displayFirstName.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.displayFirstName.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.displayFirstName.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.displayFirstName.Location = new System.Drawing.Point(590, 206);
-            this.displayFirstName.Name = "displayFirstName";
-            this.displayFirstName.Size = new System.Drawing.Size(183, 23);
-            this.displayFirstName.TabIndex = 12;
+            this.displayCustomerName.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.displayCustomerName.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.displayCustomerName.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.displayCustomerName.Location = new System.Drawing.Point(590, 200);
+            this.displayCustomerName.Name = "displayCustomerName";
+            this.displayCustomerName.Size = new System.Drawing.Size(150, 25);
+            this.displayCustomerName.TabIndex = 12;
             // 
-            // lblQuote
+            // lblQuoteTotal
             // 
-            this.lblQuote.AutoSize = true;
-            this.lblQuote.ForeColor = System.Drawing.Color.Black;
-            this.lblQuote.Location = new System.Drawing.Point(72, 48);
-            this.lblQuote.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblQuote.Name = "lblQuote";
-            this.lblQuote.Size = new System.Drawing.Size(35, 13);
-            this.lblQuote.TabIndex = 14;
-            this.lblQuote.Text = "label1";
-            this.lblQuote.Click += new System.EventHandler(this.lblQuote_Click);
+            this.lblQuoteTotal.AutoSize = true;
+            this.lblQuoteTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuoteTotal.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblQuoteTotal.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblQuoteTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblQuoteTotal.Location = new System.Drawing.Point(462, 480);
+            this.lblQuoteTotal.Name = "lblQuoteTotal";
+            this.lblQuoteTotal.Size = new System.Drawing.Size(122, 23);
+            this.lblQuoteTotal.TabIndex = 16;
+            this.lblQuoteTotal.Text = "Quote Total";
+            this.lblQuoteTotal.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // displayQuoteTotal
+            // 
+            this.displayQuoteTotal.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.displayQuoteTotal.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.displayQuoteTotal.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.displayQuoteTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.displayQuoteTotal.Location = new System.Drawing.Point(590, 480);
+            this.displayQuoteTotal.Name = "displayQuoteTotal";
+            this.displayQuoteTotal.Size = new System.Drawing.Size(110, 25);
+            this.displayQuoteTotal.TabIndex = 15;
             // 
             // DisplayQuote
             // 
@@ -220,26 +235,28 @@
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.BackgroundImage = global::MegaDeskV1._0_Rush_Lopez.Properties.Resources.displayQuote;
             this.ClientSize = new System.Drawing.Size(1184, 661);
-            this.Controls.Add(this.lblQuote);
+            this.Controls.Add(this.lblQuoteTotal);
+            this.Controls.Add(this.displayQuoteTotal);
             this.Controls.Add(this.lblFirstName);
-            this.Controls.Add(this.displayFirstName);
+            this.Controls.Add(this.displayCustomerName);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.displayRushDays);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.displayMaterial);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.displayDrawers);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.displayDepth);
             this.Controls.Add(this.lblWidth);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.LastName);
+            this.Controls.Add(this.displayWidth);
+            this.Controls.Add(this.lblQuoteDate);
+            this.Controls.Add(this.displayQuoteDate);
             this.ForeColor = System.Drawing.Color.LemonChiffon;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DisplayQuote";
             this.Text = "MegaDeskv2.0: Display Quote";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.returnToMenu);
+            this.Load += new System.EventHandler(this.DisplayQuote_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,20 +264,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Label LastName;
-        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label displayQuoteDate;
+        private System.Windows.Forms.Label lblQuoteDate;
         private System.Windows.Forms.Label lblWidth;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label displayWidth;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label displayDepth;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label displayDrawers;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label displayMaterial;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label displayRushDays;
         private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.Label displayFirstName;
-        private System.Windows.Forms.Label lblQuote;
+        private System.Windows.Forms.Label displayCustomerName;
+        private System.Windows.Forms.Label lblQuoteTotal;
+        private System.Windows.Forms.Label displayQuoteTotal;
     }
 }

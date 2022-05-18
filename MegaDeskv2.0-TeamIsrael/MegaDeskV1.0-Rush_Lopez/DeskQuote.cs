@@ -4,18 +4,23 @@ namespace MegaDeskV1._0_Rush_Lopez
 {
     public class DeskQuote : Desk
     {
-        private int rushDays { get; set; }
+        // todo: are these properties, members, fields or variables? or something else?
         private string customerFirstName { get; set; }
         private string customerLastName { get; set; }
+        private string customerName { get; set; }
+        private int rushDays { get; set; }
         private DateTime quoteDate { get; set; }
         private int totalPrice { get; set; }
+
+        // todo: is this a constructor? Why does the top part have total and date, but not here?
         public DeskQuote(int width, int depth, int drawers, string surfaceMaterial, int rushDays, string customerFirstName, string customerLastName) :
             base(width, depth, drawers, surfaceMaterial)
         {
             this.rushDays = rushDays;
             this.customerFirstName = customerFirstName;
             this.customerLastName = customerLastName;
-            quoteDate = DateTime.Today;
+            this.totalPrice = getTotalPrice();
+            this.quoteDate = DateTime.Today;
         }
 
         public int calcRushPrice()
@@ -44,7 +49,6 @@ namespace MegaDeskV1._0_Rush_Lopez
                     rushPrice = 0;
                     break;
             }
-
             return rushPrice;
         }
 
@@ -92,15 +96,58 @@ namespace MegaDeskV1._0_Rush_Lopez
             return materialPrice;
         }
 
-        public void calcTotalPrice()
+        public int getTotalPrice()
         {
             totalPrice = calcAreaPrice() + calcDrawerPrice() + calcMaterialPrice() + calcRushPrice();
+            return totalPrice;
+        }
+
+        public string displayWidth()
+        {
+            return width.ToString() + " inches";
+        }
+
+        public string displayDepth()
+        {
+            return depth.ToString() + " inches";
+        }
+
+        public string displayDrawers()
+        {
+            return drawers.ToString();
+        }
+
+        public string displayMaterial()
+        {
+            return surfaceMaterial;
+        }
+
+        public string displayRushDays()
+        {
+            return rushDays.ToString() + " days";
+        }
+
+        public string displayQuoteDate()
+        {
+            return quoteDate.ToString("MM/dd/yyyy");
+        }
+
+        public string displayQuoteTotal()
+        {
+            return "$" + totalPrice.ToString();
+        }
+
+        public string displayCustomerName()
+        {
+            Console.WriteLine(customerFirstName + " " + customerLastName);
+            return customerFirstName + " " + customerLastName;
         }
 
         public string displayQuote()
         {
+            // Create string to pass to Display Quote form
             string quote =
-                $"Customer: {customerFirstName} {customerLastName} - Date of Quote: {quoteDate}\nDesk Width: {width}\nDesk Depth: {depth}\n"
+                $"Customer: {customerName} - Date of Quote: {quoteDate}\nDesk Width: {width}\nDesk Depth: {depth}\n"
                 + $"Surface Area: {calcSurfaceArea()}\nSurface Material: {surfaceMaterial}\nNumber of Drawers: {drawers}\n"
                 + $"Rush Days: {rushDays}\nTotal Price for Desk: ${totalPrice}";
             return quote;
