@@ -139,7 +139,6 @@ namespace MegaDeskV1._0_Rush_Lopez
 
         public string displayCustomerName()
         {
-            Console.WriteLine(customerFirstName + " " + customerLastName);
             return customerFirstName + " " + customerLastName;
         }
 

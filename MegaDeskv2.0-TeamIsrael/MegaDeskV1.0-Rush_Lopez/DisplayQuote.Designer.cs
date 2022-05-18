@@ -45,6 +45,7 @@
             this.displayCustomerName = new System.Windows.Forms.Label();
             this.lblQuoteTotal = new System.Windows.Forms.Label();
             this.displayQuoteTotal = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // displayQuoteDate
@@ -228,6 +229,19 @@
             this.displayQuoteTotal.Size = new System.Drawing.Size(110, 25);
             this.displayQuoteTotal.TabIndex = 15;
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnClose.Location = new System.Drawing.Point(466, 530);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(244, 69);
+            this.btnClose.TabIndex = 17;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // DisplayQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,6 +249,7 @@
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.BackgroundImage = global::MegaDeskV1._0_Rush_Lopez.Properties.Resources.displayQuote;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblQuoteTotal);
             this.Controls.Add(this.displayQuoteTotal);
             this.Controls.Add(this.lblFirstName);
@@ -280,5 +295,6 @@
         private System.Windows.Forms.Label displayCustomerName;
         private System.Windows.Forms.Label lblQuoteTotal;
         private System.Windows.Forms.Label displayQuoteTotal;
+        private System.Windows.Forms.Button btnClose;
     }
 }

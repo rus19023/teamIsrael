@@ -3,22 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 
 namespace MegaDeskV1._0_Rush_Lopez     
 {
         public partial class AddQuote : Form
         {
-            private bool displayingQuote;
-            
-
+           
         public AddQuote()
         {
             InitializeComponent();
             // Initialize the combo box with the list of materials
             var materials = Enum.GetValues(typeof(surfaceMaterials)).Cast<surfaceMaterials>().ToList();
             cbMaterial.DataSource = materials;
-            displayingQuote = false;
         }
 
         private void widthValidating(object sender, CancelEventArgs e)
@@ -30,6 +26,7 @@ namespace MegaDeskV1._0_Rush_Lopez
             {
                 width = Convert.ToInt32(tbDesktopWidth.Text);
             }
+            // todo: handle exception?
             catch (Exception ex)
             {
                 width = 0;
@@ -40,7 +37,7 @@ namespace MegaDeskV1._0_Rush_Lopez
                 // If the width is not between 24 and 96, display an error message
                 e.Cancel = true;
                 
-                // todo: Why use Select()?
+                // todo: Why use Select()? 
                 tbDesktopWidth.Select(0, tbDesktopWidth.Text.Length);
                 errMessage = "Please enter a number between 24 and 96";
                 this.errProviderWidth.SetError(tbDesktopWidth, errMessage);
@@ -104,29 +101,25 @@ namespace MegaDeskV1._0_Rush_Lopez
             int rushDays = Convert.ToInt32(cbRushDays.SelectedItem);
             string customerFirstName = tbFirstName.Text;
             string customerLastName = tbLastName.Text;
-            displayingQuote = true;
 
+            // Sanitize inputs
             
             // Create new DeskQuote object
             DeskQuote deskQuote = new DeskQuote(width, depth, drawers, surfaceMaterial, rushDays, customerFirstName, customerLastName);
-            
-            // Create new DeskQuote object
+
+            // Create new DisplayQuote form instance with the DeskQuote object
             DisplayQuote formDisplayQuote = new DisplayQuote(deskQuote);
             formDisplayQuote.Tag = (MegaDeskMainMenu)Tag;
             formDisplayQuote.Show((MegaDeskMainMenu)Tag);
-            
-            // todo: what does this close?
+
+            // close addQuote form
             Close();
         }
 
         private void returnToMenu(object sender, FormClosingEventArgs e)
         {
-            if (!displayingQuote)
-            {
                 var mainMenu = (MegaDeskMainMenu)Tag;
-                mainMenu.Show();
-            }
-            
+                mainMenu.Show();            
         }
 
         private void tbFirstName_TextChanged(object sender, EventArgs e)
