@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace MegaDeskV1._0_Rush_Lopez     
 {
@@ -131,87 +131,13 @@ namespace MegaDeskV1._0_Rush_Lopez
             else
             {
                 Console.WriteLine("File not found! Creating one;");
-                // Create a file to write to.
-                //string createText = "Hello and Welcome" + Environment.NewLine;
+                // Create a json file
                 File.WriteAllText(JSON_PATH, json);
             }
-            
-            // Save quote to json file
-            //if (File.Exists(JSON_FILE))
-            //{
-            // Read the json file
-            //savedJSON = File.ReadAllText(JSON_FILE);
-            //Console.WriteLine(savedJSON);
-
-            // check for new quote validity
-            //if (newQuote != null) // probably a better way! this lets process continue if there is an empty object
-            //{
-            // Deserialize the json file
-            ////var quotes = JsonConvert.DeserializeObject<List<savedQuotes>>(savedJSON);
-
-            // Serialize the list
-            //string serializedQuotes = JsonConvert.SerializeObject(savedJSON, Formatting.Indented);
-
-
-
-            //}
-
-            //// Deserialize the json file
-            //JArray deskQuotes = JsonConvert.DeserializeObject<JArray>(json);
-            ////List<DeskQuote> deskQuotes = new List<DeskQuote>();
-
-            //// Add the new quote to the list
-            //deskQuotes.Add(deskQuote);
-
-            //// Serialize the list
-            //string converted = JsonConvert.SerializeObject(deskQuotes, Formatting.Indented);
-
-            //// Write the converted list to the json file
-            //File.WriteAllText(JSON_FILE, converted);
-            //}
-            //else
-            //{
-            // Create a new array of desk quotes
-            //JArray JSON = new JArray
-            //{
-            //    // Add the new quote to the list
-            //    deskQuote
-            //};
-
-            //    // create a new list of desk quotes
-            //    List<DeskQuote> quotes = new List<DeskQuote>();
-            //    quotes.Add(newQuote);
-
-            //    // Convert the list to JSON
-            //    string converted = JsonConvert.SerializeObject(quotes, Formatting.Indented);
-
-            //    // Write the converted list to the json file
-            //    File.WriteAllText(JSON_FILE, converted);
-            //}
-
             // Create new DisplayQuote form instance with the DeskQuote object
             DisplayQuote formDisplayQuote = new DisplayQuote(newQuote);
             formDisplayQuote.Tag = (MegaDeskMainMenu)Tag;
             formDisplayQuote.Show((MegaDeskMainMenu)Tag);
-
-
-            //Console.WriteLine("width: " + width);
-            //Console.WriteLine("depth: " + depth);
-            //Console.WriteLine("drawers: " + drawers);
-            //Console.WriteLine("surfaceMaterial: " + surfaceMaterial);
-            //Console.WriteLine("rushDays: " + rushDays);
-            //Console.WriteLine("customerFirstName: " + customerFirstName);
-            //Console.WriteLine("customerLastName: " + customerLastName);
-            //Console.WriteLine("getQuoteDate: " + newQuote.displayQuoteDate());
-            //Console.WriteLine("getQuoteTotal: " + newQuote.getQuoteTotal());
-            //Console.WriteLine("json: " + json);
-            //Console.WriteLine("x ");
-            //Console.WriteLine("quotes.Count(): " + savedQuotes.Count());
-            //Console.WriteLine("x ");
-            //Console.WriteLine("x ");
-            //Console.Write("serializedQuotes: " + serializedQuotes);
-            Console.WriteLine(savedQuotes.ToString());
-            //Console.WriteLine("x ");
 
             // close addQuote form
             Close();

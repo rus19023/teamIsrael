@@ -12,8 +12,7 @@ namespace MegaDeskV1._0_Rush_Lopez
     {
 
         // Initialize json file
-        private static readonly string JSON_PATH = @"data/quotes.json";
-        //private static readonly string JSON_PATH = $"{Application.StartupPath}\\{JSON_FILE}";
+        private static readonly string JSON_PATH = "data/quotes.json";
         
         // Initialize saved quotes list
         public List<DeskQuote> savedQuotes { get; set; }

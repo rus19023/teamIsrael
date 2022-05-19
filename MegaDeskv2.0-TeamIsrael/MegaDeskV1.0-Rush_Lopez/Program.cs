@@ -24,10 +24,6 @@ namespace MegaDeskV1._0_Rush_Lopez
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
                     Application.Run(new MegaDeskMainMenu());
-
-                    //// Load saved quotes
-                    //string json = File.ReadAllText(JSON_PATH);
-                    //JsonConvert.DeserializeObject<List<DeskQuote>>(json);
                 }            
         }
 }
