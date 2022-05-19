@@ -1,14 +1,19 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace MegaDeskV1._0_Rush_Lopez     
 {
         public partial class AddQuote : Form
         {
-           
+        // Initialize json file
+        private const string JSON_FILE = @"./data/quotes.json";
+
         public AddQuote()
         {
             InitializeComponent();
@@ -107,6 +112,40 @@ namespace MegaDeskV1._0_Rush_Lopez
             // Create new DeskQuote object
             DeskQuote deskQuote = new DeskQuote(width, depth, drawers, surfaceMaterial, rushDays, customerFirstName, customerLastName);
 
+            // Save quote to json file
+            if (File.Exists(JSON_FILE))
+            {
+                // Read the json file
+                string json = File.ReadAllText(JSON_FILE);
+
+                // Deserialize the json file
+                JArray JSON = JsonConvert.DeserializeObject<JArray>(json);
+                //List<DeskQuote> deskQuotes = Convert.To  <List<DeskQuote>>(json);
+
+                // Add the new quote to the list
+                JSON.Add(deskQuote);
+
+                // Serialize the list
+                string serialized = JsonConvert.SerializeObject(JSON, Formatting.Indented);
+
+                // Write the serialized list to the json file
+                File.WriteAllText(JSON_FILE, serialized);
+            }
+            else
+            {
+                // Create a new array of desk quotes
+                JArray JSON = new JArray<>();
+                
+                // Add the new quote to the list
+                JSON.Add(deskQuote);
+
+                // Serialize the list
+                string serialized = JsonConvert.SerializeObject(JSON, Formatting.Indented);
+
+                // Write the serialized list to the json file
+                File.WriteAllText(JSON_FILE, serialized);
+            }
+
             // Create new DisplayQuote form instance with the DeskQuote object
             DisplayQuote formDisplayQuote = new DisplayQuote(deskQuote);
             formDisplayQuote.Tag = (MegaDeskMainMenu)Tag;
@@ -119,7 +158,9 @@ namespace MegaDeskV1._0_Rush_Lopez
         private void returnToMenu(object sender, FormClosingEventArgs e)
         {
                 var mainMenu = (MegaDeskMainMenu)Tag;
-                mainMenu.Show();            
+                mainMenu.Show();
+            //}
+            
         }
 
         private void tbFirstName_TextChanged(object sender, EventArgs e)

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Xml;
 
 namespace MegaDeskV1._0_Rush_Lopez
 {
@@ -10,7 +14,7 @@ namespace MegaDeskV1._0_Rush_Lopez
         private string customerName { get; set; }
         private int rushDays { get; set; }
         private DateTime quoteDate { get; set; }
-        private int totalPrice { get; set; }
+        private int quoteTotal { get; set; }
 
         // todo: is this a constructor? Why does the top part have total and date, but not here?
         public DeskQuote(int width, int depth, int drawers, string surfaceMaterial, int rushDays, string customerFirstName, string customerLastName) :
@@ -19,9 +23,11 @@ namespace MegaDeskV1._0_Rush_Lopez
             this.rushDays = rushDays;
             this.customerFirstName = customerFirstName;
             this.customerLastName = customerLastName;
-            this.totalPrice = getTotalPrice();
+            this.customerName = customerName;
+            this.quoteTotal = getQuoteTotal();
             this.quoteDate = DateTime.Today;
         }
+        private static string jsonFile = @Environment.CurrentDirectory + "./data/quotes.json";
 
         public int calcRushPrice()
         {
@@ -96,9 +102,9 @@ namespace MegaDeskV1._0_Rush_Lopez
             return materialPrice;
         }
 
-        public int getTotalPrice()
+        public int getQuoteTotal()
         {
-            totalPrice = calcAreaPrice() + calcDrawerPrice() + calcMaterialPrice() + calcRushPrice();
+            int totalPrice = calcAreaPrice() + calcDrawerPrice() + calcMaterialPrice() + calcRushPrice();
             return totalPrice;
         }
 
@@ -122,6 +128,39 @@ namespace MegaDeskV1._0_Rush_Lopez
             return surfaceMaterial;
         }
 
+        //public string readFromJSON()
+        //{
+        //    // convert into list from JSON file
+        //    List<DeskQuote> deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(jsonFile.ReadAllText(jsonFile));
+
+        //    Console.WriteLine(json);
+        //    return List < DeskQuote > deskQuotes;
+        //}
+        
+        public void writeToJSON(DeskQuote deskQuote)
+        {
+            // serialize JSON directly to a file
+            using (StreamWriter file = File.CreateText(jsonFile))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(file, this);
+            }
+        }
+
+       // internal static void SaveDeskQuote(DeskQuote deskQuote)
+        //{
+        //    // collect data from JSON file            
+        //    //string json = deskQuote.readFromJSON();
+            
+        //    // Convert JSON into list of desk quote objects
+        //    //List<DeskQuote> deskQuotes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+
+        //    // add new deskQuote to list
+            
+        //    // write list to JSON file
+        //    deskQuote.writeToJSON(deskQuote);
+        //}
+
         public string displayRushDays()
         {
             return rushDays.ToString() + " days";
@@ -134,7 +173,7 @@ namespace MegaDeskV1._0_Rush_Lopez
 
         public string displayQuoteTotal()
         {
-            return "$" + totalPrice.ToString();
+            return "$" + quoteTotal.ToString();
         }
 
         public string displayCustomerName()
@@ -145,10 +184,10 @@ namespace MegaDeskV1._0_Rush_Lopez
         public string displayQuote()
         {
             // Create string to pass to Display Quote form
-            string quote =
-                $"Customer: {customerName} - Date of Quote: {quoteDate}\nDesk Width: {width}\nDesk Depth: {depth}\n"
-                + $"Surface Area: {calcSurfaceArea()}\nSurface Material: {surfaceMaterial}\nNumber of Drawers: {drawers}\n"
-                + $"Rush Days: {rushDays}\nTotal Price for Desk: ${totalPrice}";
+            string quote = "";
+            //    $"Customer: {customerName} - Date of Quote: {quoteDate}\nDesk Width: {width}\nDesk Depth: {depth}\n"
+            //    + $"Surface Area: {calcSurfaceArea()}\nSurface Material: {surfaceMaterial}\nNumber of Drawers: {drawers}\n"
+            //    + $"Rush Days: {rushDays}\nTotal Price for Desk: ${quoteTotal}";
             return quote;
         }
     }
