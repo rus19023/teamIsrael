@@ -9,13 +9,15 @@ using System.IO;
 namespace MegaDeskV1._0_Rush_Lopez     
 {
         public partial class AddQuote : Form
-        {
+    {
         // Initialize json file
-        private const string JSON_FILE = @"./data/quotes.json";
-
+        private static readonly string JSON_PATH = @"data/quotes.json";
+        //private static readonly string JSON_PATH = $"{Application.StartupPath}\\{JSON_FILE}";
+        
         public AddQuote()
         {
             InitializeComponent();
+            
             // Initialize the combo box with the list of materials
             var materials = Enum.GetValues(typeof(surfaceMaterials)).Cast<surfaceMaterials>().ToList();
             cbMaterial.DataSource = materials;
@@ -97,50 +99,61 @@ namespace MegaDeskV1._0_Rush_Lopez
 
         private void saveQuote(object sender, EventArgs e)
         {
-            // Get info from AddQuote form
+            // Create list for saved quotes
+            List<DeskQuote> savedQuotes = new SavedQuotes().getSavedQuotes();
+
+            // Get new quote object data from AddQuote form
+            // Sanitize inputs: trim, then convert? try.parse?
             int width = Convert.ToInt32(tbDesktopWidth.Text);
             int depth = Convert.ToInt32(tbDesktopDepth.Text);
             int drawers = Convert.ToInt32(cbDrawers.SelectedItem);
             string surfaceMaterial = Convert.ToString(cbMaterial.SelectedItem);
             int rushDays = Convert.ToInt32(cbRushDays.SelectedItem);
             string customerFirstName = tbFirstName.Text;
-            string customerLastName = tbLastName.Text;
+            string customerLastName = tbLastName.Text;           
 
-            // Sanitize inputs
-
-            // Create new DeskQuote object
+            // Create new DeskQuote object from inputs
             DeskQuote newQuote = new DeskQuote(width, depth, drawers, surfaceMaterial, rushDays, customerFirstName, customerLastName);
-            
-            var json = JsonConvert.SerializeObject(newQuote, Formatting.Indented);
 
+            // Add new quote to list
+            savedQuotes.Add(newQuote);
+
+            // Convert list to json string
+            string json = JsonConvert.SerializeObject(savedQuotes);
+
+            // Write the serialized list to the json file
+            if (File.Exists(JSON_PATH))
+            {
+                Console.WriteLine("json variable contents: " + json);
+                File.WriteAllText(JSON_PATH, json);
+                Console.WriteLine("New quotes written to quotes.json ");
+            }
+            else
+            {
+                Console.WriteLine("File not found! Creating one;");
+                // Create a file to write to.
+                //string createText = "Hello and Welcome" + Environment.NewLine;
+                File.WriteAllText(JSON_PATH, json);
+            }
+            
             // Save quote to json file
             //if (File.Exists(JSON_FILE))
             //{
             // Read the json file
-            //json = File.ReadAllText(JSON_FILE);
-            //Console.WriteLine(json);
-            //if (newQuote != null)
-            //{
-            //// Deserialize the json file
-            //var quotes = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
-            //List<DeskQuote> quotes = new List<DeskQuote>();
+            //savedJSON = File.ReadAllText(JSON_FILE);
+            //Console.WriteLine(savedJSON);
 
-            // Add the new quote to the list
-            //quotes.Add(newQuote);
-            
-            //Console.WriteLine("x ");
-            //Console.WriteLine("quotes.Count(): " + quotes.Count());
-            //Console.WriteLine("x ");
+            // check for new quote validity
+            //if (newQuote != null) // probably a better way! this lets process continue if there is an empty object
+            //{
+            // Deserialize the json file
+            ////var quotes = JsonConvert.DeserializeObject<List<savedQuotes>>(savedJSON);
 
             // Serialize the list
-            //string serializedQuotes = JsonConvert.SerializeObject(quotes, Formatting.Indented);
+            //string serializedQuotes = JsonConvert.SerializeObject(savedJSON, Formatting.Indented);
 
-            //Console.WriteLine("x ");
-            //Console.Write("serializedQuotes: " + serializedQuotes);
-            //Console.WriteLine("x ");
 
-            //    // Write the serialized list to the json file
-            //    File.WriteAllText(JSON_FILE, serializedQuotes);
+
             //}
 
             //// Deserialize the json file
@@ -182,16 +195,23 @@ namespace MegaDeskV1._0_Rush_Lopez
             formDisplayQuote.Show((MegaDeskMainMenu)Tag);
 
 
-            Console.WriteLine("width: " + width);
-            Console.WriteLine("depth: " + depth);
-            Console.WriteLine("drawers: " + drawers);
-            Console.WriteLine("surfaceMaterial: " + surfaceMaterial);
-            Console.WriteLine("rushDays: " + rushDays);
-            Console.WriteLine("customerFirstName: " + customerFirstName);
-            Console.WriteLine("customerLastName: " + customerLastName);
-            Console.WriteLine("getQuoteDate: " + newQuote.displayQuoteDate());
-            Console.WriteLine("getQuoteTotal: " + newQuote.getQuoteTotal());
-            Console.WriteLine("json: " + json);
+            //Console.WriteLine("width: " + width);
+            //Console.WriteLine("depth: " + depth);
+            //Console.WriteLine("drawers: " + drawers);
+            //Console.WriteLine("surfaceMaterial: " + surfaceMaterial);
+            //Console.WriteLine("rushDays: " + rushDays);
+            //Console.WriteLine("customerFirstName: " + customerFirstName);
+            //Console.WriteLine("customerLastName: " + customerLastName);
+            //Console.WriteLine("getQuoteDate: " + newQuote.displayQuoteDate());
+            //Console.WriteLine("getQuoteTotal: " + newQuote.getQuoteTotal());
+            //Console.WriteLine("json: " + json);
+            //Console.WriteLine("x ");
+            //Console.WriteLine("quotes.Count(): " + savedQuotes.Count());
+            //Console.WriteLine("x ");
+            //Console.WriteLine("x ");
+            //Console.Write("serializedQuotes: " + serializedQuotes);
+            Console.WriteLine(savedQuotes.ToString());
+            //Console.WriteLine("x ");
 
             // close addQuote form
             Close();

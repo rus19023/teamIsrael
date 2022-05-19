@@ -25,7 +25,6 @@ namespace MegaDeskV1._0_Rush_Lopez
             this.quoteTotal = getQuoteTotal();
             this.quoteDate = DateTime.Today;
         }
-        private static string jsonFile = @Environment.CurrentDirectory + "./data/quotes.json";
 
         public int calcRushPrice()
         {
@@ -134,32 +133,35 @@ namespace MegaDeskV1._0_Rush_Lopez
         //    Console.WriteLine(json);
         //    return List < DeskQuote > deskQuotes;
         //}
-        
-        public void writeToJSON(DeskQuote deskQuote)
-        {
-            // serialize JSON directly to a file
-            using (StreamWriter file = File.CreateText(jsonFile))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, this);
-            }
-        }
 
-       // internal static void SaveDeskQuote(DeskQuote deskQuote)
-        //{
-        //    // collect data from JSON file            
-        //    //string json = deskQuote.readFromJSON();
-            
-        //    // Convert JSON into list of desk quote objects
-        //    //List<DeskQuote> deskQuotes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+//        public void writeToJSON()
+//        {
+//            Create list for saved quotes
+//            public static List<DeskQuote> savedQuotes = new List<DeskQuote>();
 
-        //    // add new deskQuote to list
-            
-        //    // write list to JSON file
-        //    deskQuote.writeToJSON(deskQuote);
-        //}
+//        serialize JSON directly to a file
+//            using (StreamWriter file = File.CreateText())
+//            {
+//                JsonSerializer serializer = new JsonSerializer();
+//    serializer.Serialize(file, this);
+//    }
+//}
 
-        public string displayRushDays()
+// internal static void SaveDeskQuote(DeskQuote deskQuote)
+//{
+//    // collect data from JSON file            
+//    //string json = deskQuote.readFromJSON();
+
+//    // Convert JSON into list of desk quote objects
+//    //List<DeskQuote> deskQuotes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+
+//    // add new deskQuote to list
+
+//    // write list to JSON file
+//    deskQuote.writeToJSON(deskQuote);
+//}
+
+public string displayRushDays()
         {
             return rushDays.ToString() + " days";
         }

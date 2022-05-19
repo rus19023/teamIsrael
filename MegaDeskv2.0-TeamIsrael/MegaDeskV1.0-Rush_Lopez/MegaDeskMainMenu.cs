@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace MegaDeskV1._0_Rush_Lopez
 {
     public partial class MegaDeskMainMenu : Form
     {
+
+        // Initialize list for saved quotes
+        public static List<DeskQuote> savedQuotes = new List<DeskQuote>();
+        
         public MegaDeskMainMenu()
         {
             InitializeComponent();
@@ -42,6 +48,11 @@ namespace MegaDeskV1._0_Rush_Lopez
             formSearchQuotes.Tag = this;
             formSearchQuotes.Show(this);
             Hide();
+        }
+
+        private void MegaDeskMainMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
