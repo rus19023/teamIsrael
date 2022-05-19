@@ -56,7 +56,7 @@
             this.displayQuoteDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.displayQuoteDate.Location = new System.Drawing.Point(590, 440);
             this.displayQuoteDate.Name = "displayQuoteDate";
-            this.displayQuoteDate.Size = new System.Drawing.Size(120, 25);
+            this.displayQuoteDate.Size = new System.Drawing.Size(150, 25);
             this.displayQuoteDate.TabIndex = 0;
             // 
             // lblQuoteDate
@@ -91,7 +91,7 @@
             this.displayWidth.ForeColor = System.Drawing.Color.LemonChiffon;
             this.displayWidth.Location = new System.Drawing.Point(590, 240);
             this.displayWidth.Name = "displayWidth";
-            this.displayWidth.Size = new System.Drawing.Size(110, 25);
+            this.displayWidth.Size = new System.Drawing.Size(150, 25);
             this.displayWidth.TabIndex = 2;
             // 
             // label3
@@ -113,7 +113,7 @@
             this.displayDepth.ForeColor = System.Drawing.Color.LemonChiffon;
             this.displayDepth.Location = new System.Drawing.Point(590, 280);
             this.displayDepth.Name = "displayDepth";
-            this.displayDepth.Size = new System.Drawing.Size(110, 25);
+            this.displayDepth.Size = new System.Drawing.Size(150, 25);
             this.displayDepth.TabIndex = 4;
             // 
             // label5
@@ -135,7 +135,7 @@
             this.displayDrawers.ForeColor = System.Drawing.Color.LemonChiffon;
             this.displayDrawers.Location = new System.Drawing.Point(590, 320);
             this.displayDrawers.Name = "displayDrawers";
-            this.displayDrawers.Size = new System.Drawing.Size(110, 25);
+            this.displayDrawers.Size = new System.Drawing.Size(150, 25);
             this.displayDrawers.TabIndex = 6;
             // 
             // label7
@@ -157,7 +157,7 @@
             this.displayMaterial.ForeColor = System.Drawing.Color.LemonChiffon;
             this.displayMaterial.Location = new System.Drawing.Point(590, 360);
             this.displayMaterial.Name = "displayMaterial";
-            this.displayMaterial.Size = new System.Drawing.Size(110, 25);
+            this.displayMaterial.Size = new System.Drawing.Size(150, 25);
             this.displayMaterial.TabIndex = 8;
             // 
             // label9
@@ -179,7 +179,7 @@
             this.displayRushDays.ForeColor = System.Drawing.Color.LemonChiffon;
             this.displayRushDays.Location = new System.Drawing.Point(590, 400);
             this.displayRushDays.Name = "displayRushDays";
-            this.displayRushDays.Size = new System.Drawing.Size(110, 25);
+            this.displayRushDays.Size = new System.Drawing.Size(150, 25);
             this.displayRushDays.TabIndex = 10;
             // 
             // lblFirstName
@@ -226,7 +226,7 @@
             this.displayQuoteTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.displayQuoteTotal.Location = new System.Drawing.Point(590, 480);
             this.displayQuoteTotal.Name = "displayQuoteTotal";
-            this.displayQuoteTotal.Size = new System.Drawing.Size(110, 25);
+            this.displayQuoteTotal.Size = new System.Drawing.Size(150, 25);
             this.displayQuoteTotal.TabIndex = 15;
             // 
             // btnClose
