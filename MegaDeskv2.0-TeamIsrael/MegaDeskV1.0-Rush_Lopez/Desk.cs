@@ -2,14 +2,14 @@
 {
     public class Desk
     {
-        protected int width { get; set; }
-        protected int depth { get; set; }
-        protected int drawers { get; set; }
-        protected string surfaceMaterial { get; set; }
-        protected const int minWidth = 24;
-        protected const int maxWidth = 96;
-        protected const int minDepth = 12;
-        protected const int maxDepth = 48;
+        public int width { get; set; }
+        public int depth { get; set; }
+        public int drawers { get; set; }
+        public string surfaceMaterial { get; set; }
+        protected const int MIN_WIDTH = 24;
+        protected const int MAX_WIDTH = 96;
+        protected const int MIN_DEPTH = 12;
+        protected const int MAX_DEPTH = 48;
 
         public Desk(int width, int depth, int drawers, string surfaceMaterial)
         {
@@ -21,22 +21,22 @@
 
         public int getMinWidth()
         {
-            return minWidth;
+            return MIN_WIDTH;
         }
 
         public int getMaxWidth()
         {
-            return maxWidth;
+            return MAX_WIDTH;
         }
 
         public int getMinDepth()
         {
-            return minDepth;
+            return MIN_DEPTH;
         }
 
         public int getMaxDepth()
         {
-            return maxDepth;
+            return MAX_DEPTH;
         }
 
         public int calcSurfaceArea()

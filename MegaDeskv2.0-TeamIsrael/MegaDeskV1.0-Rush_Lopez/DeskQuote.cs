@@ -9,12 +9,11 @@ namespace MegaDeskV1._0_Rush_Lopez
     public class DeskQuote : Desk
     {
         // todo: are these properties, members, fields or variables? or something else?
-        private string customerFirstName { get; set; }
-        private string customerLastName { get; set; }
-        private string customerName { get; set; }
-        private int rushDays { get; set; }
-        private DateTime quoteDate { get; set; }
-        private int quoteTotal { get; set; }
+        public string customerFirstName { get; set; }
+        public string customerLastName { get; set; }
+        public int rushDays { get; set; }
+        public DateTime quoteDate { get; set; }
+        public int quoteTotal { get; set; }
 
         // todo: is this a constructor? Why does the top part have total and date, but not here?
         public DeskQuote(int width, int depth, int drawers, string surfaceMaterial, int rushDays, string customerFirstName, string customerLastName) :
@@ -23,7 +22,6 @@ namespace MegaDeskV1._0_Rush_Lopez
             this.rushDays = rushDays;
             this.customerFirstName = customerFirstName;
             this.customerLastName = customerLastName;
-            this.customerName = customerName;
             this.quoteTotal = getQuoteTotal();
             this.quoteDate = DateTime.Today;
         }

@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using System.IO;
-using Newtonsoft.Json.Linq;
 
 namespace MegaDeskV1._0_Rush_Lopez     
 {
@@ -108,48 +107,91 @@ namespace MegaDeskV1._0_Rush_Lopez
             string customerLastName = tbLastName.Text;
 
             // Sanitize inputs
-            
+
             // Create new DeskQuote object
-            DeskQuote deskQuote = new DeskQuote(width, depth, drawers, surfaceMaterial, rushDays, customerFirstName, customerLastName);
+            DeskQuote newQuote = new DeskQuote(width, depth, drawers, surfaceMaterial, rushDays, customerFirstName, customerLastName);
+            
+            var json = JsonConvert.SerializeObject(newQuote, Formatting.Indented);
 
             // Save quote to json file
-            if (File.Exists(JSON_FILE))
-            {
-                // Read the json file
-                string json = File.ReadAllText(JSON_FILE);
+            //if (File.Exists(JSON_FILE))
+            //{
+            // Read the json file
+            //json = File.ReadAllText(JSON_FILE);
+            //Console.WriteLine(json);
+            //if (newQuote != null)
+            //{
+            //// Deserialize the json file
+            //var quotes = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+            //List<DeskQuote> quotes = new List<DeskQuote>();
 
-                // Deserialize the json file
-                JArray JSON = JsonConvert.DeserializeObject<JArray>(json);
-                //List<DeskQuote> deskQuotes = Convert.To  <List<DeskQuote>>(json);
+            // Add the new quote to the list
+            //quotes.Add(newQuote);
+            
+            //Console.WriteLine("x ");
+            //Console.WriteLine("quotes.Count(): " + quotes.Count());
+            //Console.WriteLine("x ");
 
-                // Add the new quote to the list
-                JSON.Add(deskQuote);
+            // Serialize the list
+            //string serializedQuotes = JsonConvert.SerializeObject(quotes, Formatting.Indented);
 
-                // Serialize the list
-                string serialized = JsonConvert.SerializeObject(JSON, Formatting.Indented);
+            //Console.WriteLine("x ");
+            //Console.Write("serializedQuotes: " + serializedQuotes);
+            //Console.WriteLine("x ");
 
-                // Write the serialized list to the json file
-                File.WriteAllText(JSON_FILE, serialized);
-            }
-            else
-            {
-                // Create a new array of desk quotes
-                JArray JSON = new JArray<>();
-                
-                // Add the new quote to the list
-                JSON.Add(deskQuote);
+            //    // Write the serialized list to the json file
+            //    File.WriteAllText(JSON_FILE, serializedQuotes);
+            //}
 
-                // Serialize the list
-                string serialized = JsonConvert.SerializeObject(JSON, Formatting.Indented);
+            //// Deserialize the json file
+            //JArray deskQuotes = JsonConvert.DeserializeObject<JArray>(json);
+            ////List<DeskQuote> deskQuotes = new List<DeskQuote>();
 
-                // Write the serialized list to the json file
-                File.WriteAllText(JSON_FILE, serialized);
-            }
+            //// Add the new quote to the list
+            //deskQuotes.Add(deskQuote);
+
+            //// Serialize the list
+            //string converted = JsonConvert.SerializeObject(deskQuotes, Formatting.Indented);
+
+            //// Write the converted list to the json file
+            //File.WriteAllText(JSON_FILE, converted);
+            //}
+            //else
+            //{
+            // Create a new array of desk quotes
+            //JArray JSON = new JArray
+            //{
+            //    // Add the new quote to the list
+            //    deskQuote
+            //};
+
+            //    // create a new list of desk quotes
+            //    List<DeskQuote> quotes = new List<DeskQuote>();
+            //    quotes.Add(newQuote);
+
+            //    // Convert the list to JSON
+            //    string converted = JsonConvert.SerializeObject(quotes, Formatting.Indented);
+
+            //    // Write the converted list to the json file
+            //    File.WriteAllText(JSON_FILE, converted);
+            //}
 
             // Create new DisplayQuote form instance with the DeskQuote object
-            DisplayQuote formDisplayQuote = new DisplayQuote(deskQuote);
+            DisplayQuote formDisplayQuote = new DisplayQuote(newQuote);
             formDisplayQuote.Tag = (MegaDeskMainMenu)Tag;
             formDisplayQuote.Show((MegaDeskMainMenu)Tag);
+
+
+            Console.WriteLine("width: " + width);
+            Console.WriteLine("depth: " + depth);
+            Console.WriteLine("drawers: " + drawers);
+            Console.WriteLine("surfaceMaterial: " + surfaceMaterial);
+            Console.WriteLine("rushDays: " + rushDays);
+            Console.WriteLine("customerFirstName: " + customerFirstName);
+            Console.WriteLine("customerLastName: " + customerLastName);
+            Console.WriteLine("getQuoteDate: " + newQuote.displayQuoteDate());
+            Console.WriteLine("getQuoteTotal: " + newQuote.getQuoteTotal());
+            Console.WriteLine("json: " + json);
 
             // close addQuote form
             Close();
