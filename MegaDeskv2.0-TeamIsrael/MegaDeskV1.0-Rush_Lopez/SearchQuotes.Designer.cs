@@ -32,6 +32,16 @@
             this.lblMaterial = new System.Windows.Forms.Label();
             this.cbMaterial = new System.Windows.Forms.ComboBox();
             this.searchQuoteButton = new System.Windows.Forms.Button();
+            this.quoteSearchResults = new System.Windows.Forms.DataGridView();
+            this.customerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quoteDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.width = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.depth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drawers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surfaceMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rushOptions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.quoteSearchResults)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMaterial
@@ -78,12 +88,70 @@
             this.searchQuoteButton.UseVisualStyleBackColor = false;
             this.searchQuoteButton.Click += new System.EventHandler(this.searchQuoteButton_Click);
             // 
+            // quoteSearchResults
+            // 
+            this.quoteSearchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.quoteSearchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.customerName,
+            this.quoteDate,
+            this.width,
+            this.depth,
+            this.drawers,
+            this.surfaceMaterial,
+            this.rushOptions,
+            this.totalPrice});
+            this.quoteSearchResults.Location = new System.Drawing.Point(48, 210);
+            this.quoteSearchResults.Name = "quoteSearchResults";
+            this.quoteSearchResults.Size = new System.Drawing.Size(840, 150);
+            this.quoteSearchResults.TabIndex = 49;
+            // 
+            // customerName
+            // 
+            this.customerName.HeaderText = "Name";
+            this.customerName.Name = "customerName";
+            // 
+            // quoteDate
+            // 
+            this.quoteDate.HeaderText = "Date";
+            this.quoteDate.Name = "quoteDate";
+            // 
+            // width
+            // 
+            this.width.HeaderText = "Width";
+            this.width.Name = "width";
+            // 
+            // depth
+            // 
+            this.depth.HeaderText = "depth";
+            this.depth.Name = "depth";
+            // 
+            // drawers
+            // 
+            this.drawers.HeaderText = "Number of Drawers";
+            this.drawers.Name = "drawers";
+            // 
+            // surfaceMaterial
+            // 
+            this.surfaceMaterial.HeaderText = "Material";
+            this.surfaceMaterial.Name = "surfaceMaterial";
+            // 
+            // rushOptions
+            // 
+            this.rushOptions.HeaderText = "Rush Option";
+            this.rushOptions.Name = "rushOptions";
+            // 
+            // totalPrice
+            // 
+            this.totalPrice.HeaderText = "Total";
+            this.totalPrice.Name = "totalPrice";
+            // 
             // SearchQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkKhaki;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.quoteSearchResults);
             this.Controls.Add(this.searchQuoteButton);
             this.Controls.Add(this.lblMaterial);
             this.Controls.Add(this.cbMaterial);
@@ -91,6 +159,7 @@
             this.Name = "SearchQuotes";
             this.Text = "MegaDeskv2.0: Search Quotes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.returnToMenu);
+            ((System.ComponentModel.ISupportInitialize)(this.quoteSearchResults)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,5 +170,14 @@
         private System.Windows.Forms.Label lblMaterial;
         private System.Windows.Forms.ComboBox cbMaterial;
         private System.Windows.Forms.Button searchQuoteButton;
+        private System.Windows.Forms.DataGridView quoteSearchResults;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quoteDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn width;
+        private System.Windows.Forms.DataGridViewTextBoxColumn depth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drawers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surfaceMaterial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rushOptions;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalPrice;
     }
 }
