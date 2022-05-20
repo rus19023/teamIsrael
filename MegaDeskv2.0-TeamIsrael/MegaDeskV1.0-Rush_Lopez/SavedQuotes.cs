@@ -15,13 +15,7 @@ namespace MegaDeskV1._0_Rush_Lopez
         private static readonly string JSON_PATH = "data/quotes.json";
         
         // Initialize saved quotes list
-        public static List<DeskQuote> savedQuotes = new List<DeskQuote>(); //{ get; set; }
-
-        /*public SavedQuotes()
-        {
-            // Initialize saved quotes list from json file
-            this.savedQuotes = getSavedQuotes().ToList();
-        }*/
+        public static List<DeskQuote> savedQuotes = new List<DeskQuote>(); 
 
         public static void getSavedQuotes()
         {
@@ -40,13 +34,9 @@ namespace MegaDeskV1._0_Rush_Lopez
 
             // convert json to savedQuotes list
             savedQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(savedJSON);
-            /*if (savedQuotes == null)
-            {
-                savedQuotes = new List<DeskQuote>();
-            }*/
             
-            Console.WriteLine("\n\n\nsavedQuotes in class: " + savedQuotes.First().displayQuote());
-            //return savedQuotes; 
+            //Console.WriteLine("\n\n\nsavedQuotes in class: " + savedQuotes.First().displayQuote());
+            
         }
     }
 }
