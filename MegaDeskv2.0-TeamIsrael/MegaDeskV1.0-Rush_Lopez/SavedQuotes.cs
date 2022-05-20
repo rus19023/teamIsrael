@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace MegaDeskV1._0_Rush_Lopez
 {
-    public class SavedQuotes
+    public static class SavedQuotes
     {
 
         // Initialize json file
