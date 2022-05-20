@@ -134,6 +134,11 @@
     <None Include="Resources\displayQuote.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\rushOrderPrices.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="data\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
