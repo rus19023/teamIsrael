@@ -16,11 +16,12 @@ namespace MegaDeskV1._0_Rush_Lopez
     {
 
         // Initialize list for saved quotes
-        public static List<DeskQuote> savedQuotes = new List<DeskQuote>();
-        
+       // public static List<DeskQuote> savedQuotes = new List<DeskQuote>();
+       
         public MegaDeskMainMenu()
         {
             InitializeComponent();
+            SavedQuotes.getSavedQuotes();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

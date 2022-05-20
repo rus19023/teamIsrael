@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchQuotes));
             this.lblMaterial = new System.Windows.Forms.Label();
             this.cbMaterial = new System.Windows.Forms.ComboBox();
+            this.searchQuoteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMaterial
@@ -40,7 +41,7 @@
             this.lblMaterial.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblMaterial.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lblMaterial.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblMaterial.Location = new System.Drawing.Point(298, 91);
+            this.lblMaterial.Location = new System.Drawing.Point(316, 42);
             this.lblMaterial.Name = "lblMaterial";
             this.lblMaterial.Padding = new System.Windows.Forms.Padding(3);
             this.lblMaterial.Size = new System.Drawing.Size(81, 27);
@@ -56,11 +57,26 @@
             this.cbMaterial.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.cbMaterial.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.cbMaterial.FormattingEnabled = true;
-            this.cbMaterial.Location = new System.Drawing.Point(407, 89);
+            this.cbMaterial.Location = new System.Drawing.Point(425, 40);
             this.cbMaterial.MaxDropDownItems = 5;
             this.cbMaterial.Name = "cbMaterial";
             this.cbMaterial.Size = new System.Drawing.Size(121, 29);
             this.cbMaterial.TabIndex = 46;
+            // 
+            // searchQuoteButton
+            // 
+            this.searchQuoteButton.AllowDrop = true;
+            this.searchQuoteButton.BackColor = System.Drawing.Color.LemonChiffon;
+            this.searchQuoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.searchQuoteButton.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchQuoteButton.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.searchQuoteButton.Location = new System.Drawing.Point(343, 89);
+            this.searchQuoteButton.Name = "searchQuoteButton";
+            this.searchQuoteButton.Size = new System.Drawing.Size(177, 47);
+            this.searchQuoteButton.TabIndex = 48;
+            this.searchQuoteButton.Text = "Search";
+            this.searchQuoteButton.UseVisualStyleBackColor = false;
+            this.searchQuoteButton.Click += new System.EventHandler(this.searchQuoteButton_Click);
             // 
             // SearchQuotes
             // 
@@ -68,6 +84,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkKhaki;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.searchQuoteButton);
             this.Controls.Add(this.lblMaterial);
             this.Controls.Add(this.cbMaterial);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -83,5 +100,6 @@
 
         private System.Windows.Forms.Label lblMaterial;
         private System.Windows.Forms.ComboBox cbMaterial;
+        private System.Windows.Forms.Button searchQuoteButton;
     }
 }

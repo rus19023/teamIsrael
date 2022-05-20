@@ -179,11 +179,12 @@ namespace MegaDeskV1._0_Rush_Lopez
 
         public string displayQuote()
         {
+            
             // Create string to pass to Display Quote form
-            string quote = "";
-            //    $"Customer: {customerName} - Date of Quote: {quoteDate}\nDesk Width: {width}\nDesk Depth: {depth}\n"
-            //    + $"Surface Area: {calcSurfaceArea()}\nSurface Material: {surfaceMaterial}\nNumber of Drawers: {drawers}\n"
-            //    + $"Rush Days: {rushDays}\nTotal Price for Desk: ${quoteTotal}";
+            string quote = 
+                $"Customer: {customerFirstName} - Date of Quote: {quoteDate}\nDesk Width: {width}\nDesk Depth: {depth}\n"
+                + $"Surface Area: {calcSurfaceArea()}\nSurface Material: {surfaceMaterial}\nNumber of Drawers: {drawers}\n"
+                + $"Rush Days: {rushDays}\nTotal Price for Desk: ${quoteTotal}";
             return quote;
         }
     }

@@ -8,22 +8,22 @@ using Newtonsoft.Json;
 
 namespace MegaDeskV1._0_Rush_Lopez
 {
-    public class SavedQuotes
+    public static class SavedQuotes
     {
 
         // Initialize json file
         private static readonly string JSON_PATH = "data/quotes.json";
         
         // Initialize saved quotes list
-        public List<DeskQuote> savedQuotes { get; set; }
+        public static List<DeskQuote> savedQuotes = new List<DeskQuote>(); //{ get; set; }
 
-        public SavedQuotes()
+        /*public SavedQuotes()
         {
             // Initialize saved quotes list from json file
             this.savedQuotes = getSavedQuotes().ToList();
-        }
+        }*/
 
-        public List<DeskQuote> getSavedQuotes()
+        public static void getSavedQuotes()
         {
             // Check if json file exists
             if (!File.Exists(JSON_PATH))
@@ -35,17 +35,18 @@ namespace MegaDeskV1._0_Rush_Lopez
             string savedJSON = File.ReadAllText(JSON_PATH);
 
             // debug statement
-            Console.WriteLine(savedJSON);
+           //Console.WriteLine("\n\n\nThis is the saved json: " + savedJSON);
+           
 
             // convert json to savedQuotes list
-            List<DeskQuote> savedQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(savedJSON);
-            if (savedQuotes == null)
+            savedQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(savedJSON);
+            /*if (savedQuotes == null)
             {
                 savedQuotes = new List<DeskQuote>();
-            }
+            }*/
             
-            Console.WriteLine("savedQuotes in class: " + savedQuotes);
-            return savedQuotes; 
+            Console.WriteLine("\n\n\nsavedQuotes in class: " + savedQuotes.First().displayQuote());
+            //return savedQuotes; 
         }
     }
 }

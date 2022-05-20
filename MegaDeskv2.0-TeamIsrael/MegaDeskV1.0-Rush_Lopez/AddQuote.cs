@@ -100,7 +100,7 @@ namespace MegaDeskV1._0_Rush_Lopez
         private void saveQuote(object sender, EventArgs e)
         {
             // Create list for saved quotes
-            List<DeskQuote> savedQuotes = new SavedQuotes().getSavedQuotes();
+            //List<DeskQuote> savedQuotes = SavedQuotes.savedQuotes;
 
             // Get new quote object data from AddQuote form
             // Sanitize inputs: trim, then convert? try.parse?
@@ -116,10 +116,10 @@ namespace MegaDeskV1._0_Rush_Lopez
             DeskQuote newQuote = new DeskQuote(width, depth, drawers, surfaceMaterial, rushDays, customerFirstName, customerLastName);
 
             // Add new quote to list
-            savedQuotes.Add(newQuote);
-
+            SavedQuotes.savedQuotes.Add(newQuote);
+            
             // Convert list to json string
-            string json = JsonConvert.SerializeObject(savedQuotes);
+            string json = JsonConvert.SerializeObject(SavedQuotes.savedQuotes);
 
             // Write the serialized list to the json file
             if (File.Exists(JSON_PATH))

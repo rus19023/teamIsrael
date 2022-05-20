@@ -24,5 +24,12 @@ namespace MegaDeskV1._0_Rush_Lopez
             var mainMenu = (MegaDeskMainMenu)Tag;
             mainMenu.Show();
         }
+
+        private void searchQuoteButton_Click(object sender, EventArgs e)
+        {
+            var material = cbMaterial.SelectedItem;
+            var quotes = typeof(SavedQuotes);
+            MessageBox.Show(quotes.ToString());
+        }
     }
 }
