@@ -155,6 +155,11 @@ namespace MegaDeskV1._0_Rush_Lopez
         {
 
         }
+
+        private void tbDesktopWidth_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }        
  }
     
