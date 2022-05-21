@@ -15,6 +15,9 @@ namespace MegaDeskV1._0_Rush_Lopez
         public ViewAllQuotes()
         {
             InitializeComponent();
+            dgvAllQuotes.DataSource = SavedQuotes.savedQuotes;
+            dgvAllQuotes.Columns["quoteDate"].DefaultCellStyle.Format = "MM/dd/yyyy";
+            dgvAllQuotes.Columns["quoteTotal"].DefaultCellStyle.Format = "c";
         }
 
         private void returnToMenu(object sender, FormClosingEventArgs e)
