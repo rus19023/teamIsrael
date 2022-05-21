@@ -22,9 +22,6 @@ namespace MegaDeskV1._0_Rush_Lopez
 
         private void returnToMenu(object sender, FormClosingEventArgs e)
         {
-            var mainMenu = (MegaDeskMainMenu)Tag;
-            mainMenu.Show();
-            Close();
         }
 
         private void dgvAllQuotes_CellContentClick(object sender, DataGridViewCellEventArgs e)
