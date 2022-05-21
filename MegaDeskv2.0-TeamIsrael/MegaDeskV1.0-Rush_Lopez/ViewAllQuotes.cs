@@ -24,6 +24,19 @@ namespace MegaDeskV1._0_Rush_Lopez
         {
             var mainMenu = (MegaDeskMainMenu)Tag;
             mainMenu.Show();
+            Close();
+        }
+
+        private void dgvAllQuotes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            var mainMenu = (MegaDeskMainMenu)Tag;
+            mainMenu.Show();
+            Close();
         }
     }
 }
