@@ -149,6 +149,13 @@ namespace MegaDeskV1._0_Rush_Lopez
                 mainMenu.Show();
             
         }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            var mainMenu = (MegaDeskMainMenu)Tag;
+            mainMenu.Show();
+            Close();
+        }
     }        
  }
     
