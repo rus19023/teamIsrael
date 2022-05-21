@@ -33,10 +33,10 @@ namespace MegaDeskV1._0_Rush_Lopez
            
 
             // convert json to savedQuotes list
-            savedQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(savedJSON);
-            
+            savedQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(savedJSON) ?? new List<DeskQuote>();
+
             //Console.WriteLine("\n\n\nsavedQuotes in class: " + savedQuotes.First().displayQuote());
-            
+            //return savedQuotes; 
         }
     }
 }

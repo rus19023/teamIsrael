@@ -29,6 +29,7 @@ namespace MegaDeskV1._0_Rush_Lopez
         {
             var mainMenu = (MegaDeskMainMenu)Tag;
             mainMenu.Show();
+            Close();
         }
 
         private void lblQuote_Click(object sender, EventArgs e)
