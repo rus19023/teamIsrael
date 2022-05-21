@@ -1,13 +1,11 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Xml;
 
 namespace MegaDeskV1._0_Rush_Lopez
 {
     public class DeskQuote : Desk
     {
-        // todo: are these properties, members, fields or variables? or something else?
+        // todo: are these properties, members, fields or variables? or something else? 
         public string customerFirstName { get; set; }
         public string customerLastName { get; set; }
         public int rushDays { get; set; }
