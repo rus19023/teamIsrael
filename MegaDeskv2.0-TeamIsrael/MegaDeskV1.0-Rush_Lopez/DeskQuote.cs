@@ -1,15 +1,15 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Xml;
+using System.IO;
 
 namespace MegaDeskV1._0_Rush_Lopez
 {
     public class DeskQuote : Desk
     {
+
         //Properties of the DeskQuote class
         [DisplayName("First Name")]
+
         public string customerFirstName { get; set; }
         [DisplayName("Last Name")]
         public string customerLastName { get; set; }

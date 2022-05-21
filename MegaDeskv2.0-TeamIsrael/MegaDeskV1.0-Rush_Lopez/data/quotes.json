@@ -1,7 +1,7 @@
 [
   {
     "customerFirstName": "Mary",
-    "customerLastName": "Rush-Lopez",
+    "customerLastName": "Lamb",
     "rushDays": 7,
     "quoteDate": "2022-05-20T00:00:00-04:00",
     "quoteTotal": 737,
@@ -12,7 +12,7 @@
   },
   {
     "customerFirstName": "Alfred",
-    "customerLastName": "Rush-Lopez",
+    "customerLastName": "Butler",
     "rushDays": 7,
     "quoteDate": "2022-05-20T00:00:00-04:00",
     "quoteTotal": 737,
@@ -23,7 +23,7 @@
   },
   {
     "customerFirstName": "Jimmy",
-    "customerLastName": "Rush-Lopez",
+    "customerLastName": "Kimmel",
     "rushDays": 7,
     "quoteDate": "2022-05-20T00:00:00-04:00",
     "quoteTotal": 737,
@@ -31,5 +31,115 @@
     "depth": 24,
     "drawers": 3,
     "surfaceMaterial": "Oak"
+  },
+  {
+    "customerFirstName": "Mary",
+    "customerLastName": "Contrary",
+    "rushDays": 0,
+    "quoteDate": "2022-05-21T00:00:00-04:00",
+    "quoteTotal": 1654,
+    "width": 64,
+    "depth": 36,
+    "drawers": 2,
+    "surfaceMaterial": "Pine"
+  },
+  {
+    "customerFirstName": "Larry",
+    "customerLastName": "Cableguy",
+    "rushDays": 5,
+    "quoteDate": "2022-05-21T00:00:00-04:00",
+    "quoteTotal": 1156,
+    "width": 56,
+    "depth": 26,
+    "drawers": 3,
+    "surfaceMaterial": "Rosewood"
+  },
+  {
+    "customerFirstName": "Bonnie",
+    "customerLastName": "Clyde",
+    "rushDays": 7,
+    "quoteDate": "2022-05-21T00:00:00-04:00",
+    "quoteTotal": 710,
+    "width": 50,
+    "depth": 20,
+    "drawers": 7,
+    "surfaceMaterial": "Veneer"
+  },
+  {
+    "customerFirstName": "Fresh",
+    "customerLastName": "Prince",
+    "rushDays": 3,
+    "quoteDate": "2022-05-21T00:00:00-04:00",
+    "quoteTotal": 3105,
+    "width": 75,
+    "depth": 45,
+    "drawers": 7,
+    "surfaceMaterial": "Laminate"
+  },
+  {
+    "customerFirstName": "Mickey",
+    "customerLastName": "Mouse",
+    "rushDays": 3,
+    "quoteDate": "2022-05-21T00:00:00-04:00",
+    "quoteTotal": 1754,
+    "width": 64,
+    "depth": 31,
+    "drawers": 4,
+    "surfaceMaterial": "Rosewood"
+  },
+  {
+    "customerFirstName": "Donald",
+    "customerLastName": "Duck",
+    "rushDays": 5,
+    "quoteDate": "2022-05-21T00:00:00-04:00",
+    "quoteTotal": 715,
+    "width": 44,
+    "depth": 20,
+    "drawers": 7,
+    "surfaceMaterial": "Veneer"
+  },
+  {
+    "customerFirstName": "Vin",
+    "customerLastName": "Diesel",
+    "rushDays": 0,
+    "quoteDate": "2022-05-21T00:00:00-04:00",
+    "quoteTotal": 300,
+    "width": 45,
+    "depth": 19,
+    "drawers": 1,
+    "surfaceMaterial": "Pine"
+  },
+  {
+    "customerFirstName": "Johnny",
+    "customerLastName": "Depp",
+    "rushDays": 7,
+    "quoteDate": "2022-05-21T00:00:00-04:00",
+    "quoteTotal": 987,
+    "width": 66,
+    "depth": 22,
+    "drawers": 5,
+    "surfaceMaterial": "Pine"
+  },
+  {
+    "customerFirstName": "Hannah",
+    "customerLastName": "Montana",
+    "rushDays": 5,
+    "quoteDate": "2022-05-21T00:00:00-04:00",
+    "quoteTotal": 1380,
+    "width": 70,
+    "depth": 24,
+    "drawers": 7,
+    "surfaceMaterial": "Laminate"
+  },
+  {
+    "customerFirstName": "Arthur",
+    "customerLastName": "Doyle",
+    "rushDays": 7,
+    "quoteDate": "2022-05-21T00:00:00-04:00",
+    "quoteTotal": 2790,
+    "width": 80,
+    "depth": 40,
+    "drawers": 5,
+    "surfaceMaterial": "Laminate"
   }
 ]

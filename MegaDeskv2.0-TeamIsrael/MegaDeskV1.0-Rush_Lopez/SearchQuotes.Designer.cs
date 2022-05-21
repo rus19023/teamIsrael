@@ -72,6 +72,7 @@
             // cbMaterial
             // 
             this.cbMaterial.BackColor = System.Drawing.Color.LemonChiffon;
+            this.cbMaterial.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaterial.DropDownWidth = 120;
             this.cbMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -92,7 +93,7 @@
             this.searchQuoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.searchQuoteButton.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchQuoteButton.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.searchQuoteButton.Location = new System.Drawing.Point(361, 385);
+            this.searchQuoteButton.Location = new System.Drawing.Point(359, 574);
             this.searchQuoteButton.Name = "searchQuoteButton";
             this.searchQuoteButton.Size = new System.Drawing.Size(220, 75);
             this.searchQuoteButton.TabIndex = 48;
@@ -102,7 +103,9 @@
             // 
             // quoteSearchResults
             // 
+            this.quoteSearchResults.AccessibleName = "Grid filter by material";
             this.quoteSearchResults.AllowUserToAddRows = false;
+            this.quoteSearchResults.AllowUserToDeleteRows = false;
             this.quoteSearchResults.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,7 +133,7 @@
             this.rushOptions,
             this.totalPrice});
             this.quoteSearchResults.GridColor = System.Drawing.Color.DarkKhaki;
-            this.quoteSearchResults.Location = new System.Drawing.Point(123, 64);
+            this.quoteSearchResults.Location = new System.Drawing.Point(92, 87);
             this.quoteSearchResults.Name = "quoteSearchResults";
             this.quoteSearchResults.ReadOnly = true;
             this.quoteSearchResults.RowHeadersWidth = 50;
@@ -140,7 +143,7 @@
             this.quoteSearchResults.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DarkOliveGreen;
             this.quoteSearchResults.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.LemonChiffon;
             this.quoteSearchResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.quoteSearchResults.Size = new System.Drawing.Size(695, 300);
+            this.quoteSearchResults.Size = new System.Drawing.Size(800, 455);
             this.quoteSearchResults.TabIndex = 2;
             // 
             // customerName
@@ -171,6 +174,7 @@
             this.quoteDate.MinimumWidth = 8;
             this.quoteDate.Name = "quoteDate";
             this.quoteDate.ReadOnly = true;
+            this.quoteDate.Width = 150;
             // 
             // width
             // 
@@ -234,6 +238,7 @@
             this.surfaceMaterial.MinimumWidth = 8;
             this.surfaceMaterial.Name = "surfaceMaterial";
             this.surfaceMaterial.ReadOnly = true;
+            this.surfaceMaterial.Width = 150;
             // 
             // rushOptions
             // 
@@ -273,7 +278,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DarkKhaki;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -282,6 +286,7 @@
             this.Controls.Add(this.searchQuoteButton);
             this.Controls.Add(this.lblMaterial);
             this.Controls.Add(this.cbMaterial);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SearchQuotes";
             this.Text = "MegaDeskv2.0: Search Quotes";

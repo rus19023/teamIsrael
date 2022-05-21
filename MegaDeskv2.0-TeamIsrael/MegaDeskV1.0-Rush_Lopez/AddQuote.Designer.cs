@@ -58,10 +58,11 @@
             this.btnSaveQuote.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnSaveQuote.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnSaveQuote.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnSaveQuote.Location = new System.Drawing.Point(554, 65);
-            this.btnSaveQuote.Margin = new System.Windows.Forms.Padding(4);
+
+            this.btnSaveQuote.Location = new System.Drawing.Point(554, 60);
             this.btnSaveQuote.Name = "btnSaveQuote";
             this.btnSaveQuote.Size = new System.Drawing.Size(233, 65);
+
             this.btnSaveQuote.TabIndex = 30;
             this.btnSaveQuote.Text = "&Save Quote";
             this.btnSaveQuote.UseVisualStyleBackColor = false;
@@ -74,11 +75,12 @@
             this.lblFirstName.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblFirstName.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lblFirstName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+
             this.lblFirstName.Location = new System.Drawing.Point(100, 65);
-            this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Padding = new System.Windows.Forms.Padding(3);
+            this.lblFirstName.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.lblFirstName.Size = new System.Drawing.Size(147, 27);
+
             this.lblFirstName.TabIndex = 1;
             this.lblFirstName.Text = "Client First Name";
             this.lblFirstName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -88,10 +90,12 @@
             this.tbFirstName.BackColor = System.Drawing.Color.LemonChiffon;
             this.tbFirstName.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.tbFirstName.ForeColor = System.Drawing.Color.DarkOliveGreen;
+
             this.tbFirstName.Location = new System.Drawing.Point(287, 65);
             this.tbFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(135, 27);
+
             this.tbFirstName.TabIndex = 0;
             this.tbFirstName.Enter += new System.EventHandler(this.textboxEnter);
             // 
@@ -100,10 +104,12 @@
             this.tbLastName.BackColor = System.Drawing.Color.LemonChiffon;
             this.tbLastName.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.tbLastName.ForeColor = System.Drawing.Color.DarkOliveGreen;
+
             this.tbLastName.Location = new System.Drawing.Point(287, 98);
             this.tbLastName.Margin = new System.Windows.Forms.Padding(4);
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(135, 27);
+
             this.tbLastName.TabIndex = 1;
             this.tbLastName.Enter += new System.EventHandler(this.textboxEnter);
             // 
@@ -114,11 +120,12 @@
             this.lblLastName.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblLastName.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lblLastName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+
             this.lblLastName.Location = new System.Drawing.Point(100, 95);
-            this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Padding = new System.Windows.Forms.Padding(3);
+            this.lblLastName.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.lblLastName.Size = new System.Drawing.Size(149, 27);
+
             this.lblLastName.TabIndex = 9;
             this.lblLastName.Text = "Client Last Name";
             this.lblLastName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -130,11 +137,12 @@
             this.lblDepth.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblDepth.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lblDepth.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+
             this.lblDepth.Location = new System.Drawing.Point(100, 159);
-            this.lblDepth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDepth.Name = "lblDepth";
-            this.lblDepth.Padding = new System.Windows.Forms.Padding(3);
+            this.lblDepth.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.lblDepth.Size = new System.Drawing.Size(66, 27);
+
             this.lblDepth.TabIndex = 34;
             this.lblDepth.Text = "Depth";
             this.lblDepth.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -144,10 +152,12 @@
             this.tbDesktopDepth.BackColor = System.Drawing.Color.LemonChiffon;
             this.tbDesktopDepth.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.tbDesktopDepth.ForeColor = System.Drawing.Color.DarkOliveGreen;
+
             this.tbDesktopDepth.Location = new System.Drawing.Point(287, 162);
             this.tbDesktopDepth.Margin = new System.Windows.Forms.Padding(4);
             this.tbDesktopDepth.Name = "tbDesktopDepth";
             this.tbDesktopDepth.Size = new System.Drawing.Size(35, 27);
+
             this.tbDesktopDepth.TabIndex = 4;
             this.tbDesktopDepth.Enter += new System.EventHandler(this.textboxEnter);
             this.tbDesktopDepth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.depthKeyPress);
@@ -159,10 +169,12 @@
             this.tbDesktopWidth.BackColor = System.Drawing.Color.LemonChiffon;
             this.tbDesktopWidth.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.tbDesktopWidth.ForeColor = System.Drawing.Color.DarkOliveGreen;
+
             this.tbDesktopWidth.Location = new System.Drawing.Point(287, 130);
             this.tbDesktopWidth.Margin = new System.Windows.Forms.Padding(4);
             this.tbDesktopWidth.Name = "tbDesktopWidth";
             this.tbDesktopWidth.Size = new System.Drawing.Size(35, 27);
+
             this.tbDesktopWidth.TabIndex = 3;
             this.tbDesktopWidth.Enter += new System.EventHandler(this.textboxEnter);
             this.tbDesktopWidth.Validating += new System.ComponentModel.CancelEventHandler(this.widthValidating);
@@ -175,11 +187,12 @@
             this.lblWidth.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblWidth.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lblWidth.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+
             this.lblWidth.Location = new System.Drawing.Point(100, 127);
-            this.lblWidth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWidth.Name = "lblWidth";
-            this.lblWidth.Padding = new System.Windows.Forms.Padding(3);
+            this.lblWidth.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.lblWidth.Size = new System.Drawing.Size(62, 27);
+
             this.lblWidth.TabIndex = 33;
             this.lblWidth.Text = "Width";
             this.lblWidth.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -191,11 +204,13 @@
             this.cbMaterial.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.cbMaterial.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.cbMaterial.FormattingEnabled = true;
+
             this.cbMaterial.Location = new System.Drawing.Point(287, 227);
             this.cbMaterial.Margin = new System.Windows.Forms.Padding(4);
             this.cbMaterial.MaxDropDownItems = 5;
             this.cbMaterial.Name = "cbMaterial";
             this.cbMaterial.Size = new System.Drawing.Size(121, 29);
+
             this.cbMaterial.TabIndex = 6;
             // 
             // lblRushDays
@@ -205,11 +220,12 @@
             this.lblRushDays.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblRushDays.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lblRushDays.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+
             this.lblRushDays.Location = new System.Drawing.Point(100, 257);
-            this.lblRushDays.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRushDays.Name = "lblRushDays";
-            this.lblRushDays.Padding = new System.Windows.Forms.Padding(3);
+            this.lblRushDays.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.lblRushDays.Size = new System.Drawing.Size(93, 27);
+
             this.lblRushDays.TabIndex = 41;
             this.lblRushDays.Text = "Rush Days";
             this.lblRushDays.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -221,11 +237,12 @@
             this.lblQuoteDate.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblQuoteDate.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lblQuoteDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+
             this.lblQuoteDate.Location = new System.Drawing.Point(21815, 289);
-            this.lblQuoteDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuoteDate.Name = "lblQuoteDate";
-            this.lblQuoteDate.Padding = new System.Windows.Forms.Padding(3);
+            this.lblQuoteDate.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.lblQuoteDate.Size = new System.Drawing.Size(133, 29);
+
             this.lblQuoteDate.TabIndex = 43;
             this.lblQuoteDate.Text = "Quote Date";
             this.lblQuoteDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -243,11 +260,13 @@
             "3",
             "5",
             "7"});
+
             this.cbRushDays.Location = new System.Drawing.Point(287, 260);
             this.cbRushDays.Margin = new System.Windows.Forms.Padding(4);
             this.cbRushDays.MaxDropDownItems = 5;
             this.cbRushDays.Name = "cbRushDays";
             this.cbRushDays.Size = new System.Drawing.Size(35, 29);
+
             this.cbRushDays.TabIndex = 7;
             // 
             // lblNumDrawers
@@ -257,11 +276,12 @@
             this.lblNumDrawers.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblNumDrawers.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lblNumDrawers.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+
             this.lblNumDrawers.Location = new System.Drawing.Point(100, 192);
-            this.lblNumDrawers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumDrawers.Name = "lblNumDrawers";
-            this.lblNumDrawers.Padding = new System.Windows.Forms.Padding(3);
+            this.lblNumDrawers.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.lblNumDrawers.Size = new System.Drawing.Size(165, 27);
+
             this.lblNumDrawers.TabIndex = 44;
             this.lblNumDrawers.Text = "Number of Drawers";
             this.lblNumDrawers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -273,11 +293,12 @@
             this.lblMaterial.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblMaterial.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lblMaterial.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+
             this.lblMaterial.Location = new System.Drawing.Point(100, 224);
-            this.lblMaterial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMaterial.Name = "lblMaterial";
-            this.lblMaterial.Padding = new System.Windows.Forms.Padding(3);
+            this.lblMaterial.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.lblMaterial.Size = new System.Drawing.Size(81, 27);
+
             this.lblMaterial.TabIndex = 45;
             this.lblMaterial.Text = "Material";
             this.lblMaterial.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -298,11 +319,13 @@
             "5",
             "6",
             "7"});
+
             this.cbDrawers.Location = new System.Drawing.Point(287, 195);
             this.cbDrawers.Margin = new System.Windows.Forms.Padding(4);
             this.cbDrawers.MaxDropDownItems = 5;
             this.cbDrawers.Name = "cbDrawers";
             this.cbDrawers.Size = new System.Drawing.Size(35, 29);
+
             this.cbDrawers.TabIndex = 5;
             // 
             // errProviderWidth
@@ -329,13 +352,17 @@
             // AddQuote
             // 
             this.AcceptButton = this.btnSaveQuote;
+
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkKhaki;
             this.BackgroundImage = global::MegaDeskV1._0_Rush_Lopez.Properties.Resources.addQuote;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.btnMenu);
+
             this.Controls.Add(this.cbDrawers);
             this.Controls.Add(this.lblMaterial);
             this.Controls.Add(this.lblNumDrawers);
@@ -355,6 +382,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+
             this.Name = "AddQuote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "MegaDeskv2.0: Add Quote";
