@@ -322,6 +322,8 @@
             this.AcceptButton = this.btnSaveQuote;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DarkKhaki;
             this.BackgroundImage = global::MegaDeskV1._0_Rush_Lopez.Properties.Resources.addQuote;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
