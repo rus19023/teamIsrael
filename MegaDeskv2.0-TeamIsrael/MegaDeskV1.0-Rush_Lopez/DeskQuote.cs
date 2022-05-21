@@ -5,14 +5,21 @@ namespace MegaDeskV1._0_Rush_Lopez
 {
     public class DeskQuote : Desk
     {
-        // todo: are these properties, members, fields or variables? or something else? 
+
+        //Properties of the DeskQuote class
+        [DisplayName("First Name")]
+
         public string customerFirstName { get; set; }
+        [DisplayName("Last Name")]
         public string customerLastName { get; set; }
+        [DisplayName("Rush Days")]
         public int rushDays { get; set; }
+        [DisplayName("Date")]
         public DateTime quoteDate { get; set; }
+        [DisplayName("Quote Price")]
         public int quoteTotal { get; set; }
 
-        // todo: is this a constructor? Why does the top part have total and date, but not here?
+        // Constructor
         public DeskQuote(int width, int depth, int drawers, string surfaceMaterial, int rushDays, string customerFirstName, string customerLastName) :
             base(width, depth, drawers, surfaceMaterial)
         {

@@ -29,29 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllQuotes));
-            this.lvAllQuotes = new System.Windows.Forms.ListView();
             this.labelViewAllQuotes = new System.Windows.Forms.Label();
+            this.dgvAllQuotes = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllQuotes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lvAllQuotes
-            // 
-            this.lvAllQuotes.BackColor = System.Drawing.Color.LemonChiffon;
-            this.lvAllQuotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lvAllQuotes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lvAllQuotes.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Millimeter, ((byte)(0)));
-            this.lvAllQuotes.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lvAllQuotes.FullRowSelect = true;
-            this.lvAllQuotes.GridLines = true;
-            this.lvAllQuotes.HideSelection = false;
-            this.lvAllQuotes.Location = new System.Drawing.Point(50, 105);
-            this.lvAllQuotes.Margin = new System.Windows.Forms.Padding(4);
-            this.lvAllQuotes.MultiSelect = false;
-            this.lvAllQuotes.Name = "lvAllQuotes";
-            this.lvAllQuotes.ShowItemToolTips = true;
-            this.lvAllQuotes.Size = new System.Drawing.Size(1000, 840);
-            this.lvAllQuotes.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.lvAllQuotes.TabIndex = 0;
-            this.lvAllQuotes.UseCompatibleStateImageBehavior = false;
             // 
             // labelViewAllQuotes
             // 
@@ -63,17 +44,28 @@
             this.labelViewAllQuotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelViewAllQuotes.Name = "labelViewAllQuotes";
             this.labelViewAllQuotes.Padding = new System.Windows.Forms.Padding(10);
-            this.labelViewAllQuotes.Size = new System.Drawing.Size(370, 69);
+            this.labelViewAllQuotes.Size = new System.Drawing.Size(459, 84);
             this.labelViewAllQuotes.TabIndex = 1;
             this.labelViewAllQuotes.Text = "View All Quotes";
             // 
+            // dgvAllQuotes
+            // 
+            this.dgvAllQuotes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAllQuotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllQuotes.Location = new System.Drawing.Point(65, 112);
+            this.dgvAllQuotes.Name = "dgvAllQuotes";
+            this.dgvAllQuotes.RowHeadersWidth = 51;
+            this.dgvAllQuotes.RowTemplate.Height = 24;
+            this.dgvAllQuotes.Size = new System.Drawing.Size(1060, 515);
+            this.dgvAllQuotes.TabIndex = 2;
+            // 
             // ViewAllQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.dgvAllQuotes);
             this.Controls.Add(this.labelViewAllQuotes);
-            this.Controls.Add(this.lvAllQuotes);
             this.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -81,14 +73,14 @@
             this.Name = "ViewAllQuotes";
             this.Text = "MegaDeskvw.0: View All Quotes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.returnToMenu);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllQuotes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView lvAllQuotes;
         private System.Windows.Forms.Label labelViewAllQuotes;
+        private System.Windows.Forms.DataGridView dgvAllQuotes;
     }
 }

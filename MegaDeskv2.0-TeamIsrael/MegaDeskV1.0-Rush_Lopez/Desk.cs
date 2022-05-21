@@ -1,10 +1,16 @@
-﻿namespace MegaDeskV1._0_Rush_Lopez
+﻿using System.ComponentModel;
+
+namespace MegaDeskV1._0_Rush_Lopez
 {
     public class Desk
     {
+        [DisplayName("Width")]
         public int width { get; set; }
+        [DisplayName("Depth")]
         public int depth { get; set; }
+        [DisplayName("Drawer #")]
         public int drawers { get; set; }
+        [DisplayName("Material")]
         public string surfaceMaterial { get; set; }
         protected const int MIN_WIDTH = 24;
         protected const int MAX_WIDTH = 96;
