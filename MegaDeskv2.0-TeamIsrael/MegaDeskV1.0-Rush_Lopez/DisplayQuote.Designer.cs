@@ -54,9 +54,10 @@
             this.displayQuoteDate.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.displayQuoteDate.ForeColor = System.Drawing.Color.LemonChiffon;
             this.displayQuoteDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.displayQuoteDate.Location = new System.Drawing.Point(590, 440);
+            this.displayQuoteDate.Location = new System.Drawing.Point(885, 677);
+            this.displayQuoteDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.displayQuoteDate.Name = "displayQuoteDate";
-            this.displayQuoteDate.Size = new System.Drawing.Size(150, 25);
+            this.displayQuoteDate.Size = new System.Drawing.Size(250, 38);
             this.displayQuoteDate.TabIndex = 0;
             // 
             // lblQuoteDate
@@ -66,7 +67,8 @@
             this.lblQuoteDate.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblQuoteDate.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lblQuoteDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblQuoteDate.Location = new System.Drawing.Point(462, 440);
+            this.lblQuoteDate.Location = new System.Drawing.Point(693, 677);
+            this.lblQuoteDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuoteDate.Name = "lblQuoteDate";
             this.lblQuoteDate.Size = new System.Drawing.Size(123, 23);
             this.lblQuoteDate.TabIndex = 1;
@@ -78,7 +80,8 @@
             this.lblWidth.BackColor = System.Drawing.Color.Transparent;
             this.lblWidth.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblWidth.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblWidth.Location = new System.Drawing.Point(462, 240);
+            this.lblWidth.Location = new System.Drawing.Point(693, 369);
+            this.lblWidth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWidth.Name = "lblWidth";
             this.lblWidth.Size = new System.Drawing.Size(118, 23);
             this.lblWidth.TabIndex = 3;
@@ -89,9 +92,10 @@
             this.displayWidth.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.displayWidth.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.displayWidth.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.displayWidth.Location = new System.Drawing.Point(590, 240);
+            this.displayWidth.Location = new System.Drawing.Point(885, 369);
+            this.displayWidth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.displayWidth.Name = "displayWidth";
-            this.displayWidth.Size = new System.Drawing.Size(150, 25);
+            this.displayWidth.Size = new System.Drawing.Size(250, 38);
             this.displayWidth.TabIndex = 2;
             // 
             // label3
@@ -100,7 +104,8 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label3.Location = new System.Drawing.Point(459, 280);
+            this.label3.Location = new System.Drawing.Point(688, 431);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 23);
             this.label3.TabIndex = 5;
@@ -111,9 +116,10 @@
             this.displayDepth.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.displayDepth.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.displayDepth.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.displayDepth.Location = new System.Drawing.Point(590, 280);
+            this.displayDepth.Location = new System.Drawing.Point(885, 431);
+            this.displayDepth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.displayDepth.Name = "displayDepth";
-            this.displayDepth.Size = new System.Drawing.Size(150, 25);
+            this.displayDepth.Size = new System.Drawing.Size(250, 38);
             this.displayDepth.TabIndex = 4;
             // 
             // label5
@@ -122,7 +128,8 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label5.Location = new System.Drawing.Point(389, 320);
+            this.label5.Location = new System.Drawing.Point(584, 492);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(196, 23);
             this.label5.TabIndex = 7;
@@ -133,9 +140,10 @@
             this.displayDrawers.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.displayDrawers.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.displayDrawers.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.displayDrawers.Location = new System.Drawing.Point(590, 320);
+            this.displayDrawers.Location = new System.Drawing.Point(885, 492);
+            this.displayDrawers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.displayDrawers.Name = "displayDrawers";
-            this.displayDrawers.Size = new System.Drawing.Size(150, 25);
+            this.displayDrawers.Size = new System.Drawing.Size(250, 38);
             this.displayDrawers.TabIndex = 6;
             // 
             // label7
@@ -144,7 +152,8 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label7.Location = new System.Drawing.Point(410, 360);
+            this.label7.Location = new System.Drawing.Point(615, 554);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(175, 23);
             this.label7.TabIndex = 9;
@@ -155,9 +164,10 @@
             this.displayMaterial.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.displayMaterial.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.displayMaterial.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.displayMaterial.Location = new System.Drawing.Point(590, 360);
+            this.displayMaterial.Location = new System.Drawing.Point(885, 554);
+            this.displayMaterial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.displayMaterial.Name = "displayMaterial";
-            this.displayMaterial.Size = new System.Drawing.Size(150, 25);
+            this.displayMaterial.Size = new System.Drawing.Size(250, 38);
             this.displayMaterial.TabIndex = 8;
             // 
             // label9
@@ -166,7 +176,8 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label9.Location = new System.Drawing.Point(475, 400);
+            this.label9.Location = new System.Drawing.Point(712, 615);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(116, 23);
             this.label9.TabIndex = 11;
@@ -177,9 +188,10 @@
             this.displayRushDays.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.displayRushDays.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.displayRushDays.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.displayRushDays.Location = new System.Drawing.Point(590, 400);
+            this.displayRushDays.Location = new System.Drawing.Point(885, 615);
+            this.displayRushDays.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.displayRushDays.Name = "displayRushDays";
-            this.displayRushDays.Size = new System.Drawing.Size(150, 25);
+            this.displayRushDays.Size = new System.Drawing.Size(250, 38);
             this.displayRushDays.TabIndex = 10;
             // 
             // lblFirstName
@@ -188,7 +200,8 @@
             this.lblFirstName.BackColor = System.Drawing.Color.Transparent;
             this.lblFirstName.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblFirstName.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblFirstName.Location = new System.Drawing.Point(414, 200);
+            this.lblFirstName.Location = new System.Drawing.Point(621, 308);
+            this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(170, 23);
             this.lblFirstName.TabIndex = 13;
@@ -199,9 +212,10 @@
             this.displayCustomerName.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.displayCustomerName.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.displayCustomerName.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.displayCustomerName.Location = new System.Drawing.Point(590, 200);
+            this.displayCustomerName.Location = new System.Drawing.Point(885, 308);
+            this.displayCustomerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.displayCustomerName.Name = "displayCustomerName";
-            this.displayCustomerName.Size = new System.Drawing.Size(150, 25);
+            this.displayCustomerName.Size = new System.Drawing.Size(250, 35);
             this.displayCustomerName.TabIndex = 12;
             // 
             // lblQuoteTotal
@@ -211,7 +225,8 @@
             this.lblQuoteTotal.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblQuoteTotal.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lblQuoteTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblQuoteTotal.Location = new System.Drawing.Point(462, 480);
+            this.lblQuoteTotal.Location = new System.Drawing.Point(693, 738);
+            this.lblQuoteTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuoteTotal.Name = "lblQuoteTotal";
             this.lblQuoteTotal.Size = new System.Drawing.Size(122, 23);
             this.lblQuoteTotal.TabIndex = 16;
@@ -224,9 +239,10 @@
             this.displayQuoteTotal.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.displayQuoteTotal.ForeColor = System.Drawing.Color.LemonChiffon;
             this.displayQuoteTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.displayQuoteTotal.Location = new System.Drawing.Point(590, 480);
+            this.displayQuoteTotal.Location = new System.Drawing.Point(885, 738);
+            this.displayQuoteTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.displayQuoteTotal.Name = "displayQuoteTotal";
-            this.displayQuoteTotal.Size = new System.Drawing.Size(150, 25);
+            this.displayQuoteTotal.Size = new System.Drawing.Size(250, 38);
             this.displayQuoteTotal.TabIndex = 15;
             // 
             // btnClose
@@ -234,9 +250,10 @@
             this.btnClose.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnClose.Location = new System.Drawing.Point(466, 530);
+            this.btnClose.Location = new System.Drawing.Point(699, 815);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(244, 69);
+            this.btnClose.Size = new System.Drawing.Size(366, 106);
             this.btnClose.TabIndex = 17;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -244,11 +261,11 @@
             // 
             // DisplayQuote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.BackgroundImage = global::MegaDeskV1._0_Rush_Lopez.Properties.Resources.displayQuote;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(1178, 644);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblQuoteTotal);
             this.Controls.Add(this.displayQuoteTotal);
@@ -268,6 +285,7 @@
             this.Controls.Add(this.displayQuoteDate);
             this.ForeColor = System.Drawing.Color.LemonChiffon;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DisplayQuote";
             this.Text = "MegaDeskv2.0: Display Quote";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.returnToMenu);
