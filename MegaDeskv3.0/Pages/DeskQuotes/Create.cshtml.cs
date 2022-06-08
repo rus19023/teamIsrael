@@ -35,6 +35,9 @@ namespace MegaDeskv3._0.Pages.DeskQuotes
                 return Page();
             }
 
+            DeskQuote.quoteDate = DateTime.Now;
+            DeskQuote.quoteTotal = DeskQuote.getQuoteTotal(DeskQuote);
+
             _context.DeskQuote.Add(DeskQuote);
             await _context.SaveChangesAsync();
 
