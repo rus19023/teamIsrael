@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
@@ -99,27 +98,41 @@ namespace MegaDeskV1._0_Rush_Lopez
 
         private void saveQuote(object sender, EventArgs e)
         {
-            // Create list for saved quotes
-            List<DeskQuote> savedQuotes = new SavedQuotes().getSavedQuotes();
+            
 
             // Get new quote object data from AddQuote form
             // Sanitize inputs: trim, then convert? try.parse?
-            int width = Convert.ToInt32(tbDesktopWidth.Text);
-            int depth = Convert.ToInt32(tbDesktopDepth.Text);
-            int drawers = Convert.ToInt32(cbDrawers.SelectedItem);
+            string sWidth = tbDesktopWidth.Text;
+            string sDepth = tbDesktopDepth.Text;
+            string sDrawers = Convert.ToString(cbDrawers.SelectedItem);
             string surfaceMaterial = Convert.ToString(cbMaterial.SelectedItem);
-            int rushDays = Convert.ToInt32(cbRushDays.SelectedItem);
-            string customerFirstName = tbFirstName.Text;
-            string customerLastName = tbLastName.Text;           
+            string sRushDays = Convert.ToString(cbRushDays.SelectedItem);
+            string customerFirstName = tbFirstName.Text.Trim();
+            string customerLastName = tbLastName.Text.Trim();
+
+            //Validate that no fields are empty before continuing. If empty, display error messagebox and exit out of event
+            if (string.IsNullOrWhiteSpace(sWidth) || string.IsNullOrWhiteSpace(sDepth) ||
+                string.IsNullOrWhiteSpace(sDrawers) || string.IsNullOrWhiteSpace(surfaceMaterial) 
+                || string.IsNullOrWhiteSpace(sRushDays) || string.IsNullOrWhiteSpace(customerFirstName) 
+                || string.IsNullOrWhiteSpace(customerLastName))
+            {
+                MessageBox.Show("Please fill out all the information.", "ERROR!!");
+                return;
+            }
+
+            int width = Convert.ToInt32(sWidth);
+            int depth = Convert.ToInt32(sDepth);
+            int drawers = Convert.ToInt32(sDrawers);
+            int rushDays = Convert.ToInt32(sRushDays);
 
             // Create new DeskQuote object from inputs
             DeskQuote newQuote = new DeskQuote(width, depth, drawers, surfaceMaterial, rushDays, customerFirstName, customerLastName);
 
             // Add new quote to list
-            savedQuotes.Add(newQuote);
-
+            SavedQuotes.savedQuotes.Add(newQuote);
+            
             // Convert list to json string
-            string json = JsonConvert.SerializeObject(savedQuotes);
+            string json = JsonConvert.SerializeObject(SavedQuotes.savedQuotes);
 
             // Write the serialized list to the json file
             if (File.Exists(JSON_PATH))
@@ -147,13 +160,14 @@ namespace MegaDeskV1._0_Rush_Lopez
         {
                 var mainMenu = (MegaDeskMainMenu)Tag;
                 mainMenu.Show();
-            //}
             
         }
 
-        private void tbFirstName_TextChanged(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
-
+            var mainMenu = (MegaDeskMainMenu)Tag;
+            mainMenu.Show();
+            Close();
         }
     }        
  }

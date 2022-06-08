@@ -1,20 +1,26 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
-using System.Collections.Generic;
-using System.Xml;
 
 namespace MegaDeskV1._0_Rush_Lopez
 {
     public class DeskQuote : Desk
     {
-        // todo: are these properties, members, fields or variables? or something else?
+
+        //Properties of the DeskQuote class
+        [DisplayName("First Name")]
+
         public string customerFirstName { get; set; }
+        [DisplayName("Last Name")]
         public string customerLastName { get; set; }
+        [DisplayName("Rush Days")]
         public int rushDays { get; set; }
+        [DisplayName("Date")]
         public DateTime quoteDate { get; set; }
+        [DisplayName("Quote Price")]
         public int quoteTotal { get; set; }
 
-        // todo: is this a constructor? Why does the top part have total and date, but not here?
+        // Constructor
         public DeskQuote(int width, int depth, int drawers, string surfaceMaterial, int rushDays, string customerFirstName, string customerLastName) :
             base(width, depth, drawers, surfaceMaterial)
         {
@@ -179,11 +185,12 @@ namespace MegaDeskV1._0_Rush_Lopez
 
         public string displayQuote()
         {
+            
             // Create string to pass to Display Quote form
-            string quote = "";
-            //    $"Customer: {customerName} - Date of Quote: {quoteDate}\nDesk Width: {width}\nDesk Depth: {depth}\n"
-            //    + $"Surface Area: {calcSurfaceArea()}\nSurface Material: {surfaceMaterial}\nNumber of Drawers: {drawers}\n"
-            //    + $"Rush Days: {rushDays}\nTotal Price for Desk: ${quoteTotal}";
+            string quote = 
+                $"Customer: {customerFirstName} - Date of Quote: {quoteDate}\nDesk Width: {width}\nDesk Depth: {depth}\n"
+                + $"Surface Area: {calcSurfaceArea()}\nSurface Material: {surfaceMaterial}\nNumber of Drawers: {drawers}\n"
+                + $"Rush Days: {rushDays}\nTotal Price for Desk: ${quoteTotal}";
             return quote;
         }
     }

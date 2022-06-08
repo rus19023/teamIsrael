@@ -56,7 +56,7 @@
             this.displayQuoteDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.displayQuoteDate.Location = new System.Drawing.Point(590, 440);
             this.displayQuoteDate.Name = "displayQuoteDate";
-            this.displayQuoteDate.Size = new System.Drawing.Size(150, 25);
+            this.displayQuoteDate.Size = new System.Drawing.Size(167, 25);
             this.displayQuoteDate.TabIndex = 0;
             // 
             // lblQuoteDate
@@ -91,7 +91,7 @@
             this.displayWidth.ForeColor = System.Drawing.Color.LemonChiffon;
             this.displayWidth.Location = new System.Drawing.Point(590, 240);
             this.displayWidth.Name = "displayWidth";
-            this.displayWidth.Size = new System.Drawing.Size(150, 25);
+            this.displayWidth.Size = new System.Drawing.Size(167, 25);
             this.displayWidth.TabIndex = 2;
             // 
             // label3
@@ -113,7 +113,7 @@
             this.displayDepth.ForeColor = System.Drawing.Color.LemonChiffon;
             this.displayDepth.Location = new System.Drawing.Point(590, 280);
             this.displayDepth.Name = "displayDepth";
-            this.displayDepth.Size = new System.Drawing.Size(150, 25);
+            this.displayDepth.Size = new System.Drawing.Size(167, 25);
             this.displayDepth.TabIndex = 4;
             // 
             // label5
@@ -135,7 +135,7 @@
             this.displayDrawers.ForeColor = System.Drawing.Color.LemonChiffon;
             this.displayDrawers.Location = new System.Drawing.Point(590, 320);
             this.displayDrawers.Name = "displayDrawers";
-            this.displayDrawers.Size = new System.Drawing.Size(150, 25);
+            this.displayDrawers.Size = new System.Drawing.Size(167, 25);
             this.displayDrawers.TabIndex = 6;
             // 
             // label7
@@ -157,7 +157,7 @@
             this.displayMaterial.ForeColor = System.Drawing.Color.LemonChiffon;
             this.displayMaterial.Location = new System.Drawing.Point(590, 360);
             this.displayMaterial.Name = "displayMaterial";
-            this.displayMaterial.Size = new System.Drawing.Size(150, 25);
+            this.displayMaterial.Size = new System.Drawing.Size(167, 25);
             this.displayMaterial.TabIndex = 8;
             // 
             // label9
@@ -179,7 +179,7 @@
             this.displayRushDays.ForeColor = System.Drawing.Color.LemonChiffon;
             this.displayRushDays.Location = new System.Drawing.Point(590, 400);
             this.displayRushDays.Name = "displayRushDays";
-            this.displayRushDays.Size = new System.Drawing.Size(150, 25);
+            this.displayRushDays.Size = new System.Drawing.Size(167, 25);
             this.displayRushDays.TabIndex = 10;
             // 
             // lblFirstName
@@ -201,7 +201,7 @@
             this.displayCustomerName.ForeColor = System.Drawing.Color.LemonChiffon;
             this.displayCustomerName.Location = new System.Drawing.Point(590, 200);
             this.displayCustomerName.Name = "displayCustomerName";
-            this.displayCustomerName.Size = new System.Drawing.Size(150, 25);
+            this.displayCustomerName.Size = new System.Drawing.Size(167, 23);
             this.displayCustomerName.TabIndex = 12;
             // 
             // lblQuoteTotal
@@ -226,7 +226,7 @@
             this.displayQuoteTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.displayQuoteTotal.Location = new System.Drawing.Point(590, 480);
             this.displayQuoteTotal.Name = "displayQuoteTotal";
-            this.displayQuoteTotal.Size = new System.Drawing.Size(150, 25);
+            this.displayQuoteTotal.Size = new System.Drawing.Size(167, 25);
             this.displayQuoteTotal.TabIndex = 15;
             // 
             // btnClose
@@ -246,6 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.BackgroundImage = global::MegaDeskV1._0_Rush_Lopez.Properties.Resources.displayQuote;
             this.ClientSize = new System.Drawing.Size(1184, 661);
