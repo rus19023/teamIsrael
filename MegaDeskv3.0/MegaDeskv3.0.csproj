@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\img\" />
+    <None Include="wwwroot\img\mainmenu.jpg" />
   </ItemGroup>
 
   <ItemGroup>

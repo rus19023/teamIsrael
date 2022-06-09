@@ -1,10 +1,19 @@
 ﻿@page
-@model IndexModel
+@*@model IndexModel*@
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<main class="homepage">
+    <section class="left">         
+        <img class="home" src="/img/mainmenu.jpg") />
+    </section>
+    <section class="right">     
+        <a class="navlink" asp-area="" asp-page="/Index">Add Quote</a>   
+        <a class="navlink" asp-area="" asp-page="/DeskQuotes/">View Quotes</a>
+        <a class="navlink" asp-area="" asp-page="/DeskQuotes/#search">Search Quotes</a>
+    </section>
+   
+   @* <h1 class="title">MegaDesk v. 3.0</h1>*@
+    
+</main>

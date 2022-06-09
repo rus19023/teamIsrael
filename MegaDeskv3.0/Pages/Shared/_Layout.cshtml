@@ -3,27 +3,31 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MegaDeskv3._0</title>
-    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
-    <link rel="stylesheet" href="~/css/site.css" />    
+    <title>@ViewData["Title"] - Mega Desk LLC</title>
+    @*<link rel="stylesheet" href="css/site.css" />*@
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+   @* <link rel="stylesheet" href="https://rus19023.github.io/myportfolio/css/megadesk.css" />*@
+    <link rel="stylesheet" href="http://127.0.0.1:5501/css/megadesk.css" /> 
+    <link rel="shortcut icon" href="/img/favicon.ico">
      
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">MegaDeskv3._0</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+        <nav class="">
+            <div class="navcontainer">
+                <h1><a class="title" asp-area="" asp-page="/Index">Mega Desk LLC</a></h1> 
+                <div class="">
+                    <ul class="navbar-nav">
+                        <li class="">
+                            <a class="navlink" asp-area="" asp-page="/Index"></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        <li>
+                            <a class="navlink" asp-area="" asp-page="/DeskQuotes/Index">View Quotes</a>
+                         </li>
+                        <li class="">
+                            <a class="navlink" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                        <li>
                         </li>
                     </ul>
                 </div>
@@ -36,9 +40,9 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer">
         <div class="container">
-            &copy; 2022 - MegaDeskv3._0 - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2022 - Mega Desk LLC - <a asp-area="" asp-page="/Privacy"> Privacy Policy</a>
         </div>
     </footer>
 
