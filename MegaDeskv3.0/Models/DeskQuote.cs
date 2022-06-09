@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace MegaDeskv3._0.Models
 {
@@ -16,11 +17,7 @@ namespace MegaDeskv3._0.Models
         public int drawers { get; set; }
         [DisplayName("Material")]
         public string surfaceMaterial { get; set; }
-        //protected const int MIN_WIDTH = 24;
-        //protected const int MAX_WIDTH = 96;
-        //protected const int MIN_DEPTH = 12;
-        //protected const int MAX_DEPTH = 48;
-
+        
         [DisplayName("First Name")]
 
         public string customerFirstName { get; set; }
@@ -29,6 +26,7 @@ namespace MegaDeskv3._0.Models
         [DisplayName("Rush Days")]
         public int rushDays { get; set; }
         [DisplayName("Date")]
+        [DataType(DataType.Date)]
         public DateTime quoteDate { get; set; }
         [DisplayName("Quote Price")]
         public int quoteTotal { get; set; }
