@@ -1,4 +1,5 @@
 ﻿@page
+@using MegaDeskv3._0.Models
 @model MegaDeskv3._0.Pages.DeskQuotes.CreateModel
 
 @{
@@ -14,6 +15,16 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="DeskQuote.customerFirstName" class="control-label"></label>
+                <input asp-for="DeskQuote.customerFirstName" class="form-control" />
+                <span asp-validation-for="DeskQuote.customerFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.customerLastName" class="control-label"></label>
+                <input asp-for="DeskQuote.customerLastName" class="form-control" />
+                <span asp-validation-for="DeskQuote.customerLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="DeskQuote.width" class="control-label"></label>
                 <input asp-for="DeskQuote.width" class="form-control" />
                 <span asp-validation-for="DeskQuote.width" class="text-danger"></span>
@@ -25,38 +36,34 @@
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.drawers" class="control-label"></label>
-                <input asp-for="DeskQuote.drawers" class="form-control" />
+                <select asp-for="DeskQuote.drawers" class="form-control">
+                   @foreach(var option in BusinessLogic.Drawers)
+                    {
+                    <option value=@option>@option.ToString()</option>
+                    }
+                </select>
                 <span asp-validation-for="DeskQuote.drawers" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.surfaceMaterial" class="control-label"></label>
-                <input asp-for="DeskQuote.surfaceMaterial" class="form-control" />
+                <select asp-for="DeskQuote.surfaceMaterial" class="form-control">
+                    @foreach (var material in Enum.GetNames(typeof(BusinessLogic.surfaceMaterials)))
+                    {
+                        <option value="@material">@material
+                        </option>
+                    }
+                </select>
                 <span asp-validation-for="DeskQuote.surfaceMaterial" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.customerFirstName" class="control-label"></label>
-                <input asp-for="DeskQuote.customerFirstName" class="form-control" />
-                <span asp-validation-for="DeskQuote.customerFirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.customerLastName" class="control-label"></label>
-                <input asp-for="DeskQuote.customerLastName" class="form-control" />
-                <span asp-validation-for="DeskQuote.customerLastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="DeskQuote.rushDays" class="control-label"></label>
-                <input asp-for="DeskQuote.rushDays" class="form-control" />
+                <select asp-for="DeskQuote.rushDays" class="form-control">
+                    @foreach (var option in BusinessLogic.RushDays)
+                    {
+                        <option value="@option">@option</option>
+                    }
+                </select>
                 <span asp-validation-for="DeskQuote.rushDays" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.quoteDate" class="control-label"></label>
-                <input asp-for="DeskQuote.quoteDate" class="form-control" />
-                <span asp-validation-for="DeskQuote.quoteDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.quoteTotal" class="control-label"></label>
-                <input asp-for="DeskQuote.quoteTotal" class="form-control" />
-                <span asp-validation-for="DeskQuote.quoteTotal" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace MegaDeskv3._0.Models
 {
     public class DeskQuote
     {
+        //properties of the DeskQuote model
         public int Id { get; set; }
 
         [DisplayName("Width")]
@@ -15,12 +17,7 @@ namespace MegaDeskv3._0.Models
         public int drawers { get; set; }
         [DisplayName("Material")]
         public string surfaceMaterial { get; set; }
-        protected const int MIN_WIDTH = 24;
-        protected const int MAX_WIDTH = 96;
-        protected const int MIN_DEPTH = 12;
-        protected const int MAX_DEPTH = 48;
-
-        //Properties of the DeskQuote class
+        
         [DisplayName("First Name")]
 
         public string customerFirstName { get; set; }
@@ -29,227 +26,167 @@ namespace MegaDeskv3._0.Models
         [DisplayName("Rush Days")]
         public int rushDays { get; set; }
         [DisplayName("Date")]
+        [DataType(DataType.Date)]
         public DateTime quoteDate { get; set; }
         [DisplayName("Quote Price")]
         public int quoteTotal { get; set; }
 
-        // Constructor
-        public DeskQuote(int width, int depth, int drawers, string surfaceMaterial, int rushDays, string customerFirstName, string customerLastName)
-        {
-            this.width = width;
-            this.depth = depth;
-            this.drawers = drawers;
-            this.surfaceMaterial = surfaceMaterial;
-            this.rushDays = rushDays;
-            this.customerFirstName = customerFirstName;
-            this.customerLastName = customerLastName;
-            this.quoteTotal = getQuoteTotal();
-            this.quoteDate = DateTime.Today;
-        }
-
-        public int getMinWidth()
-        {
-            return MIN_WIDTH;
-        }
-
-        public int getMaxWidth()
-        {
-            return MAX_WIDTH;
-        }
-
-        public int getMinDepth()
-        {
-            return MIN_DEPTH;
-        }
-
-        public int getMaxDepth()
-        {
-            return MAX_DEPTH;
-        }
-
-        public int calcSurfaceArea()
+        public int calcSurfaceArea(int depth, int width)
         {
             return width * depth;
         }
-    
+
+        public int calcRushPrice(int rushDays, int depth, int width)
+        {
+            int surfaceArea = calcSurfaceArea(depth, width);
+            int rushPrice;
+            int[,] rushPrices = getRushOrder();
+            if (rushPrices == null)
+            {
+                return 0;
+            }
 
 
-    // TODO: previous method to calculate rush price
-    //public int calcRushPrice()
-    //{
-    //    int surfaceArea = calcSurfaceArea();
-    //    int rushPrice;
-    //    int[,] rushPrices = getRushOrder();
+            switch (rushDays)
+            {
+                case 3:
+                    if (surfaceArea < 1000) rushPrice = rushPrices[0, 0];
+                    else if (surfaceArea <= 2000) rushPrice = rushPrices[0, 1];
+                    else rushPrice = rushPrices[0, 2];
+                    break;
+                case 5:
+                    if (surfaceArea < 1000) rushPrice = rushPrices[1, 0];
+                    else if (surfaceArea <= 2000) rushPrice = rushPrices[1, 1];
+                    else rushPrice = rushPrices[1, 2];
+                    break;
+                case 7:
+                    if (surfaceArea < 1000) rushPrice = rushPrices[2, 0];
+                    else if (surfaceArea <= 2000) rushPrice = rushPrices[2, 1];
+                    else rushPrice = rushPrices[2, 2];
+                    break;
+                default:
+                    rushPrice = 0;
+                    break;
+            }
+            return rushPrice;
+        }
 
-    //    if (rushPrices == null)
-    //    {
-    //        return 0;
-    //    }
+        public int[,] getRushOrder()
+        {
+            int[,] rushPrices = new int[3, 3];
+            rushPrices[0, 0] = 60;
+            rushPrices[0, 1] = 70;
+            rushPrices[0, 2] = 80;
+            rushPrices[1, 0] = 40;
+            rushPrices[1, 1] = 50;
+            rushPrices[1, 2] = 60;
+            rushPrices[2, 0] = 30;
+            rushPrices[2, 1] = 35;
+            rushPrices[2, 2] = 40;
+            return rushPrices;
+        }
+
+        public int calcDrawerPrice(int drawers)
+        {
+            return 50 * drawers;
+        }
+
+        public int calcAreaPrice(int width, int depth)
+        {
+            int surfaceArea = calcSurfaceArea(width, depth);
+            if (surfaceArea > 1000)
+            {
+                return 200 + (surfaceArea - 1000);
+            }
+            else
+            {
+                return 200;
+            }
+        }
+
+        public int calcMaterialPrice(string material)
+        {
+            int materialPrice = 0;
+
+            switch (material)
+            {
+                case "Oak":
+                    materialPrice = 200;
+                    break;
+                case "Laminate":
+                    materialPrice = 100;
+                    break;
+                case "Pine":
+                    materialPrice = 50;
+                    break;
+                case "Rosewood":
+                    materialPrice = 300;
+                    break;
+                case "Veneer":
+                    materialPrice = 125;
+                    break;
+            }
+            return materialPrice;
+        }
 
         
-    //    switch (rushDays)
-    //    {
-    //        case 3:
-    //            if (surfaceArea < 1000) rushPrice = rushPrices[0, 0];
-    //            else if (surfaceArea <= 2000) rushPrice = rushPrices[0, 1];
-    //            else rushPrice = rushPrices[0, 2];
-    //            break;
-    //        case 5:
-    //            if (surfaceArea < 1000) rushPrice = rushPrices[1, 0];
-    //            else if (surfaceArea <= 2000) rushPrice = rushPrices[1, 1];
-    //            else rushPrice = rushPrices[1, 2];
-    //            break;
-    //        case 7:
-    //            if (surfaceArea < 1000) rushPrice = rushPrices[2, 0];
-    //            else if (surfaceArea <= 2000) rushPrice = rushPrices[2, 1];
-    //            else rushPrice = rushPrices[2, 2];
-    //            break;
-    //        default:
-    //            rushPrice = 0;
-    //            break;
-    //    }
-    //    return rushPrice;
-    //}
 
-    //public int[,] getRushOrder()
-    //{
-    //    try
-    //    {
-    //        StreamReader reader = new StreamReader("Resources/rushOrderPrices.txt");
-    //        int i1 = 0;
-    //        int[,] rushPrices = new int[3, 3];
-    //        while (reader.EndOfStream == false)
-    //        {
-    //            for (int i2 = 0; i2 < 3; i2++)
-    //            {
-    //                rushPrices[i1, i2] = Convert.ToInt32(reader.ReadLine());
-    //            }
-    //            i1++;
-    //        }
-    //        reader.Close();
-    //        return rushPrices;
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        Console.WriteLine(ex.Message);
-    //        return null;
-    //    }
-
-    //}
-
-    public int calcDrawerPrice()
-    {
-        return 50 * drawers;
-    }
-
-    public int calcAreaPrice()
-    {
-        int surfaceArea = calcSurfaceArea();
-        if (surfaceArea > 1000)
+        public int getQuoteTotal(DeskQuote deskQuote)
         {
-            return 200 + (surfaceArea - 1000);
-        }
-        else
-        {
-            return 200;
-        }
-    }
-
-    public int calcMaterialPrice()
-    {
-        string material = surfaceMaterial;
-        int materialPrice = 0;
-
-        switch (material)
-        {
-            case "Oak":
-                materialPrice = 200;
-                break;
-            case "Laminate":
-                materialPrice = 100;
-                break;
-            case "Pine":
-                materialPrice = 50;
-                break;
-            case "Rosewood":
-                materialPrice = 300;
-                break;
-            case "Veneer":
-                materialPrice = 125;
-                break;
-        }
-        return materialPrice;
-    }
-
-        // placeholder for calculating rush price
-        public int calcRushPrice()
-        {
-            return 0;
+            int totalPrice = calcAreaPrice(deskQuote.width, deskQuote.depth) + calcDrawerPrice(deskQuote.drawers) + calcMaterialPrice(deskQuote.surfaceMaterial) + calcRushPrice(deskQuote.rushDays, deskQuote.depth, deskQuote.width);
+            return totalPrice;
         }
 
-    public int getQuoteTotal()
-    {
-        int totalPrice = calcAreaPrice() + calcDrawerPrice() + calcMaterialPrice() + calcRushPrice();
-        return totalPrice;
-    }
+        public string displayWidth()
+        {
+            return width.ToString() + " inches";
+        }
 
-    public string displayWidth()
-    {
-        return width.ToString() + " inches";
-    }
+        public string displayDepth()
+        {
+            return depth.ToString() + " inches";
+        }
 
-    public string displayDepth()
-    {
-        return depth.ToString() + " inches";
-    }
+        public string displayDrawers()
+        {
+            return drawers.ToString();
+        }
 
-    public string displayDrawers()
-    {
-        return drawers.ToString();
-    }
+        public string displayMaterial()
+        {
+            return surfaceMaterial;
+        }
 
-    public string displayMaterial()
-    {
-        return surfaceMaterial;
-    }
+        public string displayRushDays()
+        {
+            return rushDays.ToString() + " days";
+        }
 
-    public string displayRushDays()
-    {
-        return rushDays.ToString() + " days";
-    }
+        public string displayQuoteDate()
+        {
+            return quoteDate.ToString("MM/dd/yyyy");
+        }
 
-    public string displayQuoteDate()
-    {
-        return quoteDate.ToString("MM/dd/yyyy");
-    }
+        public string displayQuoteTotal()
+        {
+            return "$" + quoteTotal.ToString();
+        }
 
-    public string displayQuoteTotal()
-    {
-        return "$" + quoteTotal.ToString();
-    }
+        public string displayCustomerName()
+        {
+            return customerFirstName + " " + customerLastName;
+        }
 
-    public string displayCustomerName()
-    {
-        return customerFirstName + " " + customerLastName;
-    }
+        //public string displayQuote()
+        //{
+        //    // Create string to pass to Display Quote form
+        //    string quote =
+        //        $"Customer: {customerFirstName} - Date of Quote: {quoteDate}\nDesk Width: {width}\nDesk Depth: {depth}\n"
+        //        + $"Surface Area: {calcSurfaceArea()}\nSurface Material: {surfaceMaterial}\nNumber of Drawers: {drawers}\n"
+        //        + $"Rush Days: {rushDays}\nTotal Price for Desk: ${quoteTotal}";
+        //    return quote;
+        //}
+    }  // End class
 
-    public string displayQuote()
-    {
-        // Create string to pass to Display Quote form
-        string quote =
-            $"Customer: {customerFirstName} - Date of Quote: {quoteDate}\nDesk Width: {width}\nDesk Depth: {depth}\n"
-            + $"Surface Area: {calcSurfaceArea()}\nSurface Material: {surfaceMaterial}\nNumber of Drawers: {drawers}\n"
-            + $"Rush Days: {rushDays}\nTotal Price for Desk: ${quoteTotal}";
-        return quote;
-    }
-}  // End class
-
-    enum surfaceMaterials
-    {
-        Oak,
-        Laminate,
-        Pine,
-        Rosewood,
-        Veneer
-    }
+    
 }  // End namespace
