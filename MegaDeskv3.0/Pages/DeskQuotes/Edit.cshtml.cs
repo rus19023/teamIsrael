@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -47,7 +48,11 @@ namespace MegaDeskv3._0.Pages.DeskQuotes
             {
                 return Page();
             }
-
+            //automatically sets date to current date
+            DeskQuote.quoteDate = DateTime.Today;
+            
+            //generates quote total from form data
+            DeskQuote.quoteTotal = DeskQuote.getQuoteTotal(DeskQuote);
             _context.Attach(DeskQuote).State = EntityState.Modified;
 
             try
