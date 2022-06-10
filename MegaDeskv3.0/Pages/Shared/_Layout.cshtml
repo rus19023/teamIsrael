@@ -3,35 +3,32 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Mega Desk LLC</title>
-    @*<link rel="stylesheet" href="css/site.css" />*@
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="css/site.css" />
     @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
    @* <link rel="stylesheet" href="https://rus19023.github.io/myportfolio/css/megadesk.css" />*@
-    <link rel="stylesheet" href="http://127.0.0.1:5501/css/megadesk.css" /> 
+    @*<link rel="stylesheet" href="http://127.0.0.1:5501/css/megadesk.css" /> *@
     <link rel="shortcut icon" href="/img/favicon.ico">
      
 </head>
 <body>
     <header>
-        <nav class="">
-            <div class="navcontainer">
+        <nav class="navcontainer">
                 <h1><a class="title" asp-area="" asp-page="/Index">Mega Desk LLC</a></h1> 
-                <div class="">
                     <ul class="navbar-nav">
-                        <li class="">
-                            <a class="navlink" asp-area="" asp-page="/Index"></a>
-                        </li>
+                        <li>
+                            <a class="navlink" asp-area="" asp-page="/DeskQuotes/Create">Create a Quote</a>
+                         </li>
                         <li>
                             <a class="navlink" asp-area="" asp-page="/DeskQuotes/Index">View Quotes</a>
                          </li>
-                        <li class="">
+                        <li>
                             <a class="navlink" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                         <li>
+                            <a class="navlink" asp-area="" asp-page="/Privacy-">Link Text</a>
                         </li>
                     </ul>
-                </div>
-            </div>
         </nav>
     </header>
     <div class="container">
@@ -42,7 +39,7 @@
 
     <footer class="border-top footer">
         <div class="container">
-            &copy; 2022 - Mega Desk LLC - <a asp-area="" asp-page="/Privacy"> Privacy Policy</a>
+            &copy; 2022 - Mega Desk LLC <a asp-area="" asp-page="/Privacy">Privacy Policy</a>
         </div>
     </footer>
 
