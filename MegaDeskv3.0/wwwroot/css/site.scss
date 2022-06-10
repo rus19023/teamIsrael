@@ -85,22 +85,50 @@ li a.navlink {
     margin: 1%;
 }
 
-.btn, .inputs, th, td {
+.btn, .inputs, {
     padding: 2%;
     margin: 0 auto;
     height: 2%;
 }
 
 table {
-    & thead {
-        background: $lemon;
-        color: $olive;
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    border: 1px solid $olive;
+}
+
+table {
+    & th {
+        background: $olive;
+        color: white;
     }
+
     & tbody {
-        background: $khaki;
-        color: $olive;
+        background: $lemon;
+    }
+
+    & tr:nth-of-type(odd) {
+        background: white;
+    }
+
+    & td, th {
+        text-align: left;
+        padding: 5px 10px
     }
 }
+
+.quoteActions {
+    display: flex;
+    flex-direction: column;
+}
+
+.quoteActions a {
+    text-decoration: none;
+    margin: 5px;
+}
+
+
 
 .form-group {
     width: 100vw;
@@ -282,5 +310,88 @@ body {
 
     .right {
         grid-area: right;
+    }
+
+
+}
+/*making table responsive*/
+@media only screen and (max-width: 880px) {
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table tr {
+        border: 1px solid $olive;
+    }
+
+    table td {
+        /* Behave  like a "row" */
+        border: none;
+        position: relative;
+        padding: 0px;
+        padding-left: 25%;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 0px;
+        left: 0px;
+        width: 20%;
+        white-space: nowrap;
+        background-color: $olive;
+        color: white;
+        padding-left: 5px;
+    }
+
+    /* Label the data */
+    td:nth-of-type(1):before {
+        content: "First Name";
+    }
+
+    td:nth-of-type(2):before {
+        content: "Last Name";
+    }
+
+    td:nth-of-type(3):before {
+        content: "Width";
+    }
+
+    td:nth-of-type(4):before {
+        content: "Depth";
+    }
+
+    td:nth-of-type(5):before {
+        content: "Drawers";
+    }
+
+    td:nth-of-type(6):before {
+        content: "Material";
+    }
+
+    td:nth-of-type(7):before {
+        content: "Rush Days";
+    }
+
+    td:nth-of-type(8):before {
+        content: "Date";
+    }
+
+    td:nth-of-type(9):before {
+        content: "Total";
+    }
+
+    .quoteActions {
+        flex-direction: row;
+        justify-content: space-between;
     }
 }

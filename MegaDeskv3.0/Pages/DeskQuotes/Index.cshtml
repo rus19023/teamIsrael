@@ -15,45 +15,51 @@
 
     <table class="table">
         <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].width)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].depth)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].drawers)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].surfaceMaterial)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].customerFirstName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].customerLastName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].rushDays)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].quoteDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].quoteTotal)
-                </th>
-                <th></th>
-            </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].customerFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].customerLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].width)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].depth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].drawers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].surfaceMaterial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].rushDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].quoteDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].quoteTotal)
+            </th>
+            <th></th>
+        </tr>
         </thead>
         <tbody>
     @foreach (var item in Model.DeskQuote) {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.width)
+                    @Html.DisplayFor(modelItem => item.customerFirstName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.depth)
+                    @Html.DisplayFor(modelItem => item.customerLastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.width) inches
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.depth) inches
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.drawers)
@@ -62,24 +68,18 @@
                     @Html.DisplayFor(modelItem => item.surfaceMaterial)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.customerFirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.customerLastName)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.rushDays)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.quoteDate)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.quoteTotal)
+                    $@Html.DisplayFor(modelItem => item.quoteTotal)
                 </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <td class="quoteActions">
+                    <a class="btn" asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn" asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                    <a  class="btn" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
     }
