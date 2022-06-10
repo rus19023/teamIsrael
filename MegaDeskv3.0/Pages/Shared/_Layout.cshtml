@@ -8,14 +8,14 @@
     @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
    @* <link rel="stylesheet" href="https://rus19023.github.io/myportfolio/css/megadesk.css" />*@
     @*<link rel="stylesheet" href="http://127.0.0.1:5501/css/megadesk.css" /> *@
-    <link rel="shortcut icon" href="/img/favicon.ico">
-     
+    <link rel="shortcut icon" href="/img/favicon.ico">     
 </head>
 <body>
     <header>
         <nav class="navcontainer">
-                <h1><a class="title" asp-area="" asp-page="/Index">Mega Desk LLC</a></h1> 
-                    <ul class="navbar-nav">
+                <h1><a class="btn" asp-area="" asp-page="/Index">@ViewData["Title"]</a></h1> 
+                <button class="btn smbtn" type="button" id="toggle" name="toggle">Menu</button>
+                    <ul id="navbar" class="navbar-nav hide">
                         <li>
                             <a class="navlink" asp-area="" asp-page="/DeskQuotes/Create">Create a Quote</a>
                          </li>
@@ -30,6 +30,7 @@
                         </li>
                     </ul>
         </nav>
+        <hr />
     </header>
     <div class="container">
         <main role="main" class="">

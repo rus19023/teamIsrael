@@ -45,7 +45,15 @@ hr {
     line-height: 2px;
 }
 
-li a.navlink {
+.show { display: block; }
+
+.hide { display: none; }
+
+ul.navbar-nav li a {
+    list-style-type: none;
+}
+
+li a.navlink, li.labels {
     font-family: $font;
     font-size: 1.25rem;
     background: $olive;
@@ -54,7 +62,6 @@ li a.navlink {
     text-align: center;
     padding: 2%;
     text-decoration: none;
-    list-style-type: none;
     & :hover {
         color: $olive;
         border: 1px solid $olive;
@@ -74,11 +81,16 @@ li a.navlink {
     background: $lemon;
     border: 1px solid $lemon;
     font-family: $font;
+    padding: 1%;
     & :hover {
         background: $lemon;
         border: 1px solid $olive;
         color: $olive;
     }
+}
+
+.smbtn {
+    font-size: smaller;
 }
 
 .btn, li {
@@ -114,14 +126,17 @@ table {
         font-family: $font;
         font-size: 1rem;
         width: 15rem;
+        border-radius: 15px;
     } 
     & .labels {
-        color: $lemon;
+        display: flex;
+        flex-direction: row;
+        color: $olive;
         padding: 1%;
         font-family: $font;
-        font-weight: 600;
-        font-size: 1rem;
-        width: 25vw;
+        font-weight: 900;
+        font-size: 1.5rem;
+        width: 50vw;
         height: 2%;
         line-height: 2.2%;
     }
@@ -129,7 +144,7 @@ table {
 
 
 .createpage {
-    background-image: url("/../../../img/addQuote.jpg");
+    background-image: url('../../../img/addQuote.jpg');
     background-position: center center;
 }
 
@@ -155,7 +170,7 @@ table {
 }
 
 .left {
-    background-image: url("../../../img/mainmenu.jpg");
+    background-image: url('../../../img/mainmenu.jpg');
     background-size: cover;
     position: relative;
     top: 0;
@@ -269,18 +284,19 @@ body {
         text-align: center;
     }
 
-    .homepage {
-        grid-area: homepage;
-        grid-template-columns: 50% 50%;
-        grid-template-areas:
-        "left right";
-    }
-
     .left {
         grid-area: left;
     }
 
     .right {
         grid-area: right;
+    }
+
+    .homepage {
+        display: grid;
+        grid-area: homepage;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+        "left right";
     }
 }

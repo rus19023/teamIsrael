@@ -33,7 +33,19 @@ hr {
   line-height: 2px;
 }
 
-li a.navlink {
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+ul.navbar-nav li a {
+  list-style-type: none;
+}
+
+li a.navlink, li.labels {
   font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   background: darkolivegreen;
@@ -42,9 +54,8 @@ li a.navlink {
   text-align: center;
   padding: 2%;
   text-decoration: none;
-  list-style-type: none;
 }
-li a.navlink :hover {
+li a.navlink :hover, li.labels :hover {
   color: darkolivegreen;
   border: 1px solid darkolivegreen;
   background: lemonchiffon;
@@ -62,11 +73,16 @@ li a.navlink :hover {
   background: lemonchiffon;
   border: 1px solid lemonchiffon;
   font-family: "Montserrat", sans-serif;
+  padding: 1%;
 }
 .btn :hover {
   background: lemonchiffon;
   border: 1px solid darkolivegreen;
   color: darkolivegreen;
+}
+
+.smbtn {
+  font-size: smaller;
 }
 
 .btn, li {
@@ -101,20 +117,23 @@ table tbody {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   width: 15rem;
+  border-radius: 15px;
 }
 .form-group .labels {
-  color: lemonchiffon;
+  display: flex;
+  flex-direction: row;
+  color: darkolivegreen;
   padding: 1%;
   font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  width: 25vw;
+  font-weight: 900;
+  font-size: 1.5rem;
+  width: 50vw;
   height: 2%;
   line-height: 2.2%;
 }
 
 .createpage {
-  background-image: url("/../../../img/addQuote.jpg");
+  background-image: url("../../../img/addQuote.jpg");
   background-position: center center;
 }
 
@@ -248,17 +267,18 @@ body {
     text-align: center;
   }
 
-  .homepage {
-    grid-area: homepage;
-    grid-template-columns: 50% 50%;
-    grid-template-areas: "left right";
-  }
-
   .left {
     grid-area: left;
   }
 
   .right {
     grid-area: right;
+  }
+
+  .homepage {
+    display: grid;
+    grid-area: homepage;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "left right";
   }
 }
