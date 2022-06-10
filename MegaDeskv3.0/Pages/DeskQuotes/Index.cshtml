@@ -10,6 +10,12 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form asp-page="./Index" method="get" id="search-form">
+    <p class="search">
+        Customer Name: <input type="text" name="SearchString" value="@Model.currentFilter"/>
+        <input type="submit" value="Filter"/> | <a asp-page="./Index">Undo Filter</a>
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -26,7 +32,9 @@
                 @Html.DisplayNameFor(model => model.DeskQuote[0].surfaceMaterial)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].customerFirstName)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.firstNameSort">
+                    @Html.DisplayNameFor(model => model.DeskQuote[0].customerFirstName)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].customerLastName)
@@ -35,7 +43,9 @@
                 @Html.DisplayNameFor(model => model.DeskQuote[0].rushDays)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].quoteDate)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.dateSort">
+                    @Html.DisplayNameFor(model => model.DeskQuote[0].quoteDate)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].quoteTotal)
