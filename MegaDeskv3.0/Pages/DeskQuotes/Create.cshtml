@@ -6,12 +6,10 @@
     ViewData["Title"] += "Add Quote";
 }
 
-<main class="createpage">
-    <h1>@ViewData["Title"] </h1>
-
-    <hr />
-    <div class="">
-        <form method="post">
+<main class="">
+    <h1 class="title">@ViewData["Title"] </h1>
+    <div class="createpage">
+        <form method="post" class="createpage">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="DeskQuote.customerFirstName" class="labels" placeholder="First Name"></label>
@@ -32,6 +30,7 @@
                 <label asp-for="DeskQuote.depth" class="labels"></label>
                 <input asp-for="DeskQuote.depth" class="inputs" />
                 <span asp-validation-for="DeskQuote.depth" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.drawers" class="labels"></label>
                 <select asp-for="DeskQuote.drawers" class="inputs">
