@@ -240,41 +240,13 @@ div.editpage {
 }
 
 .homepage {
-  display: grid;
-  grid-template-columns: 1fr;
   background-image: url(../../../img/displayQuote.jpg);
   background-size: contain;
   background-repeat: no-repeat;
-  height: 100vh;
-  margin: 0 auto;
-}
-
-.left {
-  background-image: url(../../../img/mainmenu.jpg);
-  background-size: cover;
-  position: relative;
-  top: 0;
-}
-
-.right {
-  background: darkolivegreen;
-  display: grid;
-  grid-template-columns: 1fr;
-  position: relative;
-  top: 0;
-}
-
-.home {
-  background-image: url("../../../img/mainmenu.jpg");
-  width: 100%;
+  background-position: center center;
   height: 100vh;
 }
 
-/*
-    .homesplit {
-        display: grid;
-        grid-template-columns: 1fr;
-    }*/
 a.title {
   text-decoration: none;
 }
