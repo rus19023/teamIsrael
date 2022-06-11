@@ -27,9 +27,6 @@ namespace MegaDeskv3._0.Pages.DeskQuotes
         }
 
         [BindProperty]
-        public string MaterialSelected { get; set; } 
-
-        [BindProperty]
         public DeskQuote DeskQuote { get; set; }
 
 
@@ -41,10 +38,9 @@ namespace MegaDeskv3._0.Pages.DeskQuotes
             {
                 return Page();
             }
-            
+
             //automatically sets date to current date
             DeskQuote.quoteDate = DateTime.Today;
-            DeskQuote.surfaceMaterial = MaterialSelected;
 
             //generates quote total from form data
             DeskQuote.quoteTotal = DeskQuote.getQuoteTotal(DeskQuote);

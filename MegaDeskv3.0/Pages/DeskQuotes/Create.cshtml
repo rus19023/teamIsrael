@@ -75,13 +75,12 @@
                             <span asp-validation-for="DeskQuote.rushDays" class="text-red-600"></span>
                         </div>
                         <fieldset class="mt-4 col-span-2">
-                            <legend class="">Select Material  <span class="text-hint text-xs uppercase font-mediummater  text-lime-600"> * Material must be specified</span></legend>
+                            <legend class="">Select Material  </legend>
                             <div class="grid grid-cols-5 sm:gap-4  gap-2 w-full">
                                 @foreach (var material in Enum.GetNames(typeof(BusinessLogic.surfaceMaterials)))
                                 {
                                 <div>
-                                    <input asp-for="DeskQuote.surfaceMaterial" type="radio" name="MaterialSelected"
-                                        value="@material" id="@material.ToLower()" class="sr-only peer">
+                                    <input asp-for="DeskQuote.surfaceMaterial" type="radio"  value="@material" id="@material.ToLower()" class="sr-only peer">
                                     <label for="@material.ToLower()"
                                         class="w-20 h-20 flex flex-col items-center  rounded-xl  cursor-pointer  focus:outline-none  hover:bg-lime-100  peer-checked:ring-lime-500  peer-checked:ring-4 peer-checked:border-transparent">
                                         <img src="~/img/@string.Concat(@material.ToLower(),".jpg")" alt="img"
@@ -91,7 +90,7 @@
                                 </div>
                                 }
                             </div>
-                               <span asp-validation-for="DeskQuote.surfaceMaterial" class="text-red-600"></span>
+                               <span asp-validation-for="DeskQuote.surfaceMaterial" class="text-red-600 mt-16"></span>
                         </fieldset>
 
                        <div class="col-span-2 w-full  mt-24 flex justify-end ">      

@@ -91,7 +91,6 @@ li a.navlink {
     font-family: $font;
     font-size: large;
     text-decoration: none;
-    padding: 2%;
     margin-bottom: 5vh;
     text-align: center;
     & :hover {
@@ -112,7 +111,6 @@ li a.navlink {
 .btn, .inputs {
     padding: 1%;
     margin: 0 auto;
-    height: 2%;
 }
 
 .inputleftpad {
@@ -124,7 +122,7 @@ li a.navlink {
 
 table {
     width: 100%;
-    max-width: 90%;
+    max-width: 95%;
     border-collapse: collapse;
     border: 1px solid $olive;
     margin: 0 auto;
@@ -156,13 +154,6 @@ table {
     }
 }
 
-td a.btn {
-    background: $khaki;
-    color: $olive;
-    font-weight: 900;
-    border: 2px solid $olive;
-}
-
 .quoteActions {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -172,6 +163,11 @@ td a.btn {
 .quoteActions a {
     text-decoration: none;
     margin: 5px;
+    padding: 5% 10%;
+    border: 1px solid $olive;
+    border-radius: 10px;
+    text-align: center;
+    background: $khaki;
 }
 
 
@@ -208,11 +204,11 @@ li.labels {
 }
 
 .createpage {
-    background-image: url('../../../img/addQuote.jpg');
+    // background-image: url('../../../img/addQuote.jpg');
     background: $khaki;
 }
 .img-bg {
-    background-image: url("/../../../img/addQuote.jpg");
+    background-image: url('/../../../img/addQuote.jpg');
     background-position: center center;
     background-size: cover;
 }
@@ -224,7 +220,8 @@ div.editpage {
 .viewpage {
     background-image: url('../../../img/displayQuote.jpg');
     min-height: 100vh;
-    }
+    padding-top: 2vh;
+}
 
 #search {
     text-align: center;
@@ -280,13 +277,17 @@ div.editpage {
         text-decoration: none;
     }
 
+header {
+    margin-bottom: 2vh;
+}
+
     .title {
         background: $lemon;
         color: $olive;
         font-family: $title;
         border: 2px solid $olive;
         padding: 2%;
-    text-decoration: none;
+        text-decoration: none;
     }
 
 .title, a, .navlink {
