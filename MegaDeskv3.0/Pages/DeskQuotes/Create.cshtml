@@ -16,11 +16,10 @@
                 <div class="flex w-full">
                     <div class="relative w-full  grid grid-cols-2 gap-3">
                         <div class="">
-                            <label asp-for="DeskQuote.customerFirstName" class="labels"
-                                placeholder="First Name"></label>
+                            <label asp-for="DeskQuote.customerFirstName" class="labels"></label>
                             <p>
                                 <input asp-for="DeskQuote.customerFirstName"
-                                    class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline" />
+                                    class="mb-3 border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline" placeholder="Jane"/>
                             </p>
                             <span asp-validation-for="DeskQuote.customerFirstName" class="text-red-600"></span>
                         </div>
@@ -29,7 +28,7 @@
                             <p>
                                 <input asp-for="DeskQuote.customerLastName"
                                     class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline"
-                                    placeholder="Last Name" />
+                                    placeholder="Smith" />
                             </p>
                             <span asp-validation-for="DeskQuote.customerLastName" class="text-red-600"></span>
                         </div>
@@ -37,7 +36,7 @@
                             <label asp-for="DeskQuote.width" class="labels"></label>
                             <p>
                                 <input asp-for="DeskQuote.width"
-                                    class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline" />
+                                       class="mb-3 border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline" placeholder="36"/>
                             </p>
                             <span asp-validation-for="DeskQuote.width" class="text-red-600"></span>
                         </div>
@@ -45,7 +44,7 @@
                             <label asp-for="DeskQuote.depth" class="labels"></label>
                             <p>
                                 <input asp-for="DeskQuote.depth"
-                                    class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline" />
+                                    class="mb-3 border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline" placeholder="36" />
                             </p>
                             <span asp-validation-for="DeskQuote.depth" class="text-red-600"></span>
                         </div>
@@ -65,7 +64,7 @@
                             <label asp-for="DeskQuote.rushDays" class="labels"></label>
                             <p>
                                 <select asp-for="DeskQuote.rushDays"
-                                    class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline">
+                                    class="mb-3 border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline">
                                     @foreach (var option in BusinessLogic.RushDays)
                                     {
                                     <option value="@option">@option</option>
@@ -74,24 +73,26 @@
                             </p>
                             <span asp-validation-for="DeskQuote.rushDays" class="text-red-600"></span>
                         </div>
-                        <fieldset class="mt-4 col-span-2">
+                        <fieldset class="mt-4 mb-5 col-span-2">
                             <legend class="">Select Material  </legend>
-                            <div class="grid grid-cols-5 sm:gap-4  gap-2 w-full">
+                            <div class="grid grid-cols-5 sm:gap-4 gap-2 w-full">
                                 @foreach (var material in Enum.GetNames(typeof(BusinessLogic.surfaceMaterials)))
                                 {
-                                <div>
-                                    <input asp-for="DeskQuote.surfaceMaterial" type="radio"  value="@material" id="@material.ToLower()" class="sr-only peer">
-                                    <label for="@material.ToLower()"
-                                        class="w-20 h-20 flex flex-col items-center  rounded-xl  cursor-pointer  focus:outline-none  hover:bg-lime-100  peer-checked:ring-lime-500  peer-checked:ring-4 peer-checked:border-transparent">
-                                        <img src="~/img/@string.Concat(@material.ToLower(),".jpg")" alt="img"
-                                            class="  rounded-xl  object-cover scale-75  hover:scale-100 ease-in duration-50  w-20 h-20 " />
-                                        <span>@material</span>
-                                    </label>
-                                </div>
+                                    <div>
+                                        <input asp-for="DeskQuote.surfaceMaterial" type="radio" value="@material" id="@material.ToLower()" class="sr-only peer">
+                                        <label for="@material.ToLower()"
+                                               class="w-20 h-20 flex flex-col items-center  rounded-xl  cursor-pointer  focus:outline-none  hover:bg-lime-100  peer-checked:ring-lime-500  peer-checked:ring-4 peer-checked:border-transparent">
+                                            <div>
+                                                <img src="~/img/@string.Concat(@material.ToLower(), ".jpg")" alt="img"
+                                                     class="rounded-xl object-cover scale-75 hover:scale-100 ease-in duration-50 w-20 h-20"/>
+                                            </div>
+                                            <span>@material</span>
+                                        </label>
+                                    </div>
                                 }
                             </div>
-                               <span asp-validation-for="DeskQuote.surfaceMaterial" class="text-red-600 mt-16"></span>
                         </fieldset>
+                        <span asp-validation-for="DeskQuote.surfaceMaterial" class="text-red-600"></span>
 
                        <div class="col-span-2 w-full  mt-24 flex justify-end ">      
                              <button type="submit"
