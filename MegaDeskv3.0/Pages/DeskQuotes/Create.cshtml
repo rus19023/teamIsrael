@@ -5,163 +5,109 @@
 @{
     ViewData["Title"] += "Add Quote";
 }
-
 <main class="my-12 ">
     <h1 class="my-4 title rounded-md">@ViewData["Title"] </h1>
     <div class="createpage rounded-md p-6">
-        <form method="post" class="w-full">
+        <form method="post" class="w-full flex flex-col">
             <div asp-validation-summary="ModelOnly" class="text-red-600"></div>
-            <div class="flex flex-row grid grid-cols-2 gap-3">
-                <div class="">
-                    <label asp-for="DeskQuote.customerFirstName" class="labels" placeholder="First Name"></label>
-                    <p>
-                        <input asp-for="DeskQuote.customerFirstName"
-                            class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline" />
-                    </p>
-                    <span asp-validation-for="DeskQuote.customerFirstName" class="text-red-600"></span>
-                </div>
-                <div class="">
-                    <label asp-for="DeskQuote.customerLastName" class="labels"></label>
-                    <p>
-                        <input asp-for="DeskQuote.customerLastName"
-                            class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline"
-                            placeholder="Last Name" />
-                    </p>
-                    <span asp-validation-for="DeskQuote.customerLastName" class="text-red-600"></span>
-                </div>
-                <div class="">
-                    <label asp-for="DeskQuote.width" class="labels"></label>
-                    <p>
-                        <input asp-for="DeskQuote.width"
-                            class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline" />
-                    </p>
-                    <span asp-validation-for="DeskQuote.width" class="text-red-600"></span>
-                </div>
-                <div class="">
-                    <label asp-for="DeskQuote.depth" class="labels"></label>
-                    <p>
-                        <input asp-for="DeskQuote.depth"
-                            class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline" />
-                    </p>
-                    <span asp-validation-for="DeskQuote.depth" class="text-red-600"></span>
-                </div>
 
-  
-
-                @* <div class="">
-                    <label asp-for="DeskQuote.surfaceMaterial" class="labels"></label>
-                    <p> <select asp-for="DeskQuote.surfaceMaterial"
-                            class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline">
-                            @foreach (var material in Enum.GetNames(typeof(BusinessLogic.surfaceMaterials)))
-                            {
-                            <option value="@material">@material </option>
-                            }
-                        </select></p>
-                    <span asp-validation-for="DeskQuote.surfaceMaterial" class="text-red-600"></span>
-                </div>*@
-
-
-
-                <div class="">
-                    <label asp-for="DeskQuote.drawers" class="labels"></label>
-                    <p>
-                        <select asp-for="DeskQuote.drawers"
-                            class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline">
-                            @foreach(var option in BusinessLogic.Drawers)
-                            {
-                            <option value=@option>@option.ToString()</option>
-                            }
-                        </select>
-                    </p>
-                </div>
-
-                <div class="">
-                    <label asp-for="DeskQuote.rushDays" class="labels"></label>
-                    <p>
-                        <select asp-for="DeskQuote.rushDays"
-                            class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline">
-                            @foreach (var option in BusinessLogic.RushDays)
-                            {
-                            <option value="@option">@option</option>
-                            }
-                        </select>
-                    </p>
-                    <span asp-validation-for="DeskQuote.rushDays" class="text-red-600"></span>
-                </div>
-
-
-
-
-
-                <fieldset class="mt-4">
-                    <legend class="">Select Material</legend>
-                    <div class="grid grid-cols-5 gap-4 w-full">
-                        @foreach (var material in Enum.GetNames(typeof(BusinessLogic.surfaceMaterials)))
-                        {
-                            <div>
-                        <input asp-for="DeskQuote.surfaceMaterial" type="radio" name="MaterialSelected" value="@material" id="@material.ToLower()" class="sr-only peer">
-                        <label   for="@material.ToLower()"     class="w-20 h-20 flex flex-col items-center  rounded-xl  cursor-pointer  focus:outline-none  hover:bg-lime-100  peer-checked:ring-lime-500  peer-checked:ring-4 peer-checked:border-transparent">
-                            <img src="~/img/@string.Concat(@material.ToLower(),".jpg")" alt="img" class="  rounded-xl  object-cover scale-75  hover:scale-100 ease-in duration-50  w-20 h-20 " />
-                            <span>@material</span>
-                        </label>
+            <div class="grid  grid-cols-2 gap-4">
+                <div class="flex w-full img-bg hidden rounded-xl  sm:block"> </div>
+                <div class="flex w-full">
+                    <div class="relative w-full  grid grid-cols-2 gap-3">
+                        <div class="">
+                            <label asp-for="DeskQuote.customerFirstName" class="labels"
+                                placeholder="First Name"></label>
+                            <p>
+                                <input asp-for="DeskQuote.customerFirstName"
+                                    class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline" />
+                            </p>
+                            <span asp-validation-for="DeskQuote.customerFirstName" class="text-red-600"></span>
                         </div>
-                        }
+                        <div class="">
+                            <label asp-for="DeskQuote.customerLastName" class="labels"></label>
+                            <p>
+                                <input asp-for="DeskQuote.customerLastName"
+                                    class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline"
+                                    placeholder="Last Name" />
+                            </p>
+                            <span asp-validation-for="DeskQuote.customerLastName" class="text-red-600"></span>
+                        </div>
+                        <div class="">
+                            <label asp-for="DeskQuote.width" class="labels"></label>
+                            <p>
+                                <input asp-for="DeskQuote.width"
+                                    class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline" />
+                            </p>
+                            <span asp-validation-for="DeskQuote.width" class="text-red-600"></span>
+                        </div>
+                        <div class="">
+                            <label asp-for="DeskQuote.depth" class="labels"></label>
+                            <p>
+                                <input asp-for="DeskQuote.depth"
+                                    class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline" />
+                            </p>
+                            <span asp-validation-for="DeskQuote.depth" class="text-red-600"></span>
+                        </div>
+                         <div class="">
+                            <label asp-for="DeskQuote.drawers" class="labels"></label>
+                            <p>
+                                <select asp-for="DeskQuote.drawers"
+                                    class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline">
+                                    @foreach(var option in BusinessLogic.Drawers)
+                                    {
+                                    <option value=@option>@option.ToString()</option>
+                                    }
+                                </select>
+                            </p>
+                        </div>
+                        <div class="">
+                            <label asp-for="DeskQuote.rushDays" class="labels"></label>
+                            <p>
+                                <select asp-for="DeskQuote.rushDays"
+                                    class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline">
+                                    @foreach (var option in BusinessLogic.RushDays)
+                                    {
+                                    <option value="@option">@option</option>
+                                    }
+                                </select>
+                            </p>
+                            <span asp-validation-for="DeskQuote.rushDays" class="text-red-600"></span>
+                        </div>
+                        <fieldset class="mt-4 col-span-2">
+                            <legend class="">Select Material</legend>
+                            <div class="grid grid-cols-5 gap-4 w-full">
+                                @foreach (var material in Enum.GetNames(typeof(BusinessLogic.surfaceMaterials)))
+                                {
+                                <div>
+                                    <input asp-for="DeskQuote.surfaceMaterial" type="radio" name="MaterialSelected"
+                                        value="@material" id="@material.ToLower()" class="sr-only peer">
+                                    <label for="@material.ToLower()"
+                                        class="w-20 h-20 flex flex-col items-center  rounded-xl  cursor-pointer  focus:outline-none  hover:bg-lime-100  peer-checked:ring-lime-500  peer-checked:ring-4 peer-checked:border-transparent">
+                                        <img src="~/img/@string.Concat(@material.ToLower(),".jpg")" alt="img"
+                                            class="  rounded-xl  object-cover scale-75  hover:scale-100 ease-in duration-50  w-20 h-20 " />
+                                        <span>@material</span>
+                                    </label>
+                                </div>
+                                }
+                            </div>
+                        </fieldset>
+
+                       <div class="col-span-2 w-full  mt-24 flex justify-end ">      
+                             <button type="submit"
+                    class="w-48 bg-lime-900 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-lime-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-300">Create</button>
+                        </div>
                     </div>
-                </fieldset>
-
-
-            @*       <ul class=" grid grid-cols-5  w-full gap-2 mb-2">
-
-                           @foreach (var material in Enum.GetNames(typeof(BusinessLogic.surfaceMaterials)))
-                        {
-                           <li class="relative">
-                             <input asp-for="DeskQuote.surfaceMaterial" type="radio" name="material" value="@material"     id="@material.ToLower()" class="sr-onlyssss peer">
-                                <label  for="@material.ToLower()"    class="flex flex-col items-center p-5 bg-white border border-gray-300 rounded-lg cursor-pointer  focus:outline-none  hover:bg-gray-50 peer-checked:ring-indigo-500 peer-checked:ring-2 peer-checked:border-transparent">
-                                        <img src="~/img/@string.Concat(@material.ToLower(),".jpg")" alt="img" class="object-cover scale-75  hover:scale-100 ease-in duration-50 hover:bg-lime-900 " />
-                                               <span>@material</span>
-                                 </label>
-                                  </li>                                                        
-                        }        
-                        </ul>*@
-
-
-
-
-
-
-
-            </div>
-            <div class="my-12">
-                @*<input type="submit" value="Create" class="w-48" />*@
-                <button type="submit"
-                    class="mt-6 w-48 bg-lime-900 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-lime-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-300">Create</button>
-            </div>
-            <div class="border-2 border-dashed border-lime-900 rounded-lg flex grid  grid-cols-2 gap-2">
-                <div class="">
-                    <label asp-for="DeskQuote.quoteDate" class="labels"></label>
-                    <p><input asp-for="DeskQuote.quoteDate"
-                            class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline"
-                            disabled /></p>
-                    <span asp-validation-for="DeskQuote.quoteDate" class="text-red-600"></span>
-                </div>
-                <div class="">
-                    <label asp-for="DeskQuote.quoteTotal" class="labels"></label>
-                    <p><input asp-for="DeskQuote.quoteTotal"
-                            class="mb-3   border border-gray-300 rounded-md p-2 w-full rounded focus:outline-none focus:shadow-outline"
-                            disabled /></p>
-                    <span asp-validation-for="DeskQuote.quoteTotal" class="text-red-600"></span>
                 </div>
             </div>
         </form>
-
-
     </div>
 
-    <div class="my-12">
-        <button asp-page="Index"
+    <div class="my-12  flex justify-end mr-5">
+        <a asp-page="Index"
             class="mt-6 w-48 bg-lime-900 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-300">
             Back to List
-        </button>
+        </a>
     </div>
 </main>
 

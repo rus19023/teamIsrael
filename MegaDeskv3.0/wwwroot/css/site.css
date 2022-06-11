@@ -140,6 +140,11 @@ table td, table th {
   background: lemonchiffon;
 }
 
+.img-bg {
+  background-image: url("/../../../img/addQuote.jpg");
+  background-position: center center;
+}
+
 .editpage {
   background-image: url("../../../img/addQuote.jpg");
 }
