@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
   margin: 0 auto;
+  text-align: center;
 }
 
 .navbar-nav {
@@ -57,13 +58,13 @@ li a.navlink :hover {
   font-size: medium;
 }
 
-.btn {
+.btn, a.btn {
   color: darkolivegreen;
   background: lemonchiffon;
   border: 1px solid lemonchiffon;
   font-family: "Montserrat", sans-serif;
 }
-.btn :hover {
+.btn :hover, a.btn :hover {
   background: lemonchiffon;
   border: 1px solid darkolivegreen;
   color: darkolivegreen;
@@ -274,7 +275,7 @@ body {
   .homepage {
     grid-area: homepage;
     grid-template-columns: 50% 50%;
-    grid-template-areas: "left right";
+    grid-template-areas: "left  right";
   }
 
   .left {
@@ -287,6 +288,10 @@ body {
 }
 /*making table responsive*/
 @media only screen and (max-width: 880px) {
+  .btn, .inputs {
+    padding: 1%;
+  }
+
   /* Force table to not be like tables anymore */
   table, thead, tbody, th, td, tr {
     display: block;
