@@ -246,6 +246,7 @@ div.editpage {
   background-size: contain;
   background-repeat: no-repeat;
   height: 100vh;
+  margin: 0 auto;
 }
 
 .left {
