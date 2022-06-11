@@ -38,6 +38,18 @@ hr {
   line-height: 2px;
 }
 
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+ul.navbar-nav li a {
+  list-style-type: none;
+}
+
 li a.navlink {
   font-family: "Montserrat", sans-serif;
   background: darkolivegreen;
@@ -46,7 +58,6 @@ li a.navlink {
   text-align: center;
   padding: 4%;
   text-decoration: none;
-  list-style-type: none;
 }
 li a.navlink :hover {
   color: darkolivegreen;
@@ -70,11 +81,17 @@ li a.navlink :hover {
   font-size: large;
   text-decoration: none;
   padding: 2%;
+  margin-bottom: 5vh;
+  text-align: center;
 }
 .btn :hover, a.btn :hover, input.btn :hover {
   background: darkolivegreen;
   color: lemonchiffon;
   border: 1px solid lemonchiffon;
+}
+
+.smbtn {
+  font-size: smaller;
 }
 
 .btn, li {
@@ -127,7 +144,8 @@ td a.btn {
 }
 
 .quoteActions {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   border-top: 1px solid darkolivegreen;
 }
 
@@ -164,21 +182,26 @@ label.labels {
 
 li.labels {
   list-style-type: none;
-  margin-bottom: 5vh;
+  margin: 2vh 25vw;
 }
 
 .createpage {
-  background-image: url("/../../../img/addQuote.jpg");
+  background-image: url("../../../img/addQuote.jpg");
   background-position: center center;
   background-size: cover;
 }
 
-.editpage {
+div.editpage {
   background-image: url("../../../img/addQuote.jpg");
 }
 
 .viewpage {
   background-image: url("../../../img/displayQuote.jpg");
+  min-height: 100vh;
+}
+
+#search {
+  text-align: center;
 }
 
 .deletepage {
@@ -187,6 +210,13 @@ li.labels {
 
 .detailpage {
   background-image: url("../../../img/displayQuote.jpg");
+  background-size: cover;
+  max-width: 100%;
+}
+
+.detail-list {
+  height: 50vh;
+  padding: 20vh 0 0 20vw;
 }
 
 .homepage {

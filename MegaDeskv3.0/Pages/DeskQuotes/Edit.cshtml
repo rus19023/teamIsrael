@@ -7,9 +7,7 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-<hr />
-<div class="">
-    <div class="">
+    <div class="editpage">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input class="inputleftpad" type="hidden" asp-for="DeskQuote.Id" />
@@ -70,7 +68,6 @@
             </div>
         </form>
     </div>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
