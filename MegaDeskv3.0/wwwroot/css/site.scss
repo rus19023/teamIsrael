@@ -256,10 +256,15 @@ div.editpage {
     padding: 20vh 0 0 20vw;
     }
 
-    .homepage {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
+.homepage {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-image: url(../../../img/displayQuote.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0 auto;
+}
 
     .left {
     background-image: url(../../../img/mainmenu.jpg);
@@ -281,11 +286,11 @@ div.editpage {
         width: 100%;
         height: 100vh;
     }
-
+/*
     .homesplit {
         display: grid;
         grid-template-columns: 1fr;
-    }
+    }*/
 
     a.title {
         text-decoration: none;

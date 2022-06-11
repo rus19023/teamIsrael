@@ -242,6 +242,10 @@ div.editpage {
 .homepage {
   display: grid;
   grid-template-columns: 1fr;
+  background-image: url(../../../img/displayQuote.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .left {
@@ -265,11 +269,11 @@ div.editpage {
   height: 100vh;
 }
 
-.homesplit {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
+/*
+    .homesplit {
+        display: grid;
+        grid-template-columns: 1fr;
+    }*/
 a.title {
   text-decoration: none;
 }
