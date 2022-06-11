@@ -8,7 +8,7 @@ $hover: $lemon;
 $font: 'Montserrat', sans-serif;
 $title: 'Merienda', sans-serif;
 $font-size: 20px;
-$radius: 15px;
+$radius: 4px;
 
 
 body {
@@ -61,7 +61,7 @@ ul.navbar-nav li a {
 
 li a.navlink {
     font-family: $font;
-    font-size: 1.25rem;
+    font-size: small;
     background: $olive;
     color: $lemon;
     width: 10rem;
@@ -87,7 +87,7 @@ li a.navlink {
     background: $lemon;
     color: $olive;
     border: 1px solid $olive;
-    border-radius: 15px;
+    border-radius: $radius;
     font-family: $font;
     font-size: large;
     font-weight: 900;
@@ -95,6 +95,7 @@ li a.navlink {
     padding: 1%;
     margin-bottom: 2vh;
     text-align: center;
+
     & :hover {
         background: $olive;
         color: $lemon;
@@ -207,13 +208,14 @@ label.labels {
 
 li.labels {
     list-style-type: none;
-    margin: 2vh 25vw;
+    margin: 2vh 15vw;
 }
 
 .createpage {
     // background-image: url('../../../img/addQuote.jpg');
     background: $khaki;
 }
+
 .img-bg {
     background-image: url('/../../../img/addQuote.jpg');
     background-position: center center;
@@ -343,8 +345,6 @@ header {
     }
 
 .footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     white-space: nowrap;
     text-align: center;
@@ -363,7 +363,7 @@ header {
 
         .navbar-nav {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             text-align: center;
         }
 

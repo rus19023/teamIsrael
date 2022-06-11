@@ -9,8 +9,7 @@
                 <input class="btn" type="submit" value="Filter"/>  <a class="btn" asp-page="./Index">Undo</a>
             </p>
         </form>
-  <div class="viewpage">
-    <table class="table">
+    <table>
         <thead>
         <tr>
             <th>
@@ -78,9 +77,9 @@
                     $@Html.DisplayFor(modelItem => item.quoteTotal)
                 </td>
                 <td class="quoteActions">
-                    <a class="" asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
-                    <a class="" asp-page="./Details" asp-route-id="@item.Id">Details</a>
-                    <a  class="" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    <a class="btn" asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn" asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                    <a  class="btn" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
     }
