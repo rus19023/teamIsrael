@@ -9,26 +9,38 @@ namespace MegaDeskv3._0.Models
         //properties of the DeskQuote model
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "Width must be specified")]
+        [Range(24, 96, ErrorMessage = "Please enter a width from 24 to 96 inches")]
         [DisplayName("Width")]
         public int width { get; set; }
+
+        [Required(ErrorMessage = "Depth must be specified")]
+        [Range(12, 48, ErrorMessage = "Please enter a depth from 12 to 48 inches")]
         [DisplayName("Depth")]
         public int depth { get; set; }
-        [DisplayName("Drawer #")]
+
+        [DisplayName("Drawers")]
         public int drawers { get; set; }
+
         [DisplayName("Material")]
         public string surfaceMaterial { get; set; }
-        
-        [DisplayName("First Name")]
 
+        [Required(ErrorMessage = "First name is required")]
+        [DisplayName("First Name")]
         public string customerFirstName { get; set; }
+
+        [Required(ErrorMessage = "Last name is required")]
         [DisplayName("Last Name")]
         public string customerLastName { get; set; }
+
         [DisplayName("Rush Days")]
         public int rushDays { get; set; }
+
+
         [DisplayName("Date")]
         [DataType(DataType.Date)]
         public DateTime quoteDate { get; set; }
-        [DisplayName("Quote Price")]
+        [DisplayName("Price")]
         public int quoteTotal { get; set; }
 
         public int calcSurfaceArea(int depth, int width)

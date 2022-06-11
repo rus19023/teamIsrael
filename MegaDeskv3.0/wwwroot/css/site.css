@@ -1,53 +1,232 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Montserrat:wght@300&display=swap");
+body {
+  background: chartreuse;
+  padding: 1%;
+}
 
-a.navbar-brand {
-  white-space: normal;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Merienda", sans-serif;
+  background: darkkhaki;
+}
+
+.navcontainer {
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.navbar-nav {
+  background: darkkhaki;
+  display: flex;
+  flex-direction: column;
+  line-height: 3rem;
+  list-style-type: none;
+  justify-content: space-between;
+}
+
+hr {
+  color: lemonchiffon;
+  line-height: 2px;
+}
+
+li a.navlink {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  background: darkolivegreen;
+  color: lemonchiffon;
+  width: 10rem;
   text-align: center;
-  word-break: break-all;
+  padding: 2%;
+  text-decoration: none;
+  list-style-type: none;
+}
+li a.navlink :hover {
+  color: darkolivegreen;
+  border: 1px solid darkolivegreen;
+  background: lemonchiffon;
+  text-decoration: underline;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+.text, li {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: medium;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.btn {
+  color: darkolivegreen;
+  background: lemonchiffon;
+  border: 1px solid lemonchiffon;
+  font-family: "Montserrat", sans-serif;
+}
+.btn :hover {
+  background: lemonchiffon;
+  border: 1px solid darkolivegreen;
+  color: darkolivegreen;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.btn, li {
+  margin: 1%;
+}
+
+.btn, .inputs {
+  padding: 2%;
+  margin: 0 auto;
+  height: 2%;
+}
+
+table {
+  width: 100%;
+  max-width: 800px;
+  border-collapse: collapse;
+  border: 1px solid darkolivegreen;
+}
+
+table th {
+  background: darkolivegreen;
+  color: white;
+}
+table tbody {
+  background: lemonchiffon;
+}
+table tr:nth-of-type(odd) {
+  background: white;
+}
+table td, table th {
+  text-align: left;
+  padding: 5px 10px;
+}
+
+.quoteActions {
+  display: flex;
+  flex-direction: column;
+}
+
+.quoteActions a {
+  text-decoration: none;
+  margin: 5px;
+}
+
+.form-group {
+  width: 100vw;
+  padding: 2vw;
+  background: darkkhaki;
+  color: darkolivegreen;
+  border: none;
+}
+.form-group .inputs {
+  background: darkolivegreen;
+  color: lemonchiffon;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  width: 15rem;
+}
+.form-group .labels {
+  color: lemonchiffon;
+  padding: 1%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  width: 25vw;
+  height: 2%;
+  line-height: 2.2%;
+}
+
+.createpage {
+  background: lemonchiffon;
+}
+
+.editpage {
+  background-image: url("../../../img/addQuote.jpg");
+}
+
+.viewpage {
+  background-image: url("../../../img/viewQuote.jpg");
+}
+
+.deletepage {
+  background-image: url("../../../img/addQuote.jpg");
+}
+
+.detailpage {
+  background-image: url("../../../img/displayQuote.jpg");
+}
+
+.homepage {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.left {
+  background-image: url("../../../img/mainmenu.jpg");
+  background-size: cover;
+  position: relative;
+  top: 0;
+}
+
+.right {
+  background: darkolivegreen;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.home {
+  background-image: url("../../../img/mainmenu.jpg");
+  width: 100%;
+  height: 100vh;
+}
+
+.homesplit {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+a.title {
+  text-decoration: none;
+}
+
+.title {
+  background: lemonchiffon;
+  color: darkolivegreen;
+  font-family: "Merienda", sans-serif;
+  border: 2px solid darkolivegreen;
+  padding: 2%;
+}
+
+.title, a, h1, h2, h3, h4, h5, h6, .navlink {
+  border-radius: 15px;
+  max-width: 100%;
+}
+.title :hover, a :hover, h1 :hover, h2 :hover, h3 :hover, h4 :hover, h5 :hover, h6 :hover, .navlink :hover {
+  background: darkolivegreen;
+  color: lemonchiffon;
+  border: 1px solid lemonchiffon;
+}
+
+a:hover {
+  color: lemonchiffon;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.createpage {
-    background-image: url('/img/addQuote.jpg');
+  font-size: 20px;
 }
 
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 
 button.accept-policy {
@@ -66,10 +245,123 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  text-align: center;
+  margin: 0 auto;
+  line-height: 60px;
+  /* Vertically center the text there */
+}
+.footer a {
+  color: lemonchiffon;
+}
+.footer a :hover {
+  color: darkolivegreen;
+}
+
+@media screen and (min-width: 1000px) {
+  .navbar-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+  }
+
+  .homepage {
+    grid-area: homepage;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "left right";
+  }
+
+  .left {
+    grid-area: left;
+  }
+
+  .right {
+    grid-area: right;
+  }
+}
+/*making table responsive*/
+@media only screen and (max-width: 880px) {
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  table tr {
+    border: 1px solid darkolivegreen;
+  }
+
+  table td {
+    /* Behave  like a "row" */
+    border: none;
+    position: relative;
+    padding: 0px;
+    padding-left: 25%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 0px;
+    left: 0px;
+    width: 20%;
+    white-space: nowrap;
+    background-color: darkolivegreen;
+    color: white;
+    padding-left: 5px;
+  }
+
+  /* Label the data */
+  td:nth-of-type(1):before {
+    content: "First Name";
+  }
+
+  td:nth-of-type(2):before {
+    content: "Last Name";
+  }
+
+  td:nth-of-type(3):before {
+    content: "Width";
+  }
+
+  td:nth-of-type(4):before {
+    content: "Depth";
+  }
+
+  td:nth-of-type(5):before {
+    content: "Drawers";
+  }
+
+  td:nth-of-type(6):before {
+    content: "Material";
+  }
+
+  td:nth-of-type(7):before {
+    content: "Rush Days";
+  }
+
+  td:nth-of-type(8):before {
+    content: "Date";
+  }
+
+  td:nth-of-type(9):before {
+    content: "Total";
+  }
+
+  .quoteActions {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

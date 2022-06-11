@@ -26,7 +26,12 @@ namespace MegaDeskv3._0.Pages.DeskQuotes
         }
 
         [BindProperty]
+        public string MaterialSelected { get; set; } 
+
+        [BindProperty]
         public DeskQuote DeskQuote { get; set; }
+
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -38,6 +43,7 @@ namespace MegaDeskv3._0.Pages.DeskQuotes
             
             //automatically sets date to current date
             DeskQuote.quoteDate = DateTime.Today;
+            DeskQuote.surfaceMaterial = MaterialSelected;
 
             //generates quote total from form data
             DeskQuote.quoteTotal = DeskQuote.getQuoteTotal(DeskQuote);

@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Montserrat:wght@300&display=swap');
+
+$khaki : darkkhaki;
+$olive: darkolivegreen;
+$lemon: lemonchiffon;
+$char: chartreuse;
+$hover: $lemon;
+$font: 'Montserrat', sans-serif;
+$title: 'Merienda', sans-serif;
+$font-size: 20px;
+$radius: 15px;
+
+
+body {
+    background: $char;
+    padding: 1%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $title;
+    background: $khaki;
+}
+
+.navcontainer {
+    border-radius: $radius;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.navbar-nav {
+    background: $khaki;
+    display: flex;
+    flex-direction: column;
+    line-height: 3rem;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+hr {
+    color: $lemon;
+    line-height: 2px;
+}
+
+li a.navlink {
+    font-family: $font;
+    font-size: 1.25rem;
+    background: $olive;
+    color: $lemon;
+    width: 10rem;
+    text-align: center;
+    padding: 2%;
+    text-decoration: none;
+    list-style-type: none;
+    & :hover {
+        color: $olive;
+        border: 1px solid $olive;
+        background: $lemon;
+        text-decoration: underline;
+    }
+}
+
+.text, li {
+    font-family: $font;
+    font-weight: 600;
+    font-size: medium;
+}
+
+.btn {
+    color: $olive;
+    background: $lemon;
+    border: 1px solid $lemon;
+    font-family: $font;
+    & :hover {
+        background: $lemon;
+        border: 1px solid $olive;
+        color: $olive;
+    }
+}
+
+.btn, li {
+    margin: 1%;
+}
+
+.btn, .inputs, {
+    padding: 2%;
+    margin: 0 auto;
+    height: 2%;
+}
+
+table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    border: 1px solid $olive;
+}
+
+table {
+    & th {
+        background: $olive;
+        color: white;
+    }
+
+    & tbody {
+        background: $lemon;
+    }
+
+    & tr:nth-of-type(odd) {
+        background: white;
+    }
+
+    & td, th {
+        text-align: left;
+        padding: 5px 10px
+    }
+}
+
+.quoteActions {
+    display: flex;
+    flex-direction: column;
+}
+
+.quoteActions a {
+    text-decoration: none;
+    margin: 5px;
+}
+
+
+
+.form-group {
+    width: 100vw;
+    padding: 2vw;
+    background: $khaki;
+    color: $olive;
+    border: none;
+    & .inputs {
+        background: $olive;
+        color: $lemon;
+        font-family: $font;
+        font-size: 1rem;
+        width: 15rem;
+    } 
+    & .labels {
+        color: $lemon;
+        padding: 1%;
+        font-family: $font;
+        font-weight: 600;
+        font-size: 1rem;
+        width: 25vw;
+        height: 2%;
+        line-height: 2.2%;
+    }
+}
+
+
+.createpage {
+    background: $lemon;
+}
+
+.editpage {
+    background-image: url("../../../img/addQuote.jpg");
+}
+
+.viewpage {
+    background-image: url("../../../img/viewQuote.jpg");
+}
+
+.deletepage {
+    background-image: url("../../../img/addQuote.jpg");
+}
+
+.detailpage {
+    background-image: url("../../../img/displayQuote.jpg");
+}
+
+.homepage {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.left {
+    background-image: url("../../../img/mainmenu.jpg");
+    background-size: cover;
+    position: relative;
+    top: 0;
+}
+
+.right {
+    background: $olive;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.home {
+    background-image: url("../../../img/mainmenu.jpg");
+    width: 100%;
+    height: 100vh;
+}
+
+.homesplit {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+a.title {
+    text-decoration: none;
+}
+
+.title {
+    background: $lemon;
+    color: $olive;
+    font-family: $title;
+    border: 2px solid $olive;
+    padding: 2%;
+}
+
+.title, a, h1, h2, h3, h4, h5, h6, .navlink {
+    border-radius: $radius;
+    max-width: 100%;
+    & :hover {
+        background: $olive;
+        color: $lemon;
+        border: 1px solid $lemon;
+    }
+}
+
+a:hover {
+    color: $hover;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+
+    $font-size: 20px;
+
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 60px; /* Vertically center the text there */
+  & a {
+    color: $lemon;
+    & :hover {
+        color: $olive;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .navbar-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        text-align: center;
+    }
+
+    .homepage {
+        grid-area: homepage;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+        "left right";
+    }
+
+    .left {
+        grid-area: left;
+    }
+
+    .right {
+        grid-area: right;
+    }
+
+
+}
+/*making table responsive*/
+@media only screen and (max-width: 880px) {
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table tr {
+        border: 1px solid $olive;
+    }
+
+    table td {
+        /* Behave  like a "row" */
+        border: none;
+        position: relative;
+        padding: 0px;
+        padding-left: 25%;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 0px;
+        left: 0px;
+        width: 20%;
+        white-space: nowrap;
+        background-color: $olive;
+        color: white;
+        padding-left: 5px;
+    }
+
+    /* Label the data */
+    td:nth-of-type(1):before {
+        content: "First Name";
+    }
+
+    td:nth-of-type(2):before {
+        content: "Last Name";
+    }
+
+    td:nth-of-type(3):before {
+        content: "Width";
+    }
+
+    td:nth-of-type(4):before {
+        content: "Depth";
+    }
+
+    td:nth-of-type(5):before {
+        content: "Drawers";
+    }
+
+    td:nth-of-type(6):before {
+        content: "Material";
+    }
+
+    td:nth-of-type(7):before {
+        content: "Rush Days";
+    }
+
+    td:nth-of-type(8):before {
+        content: "Date";
+    }
+
+    td:nth-of-type(9):before {
+        content: "Total";
+    }
+
+    .quoteActions {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
