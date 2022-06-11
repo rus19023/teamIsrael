@@ -13,7 +13,7 @@ namespace MegaDeskv3._0.Models
         public int width { get; set; }
         [DisplayName("Depth")]
         public int depth { get; set; }
-        [DisplayName("Drawer #")]
+        [DisplayName("Drawers")]
         public int drawers { get; set; }
         [DisplayName("Material")]
         public string surfaceMaterial { get; set; }
@@ -28,7 +28,7 @@ namespace MegaDeskv3._0.Models
         [DisplayName("Date")]
         [DataType(DataType.Date)]
         public DateTime quoteDate { get; set; }
-        [DisplayName("Quote Price")]
+        [DisplayName("Price")]
         public int quoteTotal { get; set; }
 
         public int calcSurfaceArea(int depth, int width)

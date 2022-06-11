@@ -14,29 +14,24 @@
     <header>
         <nav class="navcontainer">
                 <h1><a class="btn" asp-area="" asp-page="/Index">@ViewData["Title"]</a></h1> 
-                <button class="btn smbtn" type="button" id="toggle" name="toggle">Menu</button>
-                    <ul id="navbar" class="navbar-nav hide">
+                @*<button class="btn smbtn" type="button" id="toggle" name="toggle">Menu</button>*@
+                    <ul id="navbar" class="navbar-nav">
                         <li>
-                            <a class="navlink" asp-area="" asp-page="/DeskQuotes/Create">Create a Quote</a>
+                            <a class="navlink" asp-area="" asp-page="/DeskQuotes/Create">New Quote</a>
                          </li>
                         <li>
-                            <a class="navlink" asp-area="" asp-page="/DeskQuotes/Index">View Quotes</a>
+                            <a class="navlink" asp-area="" asp-page="/DeskQuotes/Index">All Quotes</a>
                          </li>
                         <li>
                             <a class="navlink" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                        <li>
-                            <a class="navlink" asp-area="" asp-page="/Privacy-">Link Text</a>
                         </li>
                     </ul>
         </nav>
         <hr />
     </header>
-    <div class="container">
         <main role="main" class="">
             @RenderBody()
         </main>
-    </div>
 
     <footer class="border-top footer">
         <div class="container">

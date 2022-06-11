@@ -2,36 +2,33 @@
 @using MegaDeskv3._0.Models
 @model MegaDeskv3._0.Pages.DeskQuotes.CreateModel
 
-<h1 class="title">Add Quote</h1>
-
-<main class="">
-    <h1 class="title">@ViewData["Title"] </h1>
+    <h1 class="">@ViewData["Title"] </h1>
     <div class="createpage">
-        <form method="post" class="createpage">
+        <form method="post" class="">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="DeskQuote.customerFirstName" class="labels" placeholder="First Name"></label>
-                <input asp-for="DeskQuote.customerFirstName" class="inputs" />
+                <input asp-for="DeskQuote.customerFirstName" class="inputleftpad" />
                 <span asp-validation-for="DeskQuote.customerFirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.customerLastName" class="labels"></label>
-                <input asp-for="DeskQuote.customerLastName" class="inputs"  placeholder="Last Name"/>
+                <input asp-for="DeskQuote.customerLastName" class="inputleftpad"  placeholder="Last Name"/>
                 <span asp-validation-for="DeskQuote.customerLastName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.width" class="labels"></label>
-                <input asp-for="DeskQuote.width" class="inputs" />
+                <input asp-for="DeskQuote.width" class="inputleftpad" />
                 <span asp-validation-for="DeskQuote.width" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.depth" class="labels"></label>
-                <input asp-for="DeskQuote.depth" class="inputs" />
+                <input asp-for="DeskQuote.depth" class="inputleftpad" />
                 <span asp-validation-for="DeskQuote.depth" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.drawers" class="labels"></label>
-                <select asp-for="DeskQuote.drawers" class="inputs">
+                <select asp-for="DeskQuote.drawers" class="inputleftpad">
                    @foreach(var option in BusinessLogic.Drawers)
                     {
                     <option value=@option>@option.ToString()</option>
@@ -40,7 +37,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.surfaceMaterial" class="labels"></label>
-                <select asp-for="DeskQuote.surfaceMaterial" class="inputs">
+                <select asp-for="DeskQuote.surfaceMaterial" class="inputleftpad">
                     @foreach (var material in Enum.GetNames(typeof(BusinessLogic.surfaceMaterials)))
                     {
                         <option value="@material">@material
@@ -51,7 +48,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.rushDays" class="labels"></label>
-                <select asp-for="DeskQuote.rushDays" class="inputs">
+                <select asp-for="DeskQuote.rushDays" class="inputleftpad">
                     @foreach (var option in BusinessLogic.RushDays)
                     {
                         <option value="@option">@option</option>
@@ -61,27 +58,23 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Create" class="btn" />
+                <input type="submit" value="Save Quote" class="btn" />
             </div>
 
             <div class="form-group">
 
                 <label asp-for="DeskQuote.quoteDate" class="labels"></label>
-                <input asp-for="DeskQuote.quoteDate" class="inputs" disabled/>
+                <input asp-for="DeskQuote.quoteDate" class="inputleftpad" disabled/>
                 <span asp-validation-for="DeskQuote.quoteDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.quoteTotal" class="labels"></label>
-                <input asp-for="DeskQuote.quoteTotal" class="inputs" disabled/>
+                <input asp-for="DeskQuote.quoteTotal" class="inputleftpad" disabled/>
                 <span asp-validation-for="DeskQuote.quoteTotal" class="text-danger"></span>
+        <a asp-page="Index" class="btn">Back to List</a>
             </div>
         </form>
     </div>
-
-    <div>
-        <a asp-page="Index" class="btn">Back to List</a>
-    </div>
-</main>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

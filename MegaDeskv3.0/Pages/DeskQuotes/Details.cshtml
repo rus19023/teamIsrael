@@ -1,49 +1,55 @@
 ﻿@page
 @model MegaDeskv3._0.Pages.DeskQuotes.DetailsModel
 
-<h1 class="title">Quote Details</h1>
+@{
+    ViewData["Title"] = "Quote Details";
+}
 
-<div>
-    <ul class="">
+<h1>@ViewData["Title"] </h1>
+
+<div class="detailpage">
+    
+    <ul class="detail-list">
         <li class="labels">
-            @Html.DisplayNameFor(model => model.DeskQuote.width): 
+            @Html.DisplayNameFor(model => model.DeskQuote.width):
             @Html.DisplayFor(model => model.DeskQuote.width)
         </li>
         <li class="labels">
-            @Html.DisplayNameFor(model => model.DeskQuote.depth): 
+            @Html.DisplayNameFor(model => model.DeskQuote.depth):
             @Html.DisplayFor(model => model.DeskQuote.depth)
         </li>
         <li class="labels">
-            @Html.DisplayNameFor(model => model.DeskQuote.drawers): 
+            @Html.DisplayNameFor(model => model.DeskQuote.drawers):
             @Html.DisplayFor(model => model.DeskQuote.drawers)
         </li>
         <li class="labels">
-            @Html.DisplayNameFor(model => model.DeskQuote.surfaceMaterial): 
+            @Html.DisplayNameFor(model => model.DeskQuote.surfaceMaterial):
             @Html.DisplayFor(model => model.DeskQuote.surfaceMaterial)
         </li>
         <li class="labels">
-            @Html.DisplayNameFor(model => model.DeskQuote.customerFirstName)
+            @Html.DisplayNameFor(model => model.DeskQuote.customerFirstName):
             @Html.DisplayFor(model => model.DeskQuote.customerFirstName)
         </li>
         <li class="labels">
-            @Html.DisplayNameFor(model => model.DeskQuote.customerLastName)
+            @Html.DisplayNameFor(model => model.DeskQuote.customerLastName):
             @Html.DisplayFor(model => model.DeskQuote.customerLastName)
         </li>
         <li class="labels">
-            @Html.DisplayNameFor(model => model.DeskQuote.rushDays)
+            @Html.DisplayNameFor(model => model.DeskQuote.rushDays):
             @Html.DisplayFor(model => model.DeskQuote.rushDays)
         </li>
         <li class="labels">
-            @Html.DisplayNameFor(model => model.DeskQuote.quoteDate)
+            @Html.DisplayNameFor(model => model.DeskQuote.quoteDate):
             @Html.DisplayFor(model => model.DeskQuote.quoteDate)
         </li>
         <li class="labels">
-            @Html.DisplayNameFor(model => model.DeskQuote.quoteTotal)
+            @Html.DisplayNameFor(model => model.DeskQuote.quoteTotal):
             @Html.DisplayFor(model => model.DeskQuote.quoteTotal)
         </li>
     </ul>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.DeskQuote.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <div>
+        <a class="btn" asp-page="./Edit" asp-route-id="@Model.DeskQuote.Id">Edit</a> 
+        <a class="btn" asp-page="./Index">Back to List</a>
+        <br /><br />
+    </div>
 </div>

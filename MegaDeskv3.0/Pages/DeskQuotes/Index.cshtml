@@ -1,24 +1,25 @@
 ﻿@page
 @model MegaDeskv3._0.Pages.DeskQuotes.IndexModel
 
-@{
-    ViewData["Title"] = "Quotes";
-}
-  <main class="viewpage">
-    <h1>@ViewData["Title"] </h1>
+<h1>View All Quotes</h1>
+  <div class="viewpage">
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<form asp-page="./Index" method="get" id="search-form">
-    <p class="search">
-        Customer Name: <input type="text" name="SearchString" value="@Model.currentFilter"/>
-        <input type="submit" value="Filter"/> | <a asp-page="./Index">Undo Filter</a>
-    </p>
-</form>
-<table class="table">
-    <thead>
+        <h2>@ViewData["Title"]</h2>
+        <form asp-page="./Index" method="get" id="search-form">
+            <p id="search">
+                Search Quotes by Customer Name: <input class="inputs" type="text" name="SearchString" value="@Model.currentFilter"/>
+                <input class="btn" type="submit" value="Filter"/>  <a class="btn" asp-page="./Index">Undo Filter</a>
+            </p>
+        </form>
+    <table class="table">
+        <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].customerFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].customerLastName)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].width)
             </th>
@@ -30,14 +31,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].surfaceMaterial)
-            </th>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.firstNameSort">
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].customerFirstName)
-                </a>
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].customerLastName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].rushDays)
@@ -52,43 +45,44 @@
             </th>
             <th></th>
         </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.DeskQuote) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.width)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.depth)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.drawers)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.surfaceMaterial)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.customerFirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.customerLastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.rushDays)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.quoteDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.quoteTotal)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table></main>
+        </thead>
+        <tbody>
+    @foreach (var item in Model.DeskQuote) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.customerFirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.customerLastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.width) inches
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.depth) inches
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.drawers)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.surfaceMaterial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.rushDays)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.quoteDate)
+                </td>
+                <td>
+                    $@Html.DisplayFor(modelItem => item.quoteTotal)
+                </td>
+                <td class="quoteActions">
+                    <a class="btn" asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn" asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                    <a  class="btn" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+  </div>
