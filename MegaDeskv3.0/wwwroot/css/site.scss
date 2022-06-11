@@ -50,7 +50,15 @@ hr {
     line-height: 2px;
 }
 
-li a.navlink {
+.show { display: block; }
+
+.hide { display: none; }
+
+ul.navbar-nav li a {
+    list-style-type: none;
+}
+
+li a.navlink, li.labels {
     font-family: $font;
     background: $olive;
     color: $lemon;
@@ -58,7 +66,6 @@ li a.navlink {
     text-align: center;
     padding: 4%;
     text-decoration: none;
-    list-style-type: none;
     & :hover {
         color: $olive;
         border: 1px solid $olive;
@@ -87,6 +94,10 @@ li a.navlink {
         color: $lemon;
         border: 1px solid $lemon;
     }
+}
+
+.smbtn {
+    font-size: smaller;
 }
 
 .btn, li {
@@ -185,7 +196,7 @@ li.labels {
 
 
 .createpage {
-    background-image: url("/../../../img/addQuote.jpg");
+    background-image: url('../../../img/addQuote.jpg');
     background-position: center center;
     background-size: cover;
   }
