@@ -12,7 +12,7 @@ $radius: 15px;
 
 
 body {
-    background: $char;
+    background: $khaki;
     padding: 1%;
 }
 
@@ -85,7 +85,7 @@ li a.navlink {
     margin: 1%;
 }
 
-.btn, .inputs, {
+.btn, .inputs {
     padding: 2%;
     margin: 0 auto;
     height: 2%;
@@ -157,11 +157,12 @@ table {
 
 
 .createpage {
-    background: $lemon;
+    background: $khaki;
 }
 .img-bg {
     background-image: url("/../../../img/addQuote.jpg");
     background-position: center center;
+}
 
  .img-bg2 {
         background-image: url("/../../../img/mainmenu.jpg");

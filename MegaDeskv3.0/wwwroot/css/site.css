@@ -1,6 +1,6 @@
 ﻿@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Montserrat:wght@300&display=swap");
 body {
-  background: chartreuse;
+  background: darkkhaki;
   padding: 1%;
 }
 
@@ -137,11 +137,16 @@ table td, table th {
 }
 
 .createpage {
-  background: lemonchiffon;
+  background: darkkhaki;
 }
 
 .img-bg {
   background-image: url("/../../../img/addQuote.jpg");
+  background-position: center center;
+}
+
+.img-bg2 {
+  background-image: url("/../../../img/mainmenu.jpg");
   background-position: center center;
 }
 
