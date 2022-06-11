@@ -22,6 +22,7 @@ namespace MegaDeskv3._0.Pages.DeskQuotes
 
         public IActionResult OnGet()
         {
+
                         return Page();
         }
 

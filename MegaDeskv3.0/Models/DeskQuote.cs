@@ -22,6 +22,7 @@ namespace MegaDeskv3._0.Models
         [DisplayName("Drawers")]
         public int drawers { get; set; }
 
+        [Required(ErrorMessage = "Material must be specified")]
         [DisplayName("Material")]
         public string surfaceMaterial { get; set; }
 

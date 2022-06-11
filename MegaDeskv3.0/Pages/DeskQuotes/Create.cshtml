@@ -11,7 +11,7 @@
         <form method="post" class="w-full flex flex-col">
             <div asp-validation-summary="ModelOnly" class="text-red-600"></div>
 
-            <div class="grid  grid-cols-2 gap-4">
+            <div class="grid  grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="flex w-full img-bg hidden rounded-xl  sm:block"> </div>
                 <div class="flex w-full">
                     <div class="relative w-full  grid grid-cols-2 gap-3">
@@ -75,8 +75,8 @@
                             <span asp-validation-for="DeskQuote.rushDays" class="text-red-600"></span>
                         </div>
                         <fieldset class="mt-4 col-span-2">
-                            <legend class="">Select Material</legend>
-                            <div class="grid grid-cols-5 gap-4 w-full">
+                            <legend class="">Select Material  <span class="text-hint text-xs uppercase font-mediummater  text-lime-600"> * Material must be specified</span></legend>
+                            <div class="grid grid-cols-5 sm:gap-4  gap-2 w-full">
                                 @foreach (var material in Enum.GetNames(typeof(BusinessLogic.surfaceMaterials)))
                                 {
                                 <div>
@@ -91,6 +91,7 @@
                                 </div>
                                 }
                             </div>
+                               <span asp-validation-for="DeskQuote.surfaceMaterial" class="text-red-600"></span>
                         </fieldset>
 
                        <div class="col-span-2 w-full  mt-24 flex justify-end ">      
