@@ -3,50 +3,46 @@
 @model MegaDeskv3._0.Pages.DeskQuotes.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] += "Add Quote";
 }
 
-<h1>Create</h1>
-
-<h4>DeskQuote</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
+<main class="">
+    <h1 class="title">@ViewData["Title"] </h1>
+    <div class="createpage">
+        <form method="post" class="createpage">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="DeskQuote.customerFirstName" class="control-label"></label>
-                <input asp-for="DeskQuote.customerFirstName" class="form-control" />
+                <label asp-for="DeskQuote.customerFirstName" class="labels" placeholder="First Name"></label>
+                <input asp-for="DeskQuote.customerFirstName" class="inputs" />
                 <span asp-validation-for="DeskQuote.customerFirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.customerLastName" class="control-label"></label>
-                <input asp-for="DeskQuote.customerLastName" class="form-control" />
+                <label asp-for="DeskQuote.customerLastName" class="labels"></label>
+                <input asp-for="DeskQuote.customerLastName" class="inputs"  placeholder="Last Name"/>
                 <span asp-validation-for="DeskQuote.customerLastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.width" class="control-label"></label>
-                <input asp-for="DeskQuote.width" class="form-control" />
+                <label asp-for="DeskQuote.width" class="labels"></label>
+                <input asp-for="DeskQuote.width" class="inputs" />
                 <span asp-validation-for="DeskQuote.width" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.depth" class="control-label"></label>
-                <input asp-for="DeskQuote.depth" class="form-control" />
+                <label asp-for="DeskQuote.depth" class="labels"></label>
+                <input asp-for="DeskQuote.depth" class="inputs" />
                 <span asp-validation-for="DeskQuote.depth" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.drawers" class="control-label"></label>
-                <select asp-for="DeskQuote.drawers" class="form-control">
+                <label asp-for="DeskQuote.drawers" class="labels"></label>
+                <select asp-for="DeskQuote.drawers" class="inputs">
                    @foreach(var option in BusinessLogic.Drawers)
                     {
                     <option value=@option>@option.ToString()</option>
                     }
                 </select>
-                <span asp-validation-for="DeskQuote.drawers" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.surfaceMaterial" class="control-label"></label>
-                <select asp-for="DeskQuote.surfaceMaterial" class="form-control">
+                <label asp-for="DeskQuote.surfaceMaterial" class="labels"></label>
+                <select asp-for="DeskQuote.surfaceMaterial" class="inputs">
                     @foreach (var material in Enum.GetNames(typeof(BusinessLogic.surfaceMaterials)))
                     {
                         <option value="@material">@material
@@ -56,8 +52,8 @@
                 <span asp-validation-for="DeskQuote.surfaceMaterial" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.rushDays" class="control-label"></label>
-                <select asp-for="DeskQuote.rushDays" class="form-control">
+                <label asp-for="DeskQuote.rushDays" class="labels"></label>
+                <select asp-for="DeskQuote.rushDays" class="inputs">
                     @foreach (var option in BusinessLogic.RushDays)
                     {
                         <option value="@option">@option</option>
@@ -65,16 +61,29 @@
                 </select>
                 <span asp-validation-for="DeskQuote.rushDays" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn" />
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="DeskQuote.quoteDate" class="labels"></label>
+                <input asp-for="DeskQuote.quoteDate" class="inputs" disabled/>
+                <span asp-validation-for="DeskQuote.quoteDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.quoteTotal" class="labels"></label>
+                <input asp-for="DeskQuote.quoteTotal" class="inputs" disabled/>
+                <span asp-validation-for="DeskQuote.quoteTotal" class="text-danger"></span>
             </div>
         </form>
     </div>
-</div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
+    <div>
+        <a asp-page="Index" class="btn">Back to List</a>
+    </div>
+</main>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

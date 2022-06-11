@@ -19,7 +19,7 @@ namespace MegaDeskv3._0.Pages
 
         public void OnGet()
         {
-
+            ViewData["Title"] = "MegaDeskv3 Desk LLC";
         }
     }
 }
