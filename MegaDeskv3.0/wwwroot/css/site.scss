@@ -162,239 +162,240 @@ table {
 .img-bg {
     background-image: url("/../../../img/addQuote.jpg");
     background-position: center center;
-}
 
-.editpage {
-    background-image: url("../../../img/addQuote.jpg");
-}
-
-.viewpage {
-    background-image: url("../../../img/viewQuote.jpg");
-}
-
-.deletepage {
-    background-image: url("../../../img/addQuote.jpg");
-}
-
-.detailpage {
-    background-image: url("../../../img/displayQuote.jpg");
-}
-
-.homepage {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-.left {
-    background-image: url("../../../img/mainmenu.jpg");
-    background-size: cover;
-    position: relative;
-    top: 0;
-}
-
-.right {
-    background: $olive;
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-.home {
-    background-image: url("../../../img/mainmenu.jpg");
-    width: 100%;
-    height: 100vh;
-}
-
-.homesplit {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-a.title {
-    text-decoration: none;
-}
-
-.title {
-    background: $lemon;
-    color: $olive;
-    font-family: $title;
-    border: 2px solid $olive;
-    padding: 2%;
-}
-
-.title, a, h1, h2, h3, h4, h5, h6, .navlink {
-    border-radius: $radius;
-    max-width: 100%;
-    & :hover {
-        background: $olive;
-        color: $lemon;
-        border: 1px solid $lemon;
+ .img-bg2 {
+        background-image: url("/../../../img/mainmenu.jpg");
+        background-position: center center;
     }
-}
 
-a:hover {
-    color: $hover;
-}
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 20px;
-}
-
-@media (min-width: 768px) {
-
-    $font-size: 20px;
-
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  text-align: center;
-  margin: 0 auto;
-  line-height: 60px; /* Vertically center the text there */
-  & a {
-    color: $lemon;
-    & :hover {
-        color: $olive;
+    .editpage {
+        background-image: url("../../../img/addQuote.jpg");
     }
-  }
-}
 
-@media screen and (min-width: 1000px) {
+    .viewpage {
+        background-image: url("../../../img/viewQuote.jpg");
+    }
 
-    .navbar-nav {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        text-align: center;
+    .deletepage {
+        background-image: url("../../../img/addQuote.jpg");
+    }
+
+    .detailpage {
+        background-image: url("../../../img/displayQuote.jpg");
     }
 
     .homepage {
-        grid-area: homepage;
-        grid-template-columns: 50% 50%;
-        grid-template-areas:
-        "left right";
+        display: grid;
+        grid-template-columns: 1fr;
     }
 
     .left {
-        grid-area: left;
+        background-image: url("../../../img/mainmenu.jpg");
+        background-size: cover;
+        position: relative;
+        top: 0;
     }
 
     .right {
-        grid-area: right;
+        background: $olive;
+        display: grid;
+        grid-template-columns: 1fr;
     }
 
-
-}
-/*making table responsive*/
-@media only screen and (max-width: 880px) {
-    /* Force table to not be like tables anymore */
-    table, thead, tbody, th, td, tr {
-        display: block;
+    .home {
+        background-image: url("../../../img/mainmenu.jpg");
+        width: 100%;
+        height: 100vh;
     }
 
-    /* Hide table headers (but not display: none;, for accessibility) */
-    thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
+    .homesplit {
+        display: grid;
+        grid-template-columns: 1fr;
     }
 
-    table tr {
-        border: 1px solid $olive;
+    a.title {
+        text-decoration: none;
     }
 
-    table td {
-        /* Behave  like a "row" */
-        border: none;
+    .title {
+        background: $lemon;
+        color: $olive;
+        font-family: $title;
+        border: 2px solid $olive;
+        padding: 2%;
+    }
+
+    .title, a, h1, h2, h3, h4, h5, h6, .navlink {
+        border-radius: $radius;
+        max-width: 100%;
+
+        & :hover {
+            background: $olive;
+            color: $lemon;
+            border: 1px solid $lemon;
+        }
+    }
+
+    a:hover {
+        color: $hover;
+    }
+    /* Sticky footer styles
+-------------------------------------------------- */
+    html {
+        font-size: 20px;
+    }
+
+    @media (min-width: 768px) {
+
+        $font-size: 20px;
+
+    }
+
+    .border-top {
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .border-bottom {
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .box-shadow {
+        box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    }
+
+    button.accept-policy {
+        font-size: 1rem;
+        line-height: inherit;
+    }
+    /* Sticky footer styles
+-------------------------------------------------- */
+    html {
         position: relative;
-        padding: 0px;
-        padding-left: 25%;
+        min-height: 100%;
     }
 
-    td:before {
-        /* Now like a table header */
+    body {
+        /* Margin bottom by footer height */
+        margin-bottom: 60px;
+    }
+
+    .footer {
         position: absolute;
-        /* Top/left values mimic padding */
-        top: 0px;
-        left: 0px;
-        width: 20%;
+        bottom: 0;
+        width: 100%;
         white-space: nowrap;
-        background-color: $olive;
-        color: white;
-        padding-left: 5px;
+        text-align: center;
+        margin: 0 auto;
+        line-height: 60px; /* Vertically center the text there */
+        & a {
+            color: $lemon;
+
+            & :hover {
+                color: $olive;
+            }
+        }
     }
 
-    /* Label the data */
-    td:nth-of-type(1):before {
-        content: "First Name";
-    }
+    @media screen and (min-width: 1000px) {
 
-    td:nth-of-type(2):before {
-        content: "Last Name";
-    }
+        .navbar-nav {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            text-align: center;
+        }
 
-    td:nth-of-type(3):before {
-        content: "Width";
-    }
+        .homepage {
+            grid-area: homepage;
+            grid-template-columns: 50% 50%;
+            grid-template-areas:
+                "left right";
+        }
 
-    td:nth-of-type(4):before {
-        content: "Depth";
-    }
+        .left {
+            grid-area: left;
+        }
 
-    td:nth-of-type(5):before {
-        content: "Drawers";
+        .right {
+            grid-area: right;
+        }
     }
+    /*making table responsive*/
+    @media only screen and (max-width: 880px) {
+        /* Force table to not be like tables anymore */
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
 
-    td:nth-of-type(6):before {
-        content: "Material";
-    }
+        table tr {
+            border: 1px solid $olive;
+        }
 
-    td:nth-of-type(7):before {
-        content: "Rush Days";
-    }
+        table td {
+            /* Behave  like a "row" */
+            border: none;
+            position: relative;
+            padding: 0px;
+            padding-left: 25%;
+        }
 
-    td:nth-of-type(8):before {
-        content: "Date";
-    }
+        td:before {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 0px;
+            left: 0px;
+            width: 20%;
+            white-space: nowrap;
+            background-color: $olive;
+            color: white;
+            padding-left: 5px;
+        }
+        /* Label the data */
+        td:nth-of-type(1):before {
+            content: "First Name";
+        }
 
-    td:nth-of-type(9):before {
-        content: "Total";
-    }
+        td:nth-of-type(2):before {
+            content: "Last Name";
+        }
 
-    .quoteActions {
-        flex-direction: row;
-        justify-content: space-between;
+        td:nth-of-type(3):before {
+            content: "Width";
+        }
+
+        td:nth-of-type(4):before {
+            content: "Depth";
+        }
+
+        td:nth-of-type(5):before {
+            content: "Drawers";
+        }
+
+        td:nth-of-type(6):before {
+            content: "Material";
+        }
+
+        td:nth-of-type(7):before {
+            content: "Rush Days";
+        }
+
+        td:nth-of-type(8):before {
+            content: "Date";
+        }
+
+        td:nth-of-type(9):before {
+            content: "Total";
+        }
+
+        .quoteActions {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
-}
