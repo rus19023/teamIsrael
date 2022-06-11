@@ -15,7 +15,9 @@
         <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].customerFirstName)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.firstNameSort">
+                    @Html.DisplayNameFor(model => model.DeskQuote[0].customerFirstName)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].customerLastName)
