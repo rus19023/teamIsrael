@@ -22,6 +22,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
   text-align: center;
 }
+li a.navlink :hover {
+  color: darkolivegreen;
+  border: 1px solid darkolivegreen;
+  background: lemonchiffon;
+  text-decoration: underline;
+}
 
 .navbar-nav {
   background: darkkhaki;
@@ -36,6 +42,11 @@ h1, h2, h3, h4, h5, h6 {
 hr {
   color: lemonchiffon;
   line-height: 2px;
+}
+.btn :hover {
+  background: lemonchiffon;
+  border: 1px solid darkolivegreen;
+  color: darkolivegreen;
 }
 
 .show {
