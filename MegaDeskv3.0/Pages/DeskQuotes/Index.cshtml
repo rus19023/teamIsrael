@@ -1,16 +1,14 @@
 ﻿@page
 @model MegaDeskv3._0.Pages.DeskQuotes.IndexModel
 
-<h1>View All Quotes</h1>
-  <div class="viewpage">
-
-        <h2>@ViewData["Title"]</h2>
+<h2>@ViewData["Title"]</h2>
         <form asp-page="./Index" method="get" id="search-form">
             <p id="search">
                 Search Quotes by Customer Name: <input class="inputs" type="text" name="SearchString" value="@Model.currentFilter"/>
-                <input class="btn" type="submit" value="Filter"/>  <a class="btn" asp-page="./Index">Undo Filter</a>
+                <input class="btn" type="submit" value="Filter"/>  <a class="btn" asp-page="./Index">Undo</a>
             </p>
         </form>
+  <div class="viewpage">
     <table class="table">
         <thead>
         <tr>

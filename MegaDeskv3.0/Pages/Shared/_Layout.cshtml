@@ -13,7 +13,7 @@
 <body>
     <header>
         <nav class="navcontainer">
-                <h1><a class="btn" asp-area="" asp-page="/Index">@ViewData["Title"]</a></h1> 
+                <h1><a class="title" asp-area="" asp-page="/Index">@ViewData["Title"]</a></h1> 
                 @*<button class="btn smbtn" type="button" id="toggle" name="toggle">Menu</button>*@
                     <ul id="navbar" class="navbar-nav">
                         <li>
@@ -29,13 +29,13 @@
         </nav>
         <hr />
     </header>
-        <main role="main" class="">
+        <main role="main">
             @RenderBody()
         </main>
 
     <footer class="border-top footer">
         <div class="container">
-            &copy; 2022 - Mega Desk LLC <a asp-area="" asp-page="/Privacy">Privacy Policy</a>
+            &copy; 2022 - Mega Desk LLC <a asp-area="" asp-page="/Privacy"> Privacy Policy</a>
         </div>
     </footer>
 

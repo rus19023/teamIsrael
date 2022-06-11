@@ -14,12 +14,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .navcontainer {
   border-radius: 15px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
 }
 
 .container {
-  margin: 0 auto;
   text-align: center;
 }
 
@@ -79,9 +79,10 @@ li a.navlink :hover {
   border-radius: 15px;
   font-family: "Montserrat", sans-serif;
   font-size: large;
+  font-weight: 900;
   text-decoration: none;
-  padding: 2%;
-  margin-bottom: 5vh;
+  padding: 1%;
+  margin-bottom: 2vh;
   text-align: center;
 }
 .btn :hover, a.btn :hover, input.btn :hover {
@@ -111,11 +112,13 @@ li a.navlink :hover {
 }
 
 table {
-  width: 100%;
+  max-width: 100%;
   max-width: 90%;
   border-collapse: collapse;
   border: 1px solid darkolivegreen;
   margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
 }
 
 table th {
@@ -139,6 +142,7 @@ table td, table th {
 td a.btn {
   background: darkkhaki;
   color: darkolivegreen;
+  font-size: medium;
   font-weight: 900;
   border: 2px solid darkolivegreen;
 }
@@ -191,17 +195,24 @@ li.labels {
   background-size: cover;
 }
 
-div.editpage {
+editpage {
   background-image: url("../../../img/addQuote.jpg");
 }
 
 .viewpage {
-  background-image: url("../../../img/displayQuote.jpg");
-  min-height: 100vh;
+  background-image: url("../../../img/mainmenu.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
 }
 
 #search {
   text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+#search input.inputs {
+  width: 50%;
 }
 
 .deletepage {
@@ -227,6 +238,8 @@ div.editpage {
 .left {
   background-image: url(../../../img/mainmenu.jpg);
   background-size: cover;
+  position: relative;
+  top: 0;
 }
 
 .right {
@@ -299,7 +312,7 @@ body {
   width: 100%;
   white-space: nowrap;
   text-align: center;
-  margin: 0 auto;
+  margin: 1% auto;
   line-height: 60px;
   /* Vertically center the text there */
 }

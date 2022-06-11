@@ -26,12 +26,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .navcontainer {
     border-radius: $radius;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
 }
 
 .container {
-    margin: 0 auto;
     text-align: center;
 }
 
@@ -87,9 +87,10 @@ li a.navlink {
     border-radius: 15px;
     font-family: $font;
     font-size: large;
+    font-weight: 900;
     text-decoration: none;
-    padding: 2%;
-    margin-bottom: 5vh;
+    padding: 1%;
+    margin-bottom: 2vh;
     text-align: center;
     & :hover {
         background: $olive;
@@ -119,11 +120,13 @@ li a.navlink {
 }
 
 table {
-    width: 100%;
+    max-width: 100%;
     max-width: 90%;
     border-collapse: collapse;
     border: 1px solid $olive;
     margin: 0 auto;
+    font-family: $font;
+    font-size: medium;
 }
 
 table {
@@ -151,6 +154,7 @@ table {
 td a.btn {
     background: $khaki;
     color: $olive;
+    font-size: medium;
     font-weight: 900;
     border: 2px solid $olive;
 }
@@ -203,17 +207,24 @@ li.labels {
     background-size: cover;
   }
 
-div.editpage {
+editpage {
     background-image: url('../../../img/addQuote.jpg');
 }
 
 .viewpage {
-    background-image: url('../../../img/displayQuote.jpg');
-    min-height: 100vh;
+    background-image: url('../../../img/mainmenu.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
 }
 
 #search {
     text-align: center;
+    font-family: $font;
+    font-weight: 900;
+    & input.inputs {
+        width: 50%;
+    }
 }
 
 .deletepage {
@@ -239,6 +250,8 @@ div.editpage {
 .left {
     background-image: url(../../../img/mainmenu.jpg);
     background-size: cover;
+    position: relative;
+    top: 0;
 }
 
 .right {
@@ -311,19 +324,20 @@ body {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  text-align: center;
-  margin: 0 auto;
-  line-height: 60px; /* Vertically center the text there */
-  & a {
-    color: $lemon;
-    & :hover {
-        color: $olive;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    margin: 1% auto;
+    line-height: 60px; /* Vertically center the text there */
+    & a {
+        color: $lemon;
+
+        & :hover {
+            color: $olive;
+        }
     }
-  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -349,8 +363,6 @@ body {
 
 /*making table responsive*/
 @media only screen and (max-width: 990px) {
-
-
 
     /* Force table to not be like tables anymore */
     table, thead, tbody, th, td, tr {
