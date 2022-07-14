@@ -41,6 +41,15 @@
                 <input asp-for="IntermediateNumber" class="form-control" />
                 <span asp-validation-for="IntermediateNumber" class="text-danger"></span>
             </div>
+            <div id="participantsDiv">
+                <label for="numParticipants">Number of Participants</label>
+                <select id="numParticipants">
+                    @for (var i = 0; i < 9; i++)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -54,4 +63,5 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/variableSpeakers.js"></script>
 }
