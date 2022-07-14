@@ -22,11 +22,14 @@ namespace MegaDeskv3._0.Pages.DeskQuotes
 
         public IActionResult OnGet()
         {
+
                         return Page();
         }
 
         [BindProperty]
         public DeskQuote DeskQuote { get; set; }
+
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -35,7 +38,7 @@ namespace MegaDeskv3._0.Pages.DeskQuotes
             {
                 return Page();
             }
-            
+
             //automatically sets date to current date
             DeskQuote.quoteDate = DateTime.Today;
 

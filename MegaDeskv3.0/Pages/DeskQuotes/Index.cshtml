@@ -3,15 +3,14 @@
 
 <h1>View All Quotes</h1>
   <div class="viewpage">
-
-        <h2>@ViewData["Title"]</h2>
         <form asp-page="./Index" method="get" id="search-form">
             <p id="search">
                 Search Quotes by Customer Name: <input class="inputs" type="text" name="SearchString" value="@Model.currentFilter"/>
-                <input class="btn" type="submit" value="Filter"/>  <a class="btn" asp-page="./Index">Undo Filter</a>
+                <input class="btn hover:text-lime-900" type="submit" value="Filter"/> 
+                <a class="btn hover:text-lime-900" asp-page="./Index">Undo</a>
             </p>
         </form>
-    <table class="table">
+    <table>
         <thead>
         <tr>
             <th>

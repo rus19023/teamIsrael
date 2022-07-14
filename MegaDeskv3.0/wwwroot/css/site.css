@@ -13,13 +13,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navcontainer {
-  border-radius: 15px;
+  border-radius: 4px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
 }
 
 .container {
-  margin: 0 auto;
   text-align: center;
 }
 
@@ -31,6 +31,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 2rem;
   font-size: 1rem;
   list-style-type: none;
+  justify-content: space-between;
 }
 
 hr {
@@ -52,12 +53,14 @@ ul.navbar-nav li a {
 
 li a.navlink {
   font-family: "Montserrat", sans-serif;
+  font-size: small;
   background: darkolivegreen;
   color: lemonchiffon;
   width: 10rem;
   text-align: center;
   padding: 4%;
   text-decoration: none;
+  list-style-type: none;
 }
 li a.navlink :hover {
   color: darkolivegreen;
@@ -76,12 +79,13 @@ li a.navlink :hover {
   background: lemonchiffon;
   color: darkolivegreen;
   border: 1px solid darkolivegreen;
-  border-radius: 15px;
+  border-radius: 4px;
   font-family: "Montserrat", sans-serif;
   font-size: large;
+  font-weight: 900;
   text-decoration: none;
-  padding: 2%;
-  margin-bottom: 5vh;
+  padding: 1%;
+  margin-bottom: 2vh;
   text-align: center;
 }
 .btn :hover, a.btn :hover, input.btn :hover {
@@ -111,11 +115,13 @@ li a.navlink :hover {
 }
 
 table {
-  width: 100%;
+  max-width: 100%;
   max-width: 90%;
   border-collapse: collapse;
   border: 1px solid darkolivegreen;
   margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
 }
 
 table th {
@@ -131,6 +137,9 @@ table th :hover {
 table tbody {
   background: lemonchiffon;
 }
+table tr:nth-of-type(odd) {
+  background: white;
+}
 table td, table th {
   text-align: left;
   padding: 5px 10px;
@@ -139,6 +148,7 @@ table td, table th {
 td a.btn {
   background: darkkhaki;
   color: darkolivegreen;
+  font-size: medium;
   font-weight: 900;
   border: 2px solid darkolivegreen;
 }
@@ -182,11 +192,15 @@ label.labels {
 
 li.labels {
   list-style-type: none;
-  margin: 2vh 25vw;
+  margin: 2vh 15vw;
 }
 
 .createpage {
-  background-image: url("../../../img/addQuote.jpg");
+  background: darkkhaki;
+}
+
+.img-bg {
+  background-image: url("/../../../img/addQuote.jpg");
   background-position: center center;
   background-size: cover;
 }
@@ -198,10 +212,16 @@ div.editpage {
 .viewpage {
   background-image: url("../../../img/displayQuote.jpg");
   min-height: 100vh;
+  padding-top: 2vh;
 }
 
 #search {
   text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+#search input.inputs {
+  width: 50%;
 }
 
 .deletepage {
@@ -220,36 +240,19 @@ div.editpage {
 }
 
 .homepage {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.left {
-  background-image: url(../../../img/mainmenu.jpg);
-  background-size: cover;
-}
-
-.right {
-  background: darkolivegreen;
-  display: grid;
-  grid-template-columns: 1fr;
-  position: relative;
-  top: 0;
-}
-
-.home {
-  background-image: url("../../../img/mainmenu.jpg");
-  width: 100%;
+  background-image: url(../../../img/displayQuote.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
   height: 100vh;
-}
-
-.homesplit {
-  display: grid;
-  grid-template-columns: 1fr;
 }
 
 a.title {
   text-decoration: none;
+}
+
+header {
+  margin-bottom: 2vh;
 }
 
 .title {
@@ -262,7 +265,7 @@ a.title {
 }
 
 .title, a, .navlink {
-  border-radius: 15px;
+  border-radius: 4px;
   max-width: 100%;
 }
 .title :hover, a :hover, .navlink :hover {
@@ -281,23 +284,6 @@ html {
   font-size: 20px;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -311,12 +297,10 @@ body {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   white-space: nowrap;
   text-align: center;
-  margin: 0 auto;
+  margin: 1% auto;
   line-height: 60px;
   /* Vertically center the text there */
 }
@@ -328,6 +312,12 @@ body {
 }
 
 @media screen and (min-width: 1000px) {
+  .navbar-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+  }
+
   .homepage {
     grid-area: homepage;
     grid-template-columns: 50% 50%;
