@@ -27,6 +27,10 @@ namespace SacramentMeetingPlanner.Data
                 .HasOne(p => p.Member)
                 .WithMany(p => p.Participants)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Meeting>()
+                .HasOne(m => m.Member)
+                .WithMany(m => m.Meetings);
         }
 
     }
