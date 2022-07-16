@@ -1,159 +1,62 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=fallback&family=Arima:wght@100&family=Calligraffitti&family=Merienda:wght@400;700&family=Montserrat:wght@300&family=Nunito:wght@200&family=Playfair+Display&family=Raleway:wght@100&family=Splash&display=swap');
-
-@import 'additional-styles/utility-patterns.scss';
-@import 'additional-styles/range-slider.scss';
-@import 'additional-styles/toggle-switch.scss';
-@import 'additional-styles/theme.scss';
-
 @tailwind utilities;
 
-/*// Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive*/
-@layer utilities {
-    .rtl {
-        direction: rtl;
-    }
-}
+@layer {
 
-/*// See Alpine.js: https://github.com/alpinejs/alpine#x-cloak*/
-[x-cloak] {
-    display: none;
-}
-
-/*// AOS styles*/
-/*$aos-distance: 10px;*/
-@import 'node_modules/aos/src/sass/aos.scss';
-
-@layer components {
-    .bodyt {
-        @apply container-fluid font-para w-full flex flex-wrap items-center justify-between bg-cyan-400 text-cyan-900 md:flex-row px-0;
+    .navbar {
+        @apply flex flex-row bg-purple-500;
     }
 
-    .btn {
-        @apply active:bg-pink-600 hover:text-pink-600 hover:border-2 hover:border-pink-600 font-bold uppercase text-sm px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 font-header;
-    }
-
-    .btn-d {
-        @apply bg-cyan-900 text-cyan-200 border-cyan-200;
-    }
-
-    .btn-s {
-        @apply bg-cyan-900 text-cyan-200 border-cyan-200;
-    }
-
-    .btn-m {
-        @apply bg-cyan-900 text-cyan-200 border-cyan-200 group-hover:text-white font-bold border-2-white;
+    a {
+        @apply text-white bg-purple-800 group-hover:text-purple-800 bg-white;
     }
 
     .header {
-        @apply font-normal leading-normal mt-0 mb-2 text-cyan-800 bg-pink-600;
-    }
-
-    .inputs {
-        @apply px-3 py-3 placeholder- cyan-300 text-cyan-600 relative bg-transparent rounded text-sm border border-cyan-300 outline-none focus:outline-none focus:ring w-full pl-10;
+        @apply font-bold px-3 py-3 bg-purple-900 text-purple-200 text-lg;
     }
 
     .h1 {
-        @apply text-6xl bg-red-500;
-    }
-
-    .h1 {
-        @apply text-6xl;
-    }
-
-    .h2 {
         @apply text-5xl;
     }
 
-    .h3 {
+    .h2 {
         @apply text-4xl;
     }
 
-    .h4 {
+    .h3 {
         @apply text-3xl;
     }
 
-    .h5 {
+    .h4 {
         @apply text-2xl;
     }
 
-    .h6 {
+    .h5 {
         @apply text-xl;
     }
+
+    .h6 {
+        @apply text-lg;
+    }
+
+    .link {
+        @apply px-2 py-2 bg-purple-200 text-purple-900 text-xl;
+    }
+
+    .regular {
+        @apply px-2 py-2 bg-purple-200 text-purple-700 text-lg;
+    }
+
+    .btn {
+        @apply rounded border-2 px-2 py-2 text-lg;
+    }
+
+    .btn-nav {
+        @apply border-2 border-purple-900 bg-white text-purple-900;
+    }
+
+    .btn-list {
+        @apply border-2 border-purple-900 bg-white text-purple-900;
+    }
 }
-
-
-
-/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-/*a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}*/
-
-/* Provide sufficient contrast against white background */
-/*a {
-  color: #0366d6;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}*/
-
-/* Sticky footer styles
--------------------------------------------------- */
-/*html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}*/
-
-/* Sticky footer styles
--------------------------------------------------- */
-/*html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {*/
-/* Margin bottom by footer height */
-/*margin-bottom: 60px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;*/ /* Vertically center the text there */
-/*}*/
