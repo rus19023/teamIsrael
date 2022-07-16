@@ -1,14 +1,71 @@
 ﻿@model IEnumerable<SacramentMeetingPlanner.Models.Meeting>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Meetings List";
 }
 
-<h1>Index</h1>
-
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-add" asp-action="Create">Add Meeting</a>
 </p>
+
+
+<div class="div">
+    
+        <div class="row">
+            <div class="col h6">
+                @Html.DisplayNameFor(model => model.MeetingDate)
+            </div>
+            <div class="col h6">
+                @Html.DisplayNameFor(model => model.OpeningHymn)
+            </div>
+            <div class="col h6">
+                @Html.DisplayNameFor(model => model.SacramentHymn)
+            </div>
+            <div class="col h6">
+                @Html.DisplayNameFor(model => model.ClosingHymn)
+            </div>
+            <div class="col h6">
+                @Html.DisplayNameFor(model => model.IntermediateNumber)
+            </div>
+            <div class="col h6">
+                @Html.DisplayNameFor(model => model.Member)
+            </div>
+            <div class="col h6"></div>
+        </div>
+    
+    
+@foreach (var item in Model) {
+        <div class="row">
+            <div class="col h6">
+                @Html.DisplayFor(modelItem => item.MeetingDate)
+            </div>
+            <div class="col h6">
+                @Html.DisplayFor(modelItem => item.OpeningHymn)
+            </div>
+            <div class="col h6">
+                @Html.DisplayFor(modelItem => item.SacramentHymn)
+            </div>
+            <div class="col h6">
+                @Html.DisplayFor(modelItem => item.ClosingHymn)
+            </div>
+            <div class="col h6">
+                @Html.DisplayFor(modelItem => item.IntermediateNumber)
+            </div>
+            <div class="col h6">
+                @Html.DisplayFor(modelItem => item.Member.FirstName)
+            </div>
+            <div class="col h6">
+                <a class="btn btn-open" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a class="btn btn-open" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a class="btn btn-open" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </div>
+        </div>
+}
+    
+</div>
+
+
+@*
 <table class="table">
     <thead>
         <tr>
@@ -63,3 +120,4 @@
 }
     </tbody>
 </table>
+*@

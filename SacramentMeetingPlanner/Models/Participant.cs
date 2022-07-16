@@ -9,6 +9,7 @@ namespace SacramentMeetingPlanner.Models
         public int MeetingID { get; set; }
 
         [Required]
+        [Display(Name = "Participant")]
         public int MemberID { get; set; }
 
         public bool IsPraying { get; set; }
@@ -18,6 +19,7 @@ namespace SacramentMeetingPlanner.Models
         public string? Topic { get; set; }
 
         public Meeting Meeting { get; set; }
+
         public Member Member { get; set; }
 
     }

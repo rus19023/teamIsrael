@@ -1,12 +1,10 @@
 ﻿@model SacramentMeetingPlanner.Models.Member
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Member";
 }
 
-<h1>Edit</h1>
-
-<h4>Member</h4>
+<h4 class="header h4">Member Info</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -24,14 +22,14 @@
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save Changes" class="btn btn-save" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-list" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

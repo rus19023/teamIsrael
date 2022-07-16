@@ -1,12 +1,10 @@
 ﻿@model SacramentMeetingPlanner.Models.Meeting
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Add Meeting";
 }
 
-<h1>Create</h1>
-
-<h4>Meeting</h4>
+<h4 class="header h4">New Meeting Info</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -37,7 +35,7 @@
                 <span asp-validation-for="ClosingHymn" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IntermediateNumber" class="control-label"></label>
+                <label asp-for="IntermediateNumber" class="control-label"></label> (Optional)
                 <input asp-for="IntermediateNumber" class="form-control" />
                 <span asp-validation-for="IntermediateNumber" class="text-danger"></span>
             </div>
@@ -51,14 +49,14 @@
                 </select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-save" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-list" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

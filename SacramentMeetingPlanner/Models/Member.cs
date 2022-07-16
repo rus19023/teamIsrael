@@ -17,6 +17,7 @@ namespace SacramentMeetingPlanner.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        [Display(Name = "Member Name")]
         public string FullName
         {
             get

@@ -1,13 +1,11 @@
 ﻿@model SacramentMeetingPlanner.Models.Meeting
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Meeting Details";
 }
 
-<h1>Details</h1>
-
 <div>
-    <h4>Meeting</h4>
+    <h4 class="header h4">Meeting Info</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -49,6 +47,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-open" asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a class="btn btn-list" asp-action="Index">Back to List</a>
 </div>
