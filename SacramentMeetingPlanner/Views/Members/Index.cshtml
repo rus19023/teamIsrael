@@ -12,23 +12,24 @@
 <table class="table">
     <thead>
         <tr>
+                <th>
+                  <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Last Name</a>
+                
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
+            </th>        
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
+        <tr>         
             <td>
                 @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+               <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
