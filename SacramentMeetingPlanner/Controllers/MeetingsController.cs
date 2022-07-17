@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using SacramentMeetingPlanner.Data;
 using SacramentMeetingPlanner.Models;
+using System;
 
 namespace SacramentMeetingPlanner.Controllers
 {
@@ -20,11 +21,29 @@ namespace SacramentMeetingPlanner.Controllers
         }
 
         // GET: Meetings
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string currentFilter)
         {
-            var sacramentContext = _context.Meetings.Include(m => m.Member);
-            return View(await sacramentContext.ToListAsync());
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            var meetings = from m  in _context.Meetings
+                           select  m;
+            switch (sortOrder)
+            {
+                case "Date":
+                    meetings = meetings.OrderBy(s => s.MeetingDate);
+                    break;
+                case "date_desc":
+                    meetings = meetings.OrderByDescending(m => m.MeetingDate);
+                    break;
+                default:
+                    meetings = meetings.OrderBy(s => s.MeetingDate);
+                    break;
+            }
+
+         
+            return View(await meetings.ToListAsync());
         }
+   
 
         // GET: Meetings/Details/5
         public async Task<IActionResult> Details(int? id)
