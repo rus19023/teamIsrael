@@ -20,13 +20,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="MemberID" class="control-label"></label>
-                <select asp-for="MemberID" class="form-control" asp-items="ViewBag.MemberID"></select>
+                <select asp-for="MemberID" class="form-control" asp-items="ViewBag.MemberID">
+                </select>
                 <span asp-validation-for="MemberID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="OpeningHymn" class="control-label"></label>
                 <input asp-for="OpeningHymn" class="form-control" />
                 <span asp-validation-for="OpeningHymn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Participants" class="control-label">Opening Prayer</label>
+                <select asp-for="Participants" class="form-control" ></select>
             </div>
             <div class="form-group">
                 <label asp-for="SacramentHymn" class="control-label"></label>

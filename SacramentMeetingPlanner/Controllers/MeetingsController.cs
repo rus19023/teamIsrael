@@ -65,15 +65,48 @@ namespace SacramentMeetingPlanner.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,MeetingDate,MemberID,OpeningHymn,SacramentHymn,ClosingHymn,IntermediateNumber")] Meeting meeting)
+        public async Task<IActionResult> Create([Bind("ID,MeetingDate,MemberID,OpeningHymn,SacramentHymn,ClosingHymn,IntermediateNumber")] Meeting meeting
+                                                , int prayer1, int prayer2, ICollection<Participant> speakerParticipants, int numParticipants)
         {
+            meeting.Participants = new List<Participant>();
+            for (int i = 0; i < 2; i++)
+            {
+                int memberID;
+                if (i == 0)
+                {
+                    memberID = prayer1;
+                }
+                else
+                {
+                    memberID = prayer2;
+                }
+
+                meeting.Participants.Add(new Participant
+                {
+                    MeetingID = meeting.ID,
+                    MemberID = memberID,
+                    IsPraying = true,
+                    Order = i
+                });
+                
+            }
+
+            if (numParticipants > 0)
+            {
+                for (int i = 0; i < numParticipants; i++)
+                {
+                    speakerParticipants.ElementAt(i).MeetingID = meeting.ID;
+                    meeting.Participants.Add(speakerParticipants.ElementAt(i));
+                }
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(meeting);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FirstName", meeting.MemberID);
+            ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FullName", meeting.MemberID);
             return View(meeting);
         }
 
@@ -85,12 +118,37 @@ namespace SacramentMeetingPlanner.Controllers
                 return NotFound();
             }
 
-            var meeting = await _context.Meetings.FindAsync(id);
+            var meeting = await _context.Meetings
+                .Include(m => m.Participants)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
+
+            
+
             if (meeting == null)
             {
                 return NotFound();
             }
-            ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FirstName", meeting.MemberID);
+
+            IEnumerable<int> prayers =
+                meeting.Participants.Where(p => p.IsPraying.Equals(true)).Select(p => p.MemberID);
+
+            IEnumerable<int> speakers =
+                meeting.Participants.Where(p => p.IsPraying.Equals(false)).Select(p => p.MemberID);
+
+            for (int i = 0; i < prayers.Count(); i++)
+            {
+                ViewData[$"Prayer{(i + 1)}"] = new SelectList(_context.Members, "ID", "FullName", prayers.ElementAt(i));
+            }
+
+            for (int i = 0; i < speakers.Count(); i++)
+            {
+                ViewData[$"Speaker{i}"] = new SelectList(_context.Members, "ID", "FullName", speakers.ElementAt(i));
+            }
+
+            ViewData["MemberGeneral"] = new SelectList(_context.Members, "ID", "FullName");
+
+            ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FullName", meeting.MemberID);
             return View(meeting);
         }
 

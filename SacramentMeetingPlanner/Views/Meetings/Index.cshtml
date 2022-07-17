@@ -16,19 +16,7 @@
                 @Html.DisplayNameFor(model => model.MeetingDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OpeningHymn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SacramentHymn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ClosingHymn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IntermediateNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Member)
+                Conducting Leader
             </th>
             <th></th>
         </tr>
@@ -40,19 +28,7 @@
                 @Html.DisplayFor(modelItem => item.MeetingDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OpeningHymn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SacramentHymn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClosingHymn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IntermediateNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Member.FirstName)
+                @Html.DisplayFor(modelItem => item.Member.FullName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
