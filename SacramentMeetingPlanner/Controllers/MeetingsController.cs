@@ -48,6 +48,7 @@ namespace SacramentMeetingPlanner.Controllers
         // GET: Meetings/Create
         public IActionResult Create()
         {
+            var membersList = new List<Member>();
             ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FullName");
             return View();
         }

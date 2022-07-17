@@ -8,39 +8,29 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
 </head>
 <body class="regular">
-    <header>
-        <div class="min-h-screen p-10 pt-32 h-100">
+    <header class="header">
             <nav class="navbar">
-                <div class="regular">
-                    <a class="header h1 link" asp-area="" asp-controller="Home" asp-action="Index">SacramentMeetingPlanner</a>
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                        <ul class="navbar">
-                            <li class="">
-                                <a class="btn btn-nav" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="">
-                                <a class="btn btn-nav" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <a class="navbar h1" asp-area="" asp-controller="Home" asp-action="Index">Sacrament Meeting Planner</a>
+                    <ul class="flex flex-row">
+                        <li class="">
+                            <a class="btn btn-nav" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="">
+                            <a class="btn btn-nav" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
             </nav>
-         </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            <h1 class="header h1">@ViewData["Title"] </h1>
+    <div class="container px-3">
+        <main class="regular">
+            <h1 class="headings h1">@ViewData["Title"] </h1>
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer">
         <div class="container">
-            &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel <a asp-area="" asp-controller="Home" asp-action="Privacy" class="headings h6 link">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

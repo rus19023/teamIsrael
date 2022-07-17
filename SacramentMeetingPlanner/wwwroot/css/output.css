@@ -552,124 +552,121 @@ video {
 }
 
 @layer {
-  .navbar {
-    display: flex;
-    flex-direction: row;
+  .navbar,  .footer,  .header {
     --tw-bg-opacity: 1;
-    background-color: rgb(168 85 247 / var(--tw-bg-opacity));
-  }
-
-  a {
-    background-color: rgb(107 33 168 / var(--tw-bg-opacity));
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    background-color: rgb(120 53 15 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
+    color: rgb(253 230 138 / var(--tw-text-opacity));
   }
 
-  .group:hover a {
-    --tw-text-opacity: 1;
-    color: rgb(107 33 168 / var(--tw-text-opacity));
-  }
-
-  .header {
+  .headings {
     --tw-bg-opacity: 1;
-    background-color: rgb(88 28 135 / var(--tw-bg-opacity));
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    background-color: rgb(180 83 9 / var(--tw-bg-opacity));
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     font-size: 1.125rem;
     line-height: 1.75rem;
     font-weight: 700;
     --tw-text-opacity: 1;
-    color: rgb(233 213 255 / var(--tw-text-opacity));
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   .h1 {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
-  .h2 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
 
-  .h3 {
+  .h2 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
 
-  .h4 {
+  .h3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     font-size: 1.5rem;
     line-height: 2rem;
   }
 
-  .h5 {
+  .h4 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .h5 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
   .h6 {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
-  .link {
+  .regular,  .container {
     --tw-bg-opacity: 1;
-    background-color: rgb(233 213 255 / var(--tw-bg-opacity));
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    --tw-text-opacity: 1;
-    color: rgb(88 28 135 / var(--tw-text-opacity));
-  }
-
-  .regular {
-    --tw-bg-opacity: 1;
-    background-color: rgb(233 213 255 / var(--tw-bg-opacity));
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    background-color: rgb(253 230 138 / var(--tw-bg-opacity));
     font-size: 1.125rem;
     line-height: 1.75rem;
     --tw-text-opacity: 1;
-    color: rgb(126 34 206 / var(--tw-text-opacity));
+    color: rgb(180 83 9 / var(--tw-text-opacity));
   }
 
   .btn {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     border-radius: 0.25rem;
-    border-width: 2px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
   .btn-nav {
     border-width: 2px;
     --tw-border-opacity: 1;
-    border-color: rgb(88 28 135 / var(--tw-border-opacity));
+    border-color: rgb(255 255 255 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    background-color: rgb(180 83 9 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
-    color: rgb(88 28 135 / var(--tw-text-opacity));
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   .btn-list {
     border-width: 2px;
     --tw-border-opacity: 1;
-    border-color: rgb(88 28 135 / var(--tw-border-opacity));
+    border-color: rgb(120 53 15 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
-    color: rgb(88 28 135 / var(--tw-text-opacity));
+    color: rgb(120 53 15 / var(--tw-text-opacity));
   }
+
+  .btn-save {
+    border-width: 2px;
+    --tw-border-opacity: 1;
+    border-color: rgb(120 53 15 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(252 211 77 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(120 53 15 / var(--tw-text-opacity));
+  }
+}
+
+.hidden {
+  display: none;
 }
