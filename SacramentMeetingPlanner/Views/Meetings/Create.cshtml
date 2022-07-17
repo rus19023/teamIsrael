@@ -54,10 +54,21 @@
             </div>
             @for (var i = 0; i < 9; i++)
             {
-                <div class="form-group hidden speakers">
-                    <label asp-for="Participants" class="control-label">Speaker @(i + 1)</label>
-                    @Html.DropDownList("MemberID")
-                    <span asp-validation-for="Participants" class="text-danger"></span>
+                var idName = $"[{i}].MemberID";
+                var orderName = $"[{i}].Order";
+                var topicName = $"[{i}].Topic";
+
+                <div class="hidden speakers">
+                    <div class="form-group">
+                        <label asp-for="Participants" class="control-label">Speaker @(i + 1)</label>
+                        <select name=@idName class="form-control" asp-items="ViewBag.MemberID" required></select>
+                        <span asp-validation-for="Participants" class="text-danger"></span>
+                        <input type="hidden" name=@orderName value=@i />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Participants" class="control-label">Topic</label>
+                        <input class=form-control type="text" name=@topicName required />
+                    </div>
                 </div>
             }
             <div class="form-group">
