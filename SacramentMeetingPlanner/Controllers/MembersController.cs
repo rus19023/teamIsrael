@@ -20,13 +20,29 @@ namespace SacramentMeetingPlanner.Controllers
         }
 
         // GET: Members
-        public async Task<IActionResult> Index(string sortOrder, string currentFilter)
+        public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
             ViewData["CurrentSort"] = sortOrder;
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
             var members = from m in _context.Members
-                          select m; 
+                          select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                members = members.Where(s => s.LastName.Contains(searchString) || s.FirstName.Contains(searchString));
+            }
             switch (sortOrder)
             {
                 case "name_desc":
@@ -36,8 +52,8 @@ namespace SacramentMeetingPlanner.Controllers
                     members = members.OrderBy(s => s.LastName);
                     break;
             }
-       
-            return View(await members.ToListAsync());
+            int pageSize = 10; 
+            return View(await PaginatedList<Member>.CreateAsync(members.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: Members/Details/5
