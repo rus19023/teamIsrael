@@ -555,6 +555,10 @@ video {
   .navbar,  .footer,  .header {
     --tw-bg-opacity: 1;
     background-color: rgb(120 53 15 / var(--tw-bg-opacity));
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     --tw-text-opacity: 1;
     color: rgb(253 230 138 / var(--tw-text-opacity));
   }
@@ -624,49 +628,144 @@ video {
     color: rgb(180 83 9 / var(--tw-text-opacity));
   }
 
-  .btn {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    border-radius: 0.25rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
   .btn-nav {
-    border-width: 2px;
-    --tw-border-opacity: 1;
-    border-color: rgb(255 255 255 / var(--tw-border-opacity));
+    border-radius: 0.25rem;
     --tw-bg-opacity: 1;
     background-color: rgb(180 83 9 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
-  .btn-list {
-    border-width: 2px;
+  a.btn.btn-add {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.25rem;
     --tw-border-opacity: 1;
-    border-color: rgb(120 53 15 / var(--tw-border-opacity));
+    border-color: rgb(0 0 0 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(253 230 138 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(120 53 15 / var(--tw-text-opacity));
+  }
+
+  .btn-list {
+    border-radius: 0.25rem;
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgb(120 53 15 / var(--tw-text-opacity));
   }
 
-  .btn-save {
-    border-width: 2px;
-    --tw-border-opacity: 1;
-    border-color: rgb(120 53 15 / var(--tw-border-opacity));
+  .btn-open {
+    border-radius: 0.25rem;
     --tw-bg-opacity: 1;
-    background-color: rgb(252 211 77 / var(--tw-bg-opacity));
+    background-color: rgb(245 158 11 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
-    color: rgb(120 53 15 / var(--tw-text-opacity));
+    color: rgb(254 243 199 / var(--tw-text-opacity));
+  }
+
+  .link {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+  }
+
+  .link:hover {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+  }
+
+  .text {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+  }
+
+  a {
+    background-color: transparent;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .control-label {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+  }
+
+  .form-control {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  column-span {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .btn-save,  .btn-danger {
+    border-radius: 0.25rem;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .btn,  [type='submit'],  [type='button'],  button,  [type='reset'] {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-width: 2px;
+    border-color: transparent;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
   }
 }
 
 .hidden {
   display: none;
+}
+
+[type='submit'].btn-save {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+
+[type='submit'].btn-danger {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }

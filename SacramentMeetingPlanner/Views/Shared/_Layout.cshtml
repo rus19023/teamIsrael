@@ -10,32 +10,29 @@
 <body class="regular">
     <header class="header">
             <nav class="navbar">
-                <a class="navbar h1" asp-area="" asp-controller="Home" asp-action="Index">Sacrament Meeting Planner</a>
-                    <ul class="flex flex-row">
-                        <li class="">
-                            <a class="btn btn-nav" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="">
-                            <a class="btn btn-nav" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+                <a class=" h1 link" asp-area="" asp-controller="Home" asp-action="Index">Sacrament Meeting Planner</a>
+                 <a class="btn btn-nav" asp-area="" asp-controller="Meetings" asp-action="Create">Add Meeting</a>
+                <a class="btn btn-nav" asp-area="" asp-controller="Meetings" asp-action="Index">Meetings</a>
+                <a class="btn btn-nav" asp-area="" asp-controller="Members" asp-action="Index">Members</a>
+                <a class="btn btn-nav" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </nav>
     </header>
     <div class="container px-3">
         <main class="regular">
-            <h1 class="headings h1">@ViewData["Title"] </h1>
+            <h2 class="headings h2">@ViewData["Title"] </h2>
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer">
-        <div class="container">
-            &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel <a asp-area="" asp-controller="Home" asp-action="Privacy" class="headings h6 link">Privacy</a>
+    <footer class="footer">
+        <div class="">
+            &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel <a asp-area="" asp-controller="Home" asp-action="Privacy" class="h6 link">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -19,31 +19,47 @@
             </div>
             <div class="form-group">
                 <label asp-for="MemberID" class="control-label"></label>
-                <select asp-for="MemberID" class="form-control" asp-items="ViewBag.MemberID"></select>
+                <select asp-for="MemberID" class="form-control speakerDropDown" asp-items="ViewBag.MemberID">
+                    <option>--Please Choose One--</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="OpeningHymn" class="control-label"></label>
-                <input asp-for="OpeningHymn" class="form-control" />
+                <select asp-for="OpeningHymn" class="form-control speakerDropDown" asp-items="ViewBag.Hymns">
+                    <option>--Please Choose One--</option>
+                </select>
                 <span asp-validation-for="OpeningHymn" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SacramentHymn" class="control-label"></label>
-                <input asp-for="SacramentHymn" class="form-control" />
-                <span asp-validation-for="SacramentHymn" class="text-danger"></span>
+                <label asp-for="Participants" class="control-label">Opening Prayer</label>
+                <select name="prayer1" class="form-control" asp-items="ViewBag.MemberID"></select>
             </div>
             <div class="form-group">
-                <label asp-for="ClosingHymn" class="control-label"></label>
-                <input asp-for="ClosingHymn" class="form-control" />
-                <span asp-validation-for="ClosingHymn" class="text-danger"></span>
+                <label asp-for="SacramentHymn" class="control-label"></label>
+                <select asp-for="SacramentHymn" class="form-control speakerDropDown" asp-items="ViewBag.Hymns">
+                    <option>--Please Choose One--</option>
+                </select>
+                <span asp-validation-for="SacramentHymn" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IntermediateNumber" class="control-label"></label> (Optional)
                 <input asp-for="IntermediateNumber" class="form-control" />
                 <span asp-validation-for="IntermediateNumber" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="ClosingHymn" class="control-label"></label>
+                <select asp-for="ClosingHymn" class="form-control speakerDropDown" asp-items="ViewBag.Hymns">
+                    <option>--Please Choose One--</option>
+                </select>
+                <span asp-validation-for="ClosingHymn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Participants" class="control-label">Closing Prayer</label>
+                <select name="prayer2" class="form-control" asp-items="ViewBag.MemberID" required></select>
+            </div>
             <div id="participantsDiv">
                 <label for="numParticipants">Number of Speakers</label>
-                <select id="numParticipants">
+                <select id="numParticipants" name="numParticipants">
                     @for (var i = 0; i < 9; i++)
                     {
                         <option value="@i">@i</option>
@@ -52,26 +68,39 @@
             </div>
             @for (var i = 0; i < 9; i++)
             {
-                <div class="form-group hidden speakers">
-                    <label asp-for="Participants" class="control-label">Speaker @(i + 1)</label>
-                    @Html.DropDownList("MemberID")
-                    <span asp-validation-for="Participants" class="text-danger"></span>
+                var idName = $"[{i}].MemberID";
+                var orderName = $"[{i}].Order";
+                var topicName = $"[{i}].Topic";
+
+                <div class="hidden speakers">
+                    <div class="form-group">
+                        <label asp-for="Participants" class="control-label">Speaker @(i + 1)</label>
+                        <select name=@idName class="form-control" asp-items="ViewBag.MemberID" required></select>
+                        <span asp-validation-for="Participants" class="text-danger"></span>
+                        <input type="hidden" name=@orderName value=@i />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Participants" class="control-label">Topic</label>
+                        <input class="form-control" type="text" name=@topicName required />
+                    </div>
                 </div>
             }
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-save" />
+                <input  class="btn btn-save" type="submit" value="Save Meeting" />
+                <a class="btn btn-list" asp-action="Index">Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a class="btn btn-list" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script>
+        //adds searchable feature to dropdowns
+        $(".speakerDropDown").select2();
+    </script>
     <script src="~/js/variableSpeakers.js"></script>
+    
 }

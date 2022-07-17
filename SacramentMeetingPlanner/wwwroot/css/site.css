@@ -5,7 +5,7 @@
 @layer {
 
     .navbar, .footer, .header {
-        @apply bg-amber-900 text-amber-200;
+        @apply bg-amber-900 text-amber-200 px-6 py-6;
     }
 
     .headings {
@@ -40,23 +40,66 @@
         @apply bg-amber-200 text-amber-700 text-lg;
     }
 
-    .btn {
-        @apply rounded px-2 py-2 text-sm mx-2;
+    .btn-nav {
+        @apply bg-amber-700 text-white rounded;
     }
 
-    .btn-nav {
-        @apply border-2 border-white bg-amber-700 text-white;
+    a.btn.btn-add {
+        @apply text-amber-900 bg-amber-200 border-black my-6 rounded;
     }
 
     .btn-list {
-        @apply border-2 border-amber-900 bg-white text-amber-900;
+        @apply bg-white text-amber-900 rounded;
     }
 
-    .btn-save {
-        @apply border-2 border-amber-900 bg-amber-300 text-amber-900;
+    .btn-open {
+        @apply bg-amber-500 text-amber-100 rounded;
+    }
+
+    .link {
+        @apply text-white no-underline text-lg font-bold hover:text-white hover:underline;
+    }
+
+    .text {
+        @apply text-sm font-bold px-3 py-3;
+    }
+
+    a {
+        @apply bg-transparent text-white font-bold;
+    }
+
+    .form-group {
+        @apply px-3 py-3 flex flex-row;
+    }
+
+    .control-label {
+        @apply text-lg font-bold px-3 py-3;
+    }
+
+    .form-control {
+        @apply text-lg px-3 py-3;
+    }
+
+    column-span {
+        @apply px-3;
+    }
+
+    .btn-save, .btn-danger {
+        @apply text-white rounded;
+    }
+
+    .btn, [type='submit'], [type='button'], button, [type='reset'] {
+        @apply border-2 border-transparent px-2 py-2 text-sm mx-3 my-3 font-bold no-underline;
     }
 }
 
 .hidden {
     display: none;
+}
+[type='submit'].btn-save {
+    @apply bg-green-500;
+}
+
+[type='submit'].btn-danger {
+    @apply bg-red-500;
 }
