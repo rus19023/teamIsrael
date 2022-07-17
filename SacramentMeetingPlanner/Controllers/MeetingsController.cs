@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using SacramentMeetingPlanner.Data;
 using SacramentMeetingPlanner.Models;
 
@@ -50,6 +50,13 @@ namespace SacramentMeetingPlanner.Controllers
         {
             var membersList = new List<Member>();
             ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FullName");
+
+            string hymnsJSON = System.IO.File.ReadAllText("Data/LDSHymns2.json");
+
+            var hymns = JsonConvert.DeserializeObject<List<string>>(hymnsJSON);
+            ViewData["Hymns"] = new SelectList(hymns);
+
+
             return View();
         }
 
