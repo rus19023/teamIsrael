@@ -12,7 +12,7 @@
         @apply font-extrabold m-3 uppercase inline-flex hover:text-pink-700 transition-all duration-500;
     }
 
-   .footer, .header {
+    .footer, .header {
         @apply bg-amber-900 text-amber-200 px-6 py-6;
     }
 
@@ -73,11 +73,15 @@
     }
 
     .btn-list {
-        @apply bg-white text-amber-900 rounded border-amber-900;
+        @apply bg-white text-amber-900 rounded border-amber-900 mx-2 my-2;
     }
 
     .btn-open {
-        @apply bg-amber-500 text-amber-100 rounded;
+        @apply bg-amber-100 text-amber-700 rounded py-1 px-1;
+    }
+
+    .left {
+        @apply bg-transparent;
     }
 
     .link {
@@ -110,6 +114,14 @@
 
     .btn-save, .btn-danger {
         @apply text-white rounded;
+    }
+
+    .search-input {
+        @apply bg-amber-50 border border-amber-600 text-amber-900 text-sm rounded focus:ring-amber-500 focus:border-amber-500 block w-full pl-10 p-2.5 dark:bg-amber-700 dark:border-amber-600 dark:placeholder-amber-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500;
+    }
+
+    .btn-default {
+        @applyw-36 inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium rounded-lg border hover:bg-amber-900 hover:text-white focus:ring-1 focus:outline-none focus:ring-slate-900;
     }
 }
 

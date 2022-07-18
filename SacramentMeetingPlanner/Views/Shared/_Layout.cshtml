@@ -7,10 +7,9 @@
      <link rel="stylesheet" href="~/css/output.css"/>
     <link rel="shortcut icon" href="/img/favicon.ico">
 </head>
+
 <body class="regular">
     <header class="header">
-
-
         <nav class="nav">      
             <a href="/" class="">Sacrament Meeting Planner  </a>      
             <button id="mobileMenuButton" class="p-3 focus:outline-none md:hidden" title="Open side menu">
@@ -25,7 +24,7 @@
       
           <!-- List of nav item -->
             <div id="sideMenuHideOnMobile" class="nav-list">
-                     <a class="btn-list" asp-area="" asp-controller="Meetings" asp-action="Create">Add Meeting</a>
+                     <a class="nav-item text-white" asp-area="" asp-controller="Meetings" asp-action="Create">Add Meeting</a>
                     <a class="nav-item" asp-area="" asp-controller="Members" asp-action="Index">Members</a>
                     <a class="nav-item" asp-area="" asp-controller="Meetings" asp-action="Index">Meetings</a>
                     <a class="nav-item" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
