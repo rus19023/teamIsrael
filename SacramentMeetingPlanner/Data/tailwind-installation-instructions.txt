@@ -1,0 +1,43 @@
+for .net MVC project template:
+
+(run in this order in PCM)
+
+npm init -y
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+npx tailwind init -p
+***************************************
+(add to scripts in package.json)
+
+    "css:build": "npx tailwind build -i ./wwwroot/css/site.css -o ./wwwroot/css/output.css"
+*************************************
+(add to end of project's .csproj file)
+
+    <ItemGroup>
+        <UpToDateCheckBuilt Include="wwwroot/css/site.css" Set="Css" />
+        <UpToDateCheckBuilt Include="postcss.config.js" Set="Css" />
+        <UpToDateCheckBuilt Include="tailwind.config.js" Set="Css" />
+    </ItemGroup>
+
+    <Target Name="Tailwind" BeforeTargets="Build">
+        <Exec Command="npm run css:build"/>
+    </Target>
+*********************************************
+Under the wwwroot folder, we can delete any lingering Bootstrap files. The files will be in the directories of ./wwwroot/css and ./wwwroot/lib/bootstrap.
+**********************************************
+(create sites.css and add the following. This file is where we can put any custom CSS components utilizing the @apply processor.)
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+********************************************
+(replace site.css stylesheet link in head in _Layout.cshtml in Shared folder with this and remove any bootstrap stylesheet)
+
+    <link rel="stylesheet" href="~/css/output.css"/>
+**********************************************
+(be sure this is what the content section of tailwind.config.js has, to clean up your css file and make it smaller)
+    
+        content: [
+            './Pages/**/*.cshtml',
+            './Views/**/*.chstml'
+        ],
+******************************************
