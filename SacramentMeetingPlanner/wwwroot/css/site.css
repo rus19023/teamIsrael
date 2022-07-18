@@ -44,8 +44,8 @@
         @apply bg-amber-700 text-white rounded;
     }
 
-    a.btn.btn-add {
-        @apply text-amber-900 bg-amber-200 border-black my-6 rounded;
+    btn-add {
+        @apply text-amber-900 bg-amber-200 border-amber-900 mt-12 rounded;
     }
 
     .btn-list {
@@ -97,9 +97,9 @@
     display: none;
 }
 [type='submit'].btn-save {
-    @apply bg-green-500;
+    @apply bg-green-500 text-white px-2 py-2;
 }
 
 [type='submit'].btn-danger {
-    @apply bg-red-500;
+    @apply bg-red-500 text-white px-2 py-2;
 }

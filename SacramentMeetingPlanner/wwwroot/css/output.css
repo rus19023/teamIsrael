@@ -636,12 +636,11 @@ video {
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
-  a.btn.btn-add {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+  btn-add {
+    margin-top: 3rem;
     border-radius: 0.25rem;
     --tw-border-opacity: 1;
-    border-color: rgb(0 0 0 / var(--tw-border-opacity));
+    border-color: rgb(120 53 15 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(253 230 138 / var(--tw-bg-opacity));
     --tw-text-opacity: 1;
@@ -763,9 +762,21 @@ video {
 [type='submit'].btn-save {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 [type='submit'].btn-danger {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
