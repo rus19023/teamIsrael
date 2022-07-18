@@ -1,20 +1,17 @@
 ﻿@model PaginatedList<SacramentMeetingPlanner.Models.Meeting>
 
-@{
-    ViewData["Title"] = "Meetings";
-}
-
+@{ViewData["Title"] = "Meetings";}
 
     <div class="flex items-center border rounded-md p-4 my-2 justify-between">  
         <h1>@ViewData["Title"] </h1>
-         <a asp-action="Create" class="w-36 inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Create New</a>
+         <a asp-action="Create" class="w-36 inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Add Meeting</a>
 </div>
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Enrollment Date</a>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Meeting Date</a>
             </th>
             <th>
                 Conducting Leader
