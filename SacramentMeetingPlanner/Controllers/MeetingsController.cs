@@ -14,10 +14,14 @@ namespace SacramentMeetingPlanner.Controllers
     public class MeetingsController : Controller
     {
         private readonly SacramentContext _context;
+        private readonly List<Hymn> hymns;
 
         public MeetingsController(SacramentContext context)
         {
             _context = context;
+            string hymnsJSON = System.IO.File.ReadAllText("Data/LDSHymnsKV.json");
+
+            hymns = JsonConvert.DeserializeObject<List<Hymn>>(hymnsJSON) ?? new List<Hymn>();
         }
 
         // GET: Meetings
@@ -70,6 +74,8 @@ namespace SacramentMeetingPlanner.Controllers
 
             var meeting = await _context.Meetings
                 .Include(m => m.Member)
+                .Include(m => m.Participants.OrderByDescending(p => p.IsPraying).ThenBy(p => p.Order))
+                    .ThenInclude(p => p.Member)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (meeting == null)
             {
@@ -85,10 +91,6 @@ namespace SacramentMeetingPlanner.Controllers
             var membersList = new List<Member>();
             ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FullName");
 
-            string hymnsJSON = System.IO.File.ReadAllText("Data/LDSHymns2.json");
-
-            var hymns = JsonConvert.DeserializeObject<List<Hymn>>(hymnsJSON) ?? new List<Hymn>();
-            
             ViewData["Hymns"] = new SelectList(hymns, "Name", "Name");
 
 
@@ -101,7 +103,7 @@ namespace SacramentMeetingPlanner.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,MeetingDate,MemberID,OpeningHymn,SacramentHymn,ClosingHymn,IntermediateNumber")] Meeting meeting
-                                                , int prayer1, int prayer2, ICollection<Participant> speakerParticipants, int numParticipants)
+                                                , int prayer1, int prayer2, ICollection<Participant>? speakerParticipants, int numParticipants)
         {
             meeting.Participants = new List<Participant>();
             for (int i = 0; i < 2; i++)
@@ -109,10 +111,22 @@ namespace SacramentMeetingPlanner.Controllers
                 int memberID;
                 if (i == 0)
                 {
+                    if (prayer1 == -1)
+                    {
+                        ModelState.AddModelError("Prayer1", "Prayer participant was left unselected.");
+                        ViewData["Prayer1Error"] = "Please select a member for this prayer.";
+                        break;
+                    }
                     memberID = prayer1;
                 }
                 else
                 {
+                    if (prayer2 == -1)
+                    {
+                        ModelState.AddModelError("Prayer2", "Prayer participant was left unselected.");
+                        ViewData["Prayer2Error"] = "Please select a member for this prayer.";
+                        break;
+                    }
                     memberID = prayer2;
                 }
 
@@ -130,24 +144,66 @@ namespace SacramentMeetingPlanner.Controllers
             {
                 for (int i = 0; i < numParticipants; i++)
                 {
+                    //Checks that a speaker was selected given that Please Choose One option has a value of -1
+                    if (speakerParticipants.ElementAt(i).MemberID == -1)
+                    {
+                        ModelState.AddModelError("SpeakerID", "Speaker was not selected.");
+                        ViewData["SpeakerError"] = "Please select a speaker.";
+                        break;
+                    }
+                    //Checks that topic was not left empty
+                    if (String.IsNullOrWhiteSpace(speakerParticipants.ElementAt(i).Topic))
+                    {
+                        ModelState.AddModelError("Topic", "Topic can not be empty.");
+                        ViewData["TopicError"] = "Please enter a topic for the speaker.";
+                        break;
+                    }
                     speakerParticipants.ElementAt(i).MeetingID = meeting.ID;
                     meeting.Participants.Add(speakerParticipants.ElementAt(i));
                 }
             }
 
-            if (ModelState.IsValid)
+            try
             {
-                _context.Add(meeting);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _context.Add(meeting);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
-            ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FullName", meeting.MemberID);
+            catch (DbUpdateException ex)
+            {
+                Console.WriteLine(ex.Message);
+                ModelState.AddModelError("", "Unable to save changes. " +
+                                             "Try again, and if the problem persists, " +
+                                             "see your system administrator.");
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine(ex.Message);
+                ViewData["Error"] =
+                    "!!A member can only participate as a speaker/prayer assignment once. Please don't duplicate members " +
+                    "on participation assignments!!";
+            }
 
-            string hymnsJSON = System.IO.File.ReadAllText("Data/LDSHymns2.json");
+            List<int> speakerIDs = new List<int>();
+            if (numParticipants > 0)
+            {
+                for (int i = 0; i < numParticipants; i++)
+                {
+                    speakerIDs.Add(speakerParticipants.ElementAt(i).MemberID);
+                }
+            }
 
-            var hymns = JsonConvert.DeserializeObject<List<string>>(hymnsJSON);
+            ViewData["SpeakerIDs"] = speakerIDs;
+            ViewData["Context"] = _context;
+            ViewData["Prayer1"] = new SelectList(_context.Members, "ID", "FullName", prayer1);
+            ViewData["Prayer2"] = new SelectList(_context.Members, "ID", "FullName", prayer2);
 
-            ViewData["Hymns"] = new SelectList(hymns, "Value", "Text");
+            ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FullName");
+
+            ViewData["Hymns"] = new SelectList(hymns, "Name", "Name");
             return View(meeting);
         }
 
@@ -200,25 +256,10 @@ namespace SacramentMeetingPlanner.Controllers
             ViewData["MemberGeneral"] = new SelectList(_context.Members, "ID", "FullName");
 
             ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FullName", meeting.MemberID);
-
-            string hymnsJSON = System.IO.File.ReadAllText("Data/LDSHymns2.json");
-
-            var hymns = JsonConvert.DeserializeObject<List<string>>(hymnsJSON);
-            for (int i = 0; i < hymns.Count(); i++)
-            {
-                if (hymns[i].Equals(meeting.OpeningHymn))
-                {
-                    ViewData["OpenHymn"] = new SelectList(hymns,"Value","Text", i);
-                }
-                else if (hymns[i].Equals(meeting.SacramentHymn))
-                {
-                    ViewData["SacramentHymn"] = new SelectList(hymns, i);
-                }
-                else if (hymns[i].Equals(meeting.ClosingHymn))
-                {
-                    ViewData["CloseHymn"] = new SelectList(hymns, i);
-                }
-            }
+            
+            ViewData["OpenHymn"] = new SelectList(hymns, "Name", "Name", meeting.OpeningHymn);
+            ViewData["SacramentHymn"] = new SelectList(hymns, "Name", "Name", meeting.SacramentHymn);
+            ViewData["CloseHymn"] = new SelectList(hymns, "Name", "Name", meeting.ClosingHymn);
             return View(meeting);
         }
         
@@ -230,34 +271,7 @@ namespace SacramentMeetingPlanner.Controllers
         public async Task<IActionResult> Edit(int? id, /*[Bind("ID,MeetingDate,MemberID,OpeningHymn,SacramentHymn,ClosingHymn,IntermediateNumber")] Meeting meeting
                                             ,*/ int prayer1, int prayer2, ICollection<Participant> speakerParticipants, int numParticipants)
         {
-            //Original Template code
-            /*
-            if (id != meeting.ID)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(meeting);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!MeetingExists(meeting.ID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }*/
-
+            
             if (id == null)
             {
                 return NotFound();
@@ -284,6 +298,13 @@ namespace SacramentMeetingPlanner.Controllers
                     ModelState.AddModelError("", "Unable to save changes. " +
                                                  "Try again, and if the problem persists, " +
                                                  "see your system administrator.");
+                }
+                catch (InvalidOperationException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    ViewData["Error"] =
+                        "!!A member can only participate as a speaker/prayer assignment once. Please don't duplicate members " +
+                        "on participation assignments!!";
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -319,9 +340,7 @@ namespace SacramentMeetingPlanner.Controllers
 
             ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FirstName", meetingToUpdate.MemberID);
 
-            string hymnsJSON = System.IO.File.ReadAllText("Data/LDSHymns2.json");
-
-            var hymns = JsonConvert.DeserializeObject<List<string>>(hymnsJSON);
+            /*
             for (int i = 0; i < hymns.Count(); i++)
             {
                 if (hymns[i].Equals(meetingToUpdate.OpeningHymn))
@@ -336,7 +355,10 @@ namespace SacramentMeetingPlanner.Controllers
                 {
                     ViewData["CloseHymn"] = new SelectList(hymns, i);
                 }
-            }
+            }*/
+            ViewData["OpenHymn"] = new SelectList(hymns, "Name", "Name", meetingToUpdate.OpeningHymn);
+            ViewData["SacramentHymn"] = new SelectList(hymns, "Name", "Name", meetingToUpdate.SacramentHymn);
+            ViewData["CloseHymn"] = new SelectList(hymns, "Name", "Name", meetingToUpdate.ClosingHymn);
             return View(meetingToUpdate);
         }
 
@@ -412,6 +434,14 @@ namespace SacramentMeetingPlanner.Controllers
                 //Iterate through the number of participants to update or add new speakers
                 for (int i = 0; i < numParticipants; i++)
                 {
+                    //Checks that topics were not left empty or with only whitespaces.
+                    if (String.IsNullOrWhiteSpace(speakers.ElementAt(i).Topic))
+                    {
+                        ModelState.AddModelError("Topic", "Topic can not be empty.");
+                        ViewData["TopicError"] = "Please enter a topic for the speaker.";
+                        return;
+                    }
+
                     //Here we check if the current speaker (in order) is still part of the original speakers
                     //and if so check for differences and update.
                     if (i < originalSpeakers.Count())
@@ -480,6 +510,8 @@ namespace SacramentMeetingPlanner.Controllers
 
             var meeting = await _context.Meetings
                 .Include(m => m.Member)
+                .Include(m => m.Participants.OrderByDescending(p => p.IsPraying).ThenBy(p => p.Order))
+                    .ThenInclude(p => p.Member)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (meeting == null)
             {

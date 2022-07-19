@@ -20,7 +20,6 @@
             <div class="form-group">
                 <label asp-for="MemberID" class="control-label"></label>
                 <select asp-for="MemberID" class="form-control speakerDropDown" asp-items="ViewBag.MemberID">
-                    <option>--Please Choose One--</option>
                 </select>
             </div>
             <div class="form-group">
@@ -76,7 +75,6 @@
                     var topicName = $"[{i}].Topic";
                     if (i < (int)ViewData["SpeakerNumber"])
                     {
-                        var selectName = $"Speaker{i}";
                         var selectList = new
                             SelectList(ViewBag.Context.Members, "ID", "FullName", Model.Participants.ElementAt(indexes[i]).MemberID);
 
@@ -89,7 +87,13 @@
                             </div>
                             <div class="form-group">
                                 <label asp-for="Participants" class="control-label">Topic</label>
-                                <input class=form-control type="text" name=@topicName required value="@Model.Participants.ElementAt(indexes[i]).Topic"/>
+                                <input class=form-control type="text" name=@topicName value="@Model.Participants.ElementAt(indexes[i]).Topic"/>
+                                @{
+                                    if (ViewData["TopicError"] != null)
+                                    {
+                                        <p>@ViewBag.TopicError</p>
+                                    }
+                                }
                             </div>
                         </div>
                     }
@@ -104,7 +108,13 @@
                             </div>
                             <div class="form-group">
                                 <label asp-for="Participants" class="control-label">Topic</label>
-                                <input class=form-control type="text" name=@topicName required/>
+                                <input class=form-control type="text" name=@topicName />
+                                @{
+                                    if (ViewData["TopicError"] != null)
+                                    {
+                                        <p>@ViewBag.TopicError</p>
+                                    }
+                                }
                             </div>
                         </div>
                     }
