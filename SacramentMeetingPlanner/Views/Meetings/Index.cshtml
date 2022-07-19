@@ -8,7 +8,7 @@
     ViewData["Title"] = "Meetings List";
 }
 <div class="row">    
-        <div class="">
+       @* <div class="">
             <div class=" h5 ">
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Meeting Date</a>
             </div>
@@ -16,9 +16,8 @@
               Conducting Leader
             </div>
             <div class=" h6 "></div>
-        </div>
-    
-    
+        </div>    
+   
 @foreach (var item in Model) {
         <div class="row">
             <div class="h6">
@@ -35,9 +34,9 @@
         </div>
     }    
 </div>
+*@
 
 
-@*
 <table class="table">
     <thead>
         <tr>
@@ -68,8 +67,8 @@
 }
     </tbody>
 </table>
-*@
 
+<br />
 @{
     var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
     var nextDisabled = !Model.HasNextPage ? "disabled" : "";
