@@ -4,15 +4,23 @@
 
 @layer {
 
+    .site-title {
+        @apply font-bold m-3 uppercase inline-flex hover:text-white transition-all duration-500;
+    }
+
     .nav {
-        @apply bg-amber-900 shadow fixed max-w-screen-md z-10 mx-auto inset-x-0 top-0 flex justify-between items-center;
+        @apply bg-amber-900 shadow max-w-screen-md z-10 mx-auto mt-3 inset-x-0 top-0 flex inline-flex justify-between items-center;
+    }
+
+    .footer {
+        @apply bg-amber-900 text-amber-200 font-bold shadow max-w-screen-md z-10 mx-auto inset-x-0 top-0 flex px-2 py-2 justify-between text-center items-center;
     }
 
     .burger {
         @apply font-extrabold m-3 uppercase inline-flex hover:text-pink-700 transition-all duration-500;
     }
 
-    .footer, .header {
+    .header {
         @apply bg-amber-900 text-amber-200 px-6 py-6;
     }
 
@@ -57,7 +65,7 @@
     }
 
     .regular, .container {
-        @apply bg-amber-200 text-amber-700 text-lg;
+        @apply bg-amber-100 text-amber-700 text-lg;
     }
 
     .btn-nav {
@@ -74,6 +82,10 @@
 
     .btn-list {
         @apply bg-white text-amber-900 rounded border-amber-900 mx-2 my-2;
+    }
+
+    .btn-list {
+        @apply bg-white text-amber-900 rounded border-amber-900 mx-2 my-2 font-bold text-lg;
     }
 
     .btn-open {
@@ -122,6 +134,15 @@
 
     .btn-default {
         @applyw-36 inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium rounded-lg border hover:bg-amber-900 hover:text-white focus:ring-1 focus:outline-none focus:ring-slate-900;
+    }
+
+    #left {
+        @apply text-center;
+    }
+
+    #right {
+        @apply text-center bg-gradient-to-r from-cyan-500 to-blue-500;
+        background-image: url(img/Blessing_the_sacrament.jpg);
     }
 }
 

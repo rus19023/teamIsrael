@@ -746,10 +746,6 @@ video {
   padding-left: 0.75rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -779,8 +775,42 @@ video {
 }
 
 @layer {
+  .site-title {
+    margin: 0.75rem;
+    display: inline-flex;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+  }
+
+  .site-title:hover {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
   .nav {
-    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.75rem;
+    display: flex;
+    display: inline-flex;
+    max-width: 768px;
+    align-items: center;
+    justify-content: space-between;
+    --tw-bg-opacity: 1;
+    background-color: rgb(120 53 15 / var(--tw-bg-opacity));
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .footer {
     left: 0px;
     right: 0px;
     top: 0px;
@@ -793,6 +823,14 @@ video {
     justify-content: space-between;
     --tw-bg-opacity: 1;
     background-color: rgb(120 53 15 / var(--tw-bg-opacity));
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(253 230 138 / var(--tw-text-opacity));
     --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -813,7 +851,7 @@ video {
     color: rgb(190 24 93 / var(--tw-text-opacity));
   }
 
-  .footer,  .header {
+  .header {
     --tw-bg-opacity: 1;
     background-color: rgb(120 53 15 / var(--tw-bg-opacity));
     padding-left: 1.5rem;
@@ -954,7 +992,7 @@ video {
 
   .regular,  .container {
     --tw-bg-opacity: 1;
-    background-color: rgb(253 230 138 / var(--tw-bg-opacity));
+    background-color: rgb(254 243 199 / var(--tw-bg-opacity));
     font-size: 1.125rem;
     line-height: 1.75rem;
     --tw-text-opacity: 1;
@@ -1007,6 +1045,9 @@ video {
     border-color: rgb(120 53 15 / var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 700;
     --tw-text-opacity: 1;
     color: rgb(120 53 15 / var(--tw-text-opacity));
   }
@@ -1154,6 +1195,20 @@ video {
 
   .btn-default {
     @applyw-36 inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium rounded-lg border hover:bg-amber-900 hover:text-white focus:ring-1 focus:outline-none focus:ring-slate-900;
+  }
+
+  #left {
+    text-align: center;
+  }
+
+  #right {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+    --tw-gradient-from: #06b6d4;
+    --tw-gradient-to: rgb(6 182 212 / 0);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: #3b82f6;
+    text-align: center;
+    background-image: url(img/Blessing_the_sacrament.jpg);
   }
 }
 
