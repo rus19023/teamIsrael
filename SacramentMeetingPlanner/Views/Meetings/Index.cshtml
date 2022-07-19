@@ -1,126 +1,66 @@
 ﻿@model PaginatedList<SacramentMeetingPlanner.Models.Meeting>
-<br />
-<p>
-    <a class="btn btn-list" asp-action="Create">Add Meeting</a>
-</p>
-<br />
 @{
     ViewData["Title"] = "Meetings List";
 }
 
+<div class="flex flex-col w-full">
+    <p class="my-4">
+        <a class="btn btn-list" asp-action="Create">Add Meeting</a>
+    </p>
 
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-    @foreach (var item in Model)
-    {
-        @* <div class="row">
-            <div class="h6">
-            @Html.DisplayFor(modelItem => item.MeetingDate)
-            </div>
-            <div class="h5">
-            @Html.DisplayFor(modelItem => item.Member.FullName)
-            </div>
-            <div class="h5">
-            <a class="btn btn-list" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
-            <a class="btn btn-list" asp-action="Details" asp-route-id="@item.ID">Details</a>
-            <a class="btn btn-list" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </div>
-            </div> *@
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 ">
+        @foreach (var item in Model)
+        {
+            <div class="w-full overflow-hidden bg-amber-50 rounded-lg shadow-lg">
+                <div class="pt-4">
+                    <div class="px-6 mb-2">
+                        <div class="-m-3 p-3 flex items-start rounded-lg">                           
+                            <div class="ml-4">
+                                <p class="text-xs font-medium text-amber-900 uppercase">meeting date</p>
+                                <p class="mt-1 text-sm">@Html.DisplayFor(modelItem => item.MeetingDate)</p>
+                            </div>
+                        </div>
+                        <div class="-m-3 p-3 flex items-start rounded-lg ">
+                            <div class="ml-4">
+                                <p class="text-xs font-medium text-amber-900 uppercase">Conducting Leader</p>
+                                <p class="mt-1 text-sm">@Html.DisplayFor(modelItem => item.Member.FullName)</p>
+                            </div>
+                        </div>
 
 
+                    </div>
 
-
-
-
-
-
-
-        <div class="w-full   overflow-hidden bg-white rounded-lg shadow-lg">
-            <div class="flex items-center px-6 py-3 bg-amber-900">
-
-                <i class="fa-solid fa-calendar-day w-6 h-6 text-white"></i>
-                <h1 class="mx-3 text-lg font-semibold text-white">@Html.DisplayFor(modelItem => item.MeetingDate)</h1>
-            </div>
-
-            <div class="pt-4">
-                <div class="px-6">
-                 <h1 class="text-xs uppercase font-bold text-amber-900 ml-6">Conducting Leader</h1>
-
-                <p class="py-2 text-amber-800 text-sm font-semibold"> <i class="fa fa-user mr-2"></i>  @Html.DisplayFor(modelItem => item.Member.FullName)</p>   
-                </div>
-                
-
-                <div class="flex flex-col w-full mt-auto">
-                    <div class="grid grid-cols-3 border-t divide-x  bg-gray-50 dark:bg-transparent py-4">
-                        <a class="cursor-pointer  uppercase text-xs flex flex-row items-center justify-center  font-semibold"
-                        asp-action="Edit" asp-route-id="@item.ID"><i class="fa fa-pencil mr-2"></i>Edit</a>
-                        <a class="cursor-pointer  uppercase text-xs flex flex-row items-center justify-center  font-semibold"
-                        asp-action="Details" asp-route-id="@item.ID"> <i
-                            class="fa fa-external-link mr-2"></i>Details</a>
-                        <a class="cursor-pointer  uppercase text-xs flex flex-row items-center justify-center  font-semibold"
-                        asp-action="Delete" asp-route-id="@item.ID"> <i class="fa fa-trash mr-2"></i>Delete</a>
+                    <div class="flex flex-col w-full mt-auto">
+                        <div class="grid grid-cols-3 border-t divide-x bg-gray-50 py-4">
+                            <a class="cursor-pointer uppercase text-xs flex flex-row items-center justify-center  font-semibold"
+                            asp-action="Edit" asp-route-id="@item.ID"><i class="fa fa-pencil mr-2"></i>Edit</a>
+                            <a class="cursor-pointer uppercase text-xs flex flex-row items-center justify-center  font-semibold"
+                            asp-action="Details" asp-route-id="@item.ID"> <i
+                                class="fa fa-external-link mr-2"></i>Details</a>
+                            <a class="cursor-pointer  uppercase text-xs flex flex-row items-center justify-center  font-semibold"
+                            asp-action="Delete" asp-route-id="@item.ID"> <i class="fa fa-trash mr-2"></i>Delete</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        }
+    </div>
 
-
-
-
-
+    @{
+        var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
     }
+
+    <div class="my-6">
+        <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]"
+            asp-route-pageNumber="@(Model.PageIndex - 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]"
+            class="btn btn-list @prevDisabled">
+            Previous
+        </a>
+        <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]"
+            asp-route-pageNumber="@(Model.PageIndex + 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]"
+            class="btn btn-list @nextDisabled">
+            Next
+        </a>
+    </div>
 </div>
-
-
-
-
-
-
-@*
-    <table class="table">
-    <thead>
-    <tr>
-    <th>
-    <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]"
-    asp-route-currentFilter="@ViewData["CurrentFilter"]">Meeting Date</a>
-    </th>
-    <th>
-    Conducting Leader
-    </th>
-    <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var item in Model) {
-    <tr>
-    <td>
-    @Html.DisplayFor(modelItem => item.MeetingDate)
-    </td>
-    <td>
-    @Html.DisplayFor(modelItem => item.Member.FullName)
-    </td>
-    <td>
-    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-    </td>
-    </tr>
-    }
-    </tbody>
-    </table>
-*@
-
-@{
-    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-}
-
-<br /> <br />
-<a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex - 1)"
-    asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-list @prevDisabled">
-    Previous
-</a>
-<a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex + 1)"
-    asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-list @nextDisabled">
-    Next
-</a>
-<br /> <br />
