@@ -9,16 +9,13 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="~/css/output.css" />
-
     <link rel="shortcut icon" href="/img/favicon.ico">
 </head>
 
 <body class="regular">
     <header class="header">
         <nav class="nav">      
-            <a href="/" class="site-title">Sacrament Meeting Planner  </a>      
-        <nav class="nav">
-            <a href="/" class="">Sacrament Meeting Planner </a>
+            <a href="/" class="site-title">Sacrament Meeting Planner  </a> 
             <button id="mobileMenuButton" class="p-3 focus:outline-none md:hidden" title="Open side menu">
                 <!-- SVG For "x" button -->
                 <svg id="mobileMenuButtonClose" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -52,14 +49,11 @@
     <footer class="footer">
         <div class="">
             &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel 
-            &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel <a asp-area=""
-                asp-controller="Home" asp-action="Privacy" class="h6 link">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-        <script src="https://cdn.tailwindcss.com"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

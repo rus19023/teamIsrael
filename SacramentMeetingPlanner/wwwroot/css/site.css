@@ -4,12 +4,12 @@
 
 @layer {
 
-    .headings {
-        @apply font-bold bg-amber-700 text-white py-3;
-    }
-
     .regular, .container {
         @apply bg-amber-100 text-amber-700 text-lg mx-auto;
+    }
+
+    .headings {
+        @apply font-bold bg-amber-700 text-white py-3 px-0;
     }
 
     .card-links {
