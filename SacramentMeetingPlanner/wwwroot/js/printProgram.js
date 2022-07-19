@@ -3,11 +3,19 @@ button.addEventListener('click', rearrangeLayout);
 
 function rearrangeLayout() {
     var program = document.querySelector("#programContainer");
-    program.classList.add("program-grid");
+    program.classList.add("programGrid");
+
+    var heading = document.querySelector("#headingContainer");
+    heading.classList.add("programHeading");
+
+    var actions = document.querySelector("#meetingActions");
+    actions.classList.add("noDisplay");
+
+    var content = document.querySelector("#meetingContent");
+    content.classList.add("programContent");
 
 
-
-    print();
+    //print();
 }
 
 async function print() {
@@ -26,7 +34,7 @@ async function print() {
 };
     html2pdf(element, opt);
 
-    resetFormat();
+    //resetFormat();
 }
 
 function resetFormat() {

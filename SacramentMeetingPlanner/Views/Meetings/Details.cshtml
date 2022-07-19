@@ -5,14 +5,13 @@
 }
 
 <div class="bg-white shadow overflow-hidden sm:rounded-lg my-12 max-w-screen-md  mx-auto" id="programContainer">
-    <div class="px-4 py-5 sm:px-6 flex justify-between">
+    <div class="px-4 py-5 sm:px-6 flex justify-between" id="headingContainer">
         <div>
-            <h3 class="text-lg leading-6 font-medium text-gray-900">@ViewData["Title"]</h3>
-            <p class="mt-1 max-w-2xl text-sm text-gray-500" id="date"> @Html.DisplayFor(model => model.MeetingDate) meeting
-                details.
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Farm Lake Ward</h3>
+            <p class="mt-1 max-w-2xl text-sm text-gray-500" id="date"> @Html.DisplayFor(model => model.MeetingDate)
             </p>
         </div>
-        <div>
+        <div id="meetingActions">
             <div>
                 <a class="btn btn-save" asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
                 <a class="btn btn-list" asp-action="Index">Back to List</a>
@@ -20,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="border-t border-gray-200">
+    <div class="border-t border-gray-200" id="meetingContent">
         <dl>
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-gray-500"> @Html.DisplayNameFor(model => model.Member)</dt>

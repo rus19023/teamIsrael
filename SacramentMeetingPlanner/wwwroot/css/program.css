@@ -1,6 +1,23 @@
-﻿.program-grid {
+.programGrid {
     display: grid;
     grid-template-columns: 50% 50%;
+}
+
+.programHeading {
+        grid-column-start: 2;
+}
+
+.programHeading div {
+    text-align: center;
+    width: 100%;
+}
+
+.noDisplay {
+    display: none;
+}
+
+.programContent {
+    grid-column-start: 2;
 }
 
 
