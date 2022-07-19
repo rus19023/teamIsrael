@@ -4,15 +4,15 @@
     ViewData["Title"] = "Meeting Details";
 }
 
-<div class="bg-amber-50 shadow overflow-hidden sm:rounded-lg my-12">
-    <div class="flex flex-col sm:flex-row px-4 py-5 sm:px-6  sm:justify-between">
+<div class="bg-amber-50 shadow overflow-hidden sm:rounded-lg my-12" id="programContainer">
+    <div class="flex flex-col sm:flex-row px-4 py-5 sm:px-6  sm:justify-between" id="headingContainer">
         <div>
             <h3 class="text-lg leading-6 font-medium text-gray-900">Farm Lake Ward</h3>
             <p class="mt-1 max-w-2xl text-sm text-gray-500" id="date"> @Html.DisplayFor(model => model.MeetingDate)
             </p>
         </div>
         <div class="mt-1 sm:mt-0" id="meetingActions">
-            <div>
+            <div id="meetingActions">
                 <a class="btn btn-save" asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
                 <a class="btn btn-list" asp-action="Index">Back to List</a>
                 <a class="btn" id="printPDF" href="#">Print</a>
