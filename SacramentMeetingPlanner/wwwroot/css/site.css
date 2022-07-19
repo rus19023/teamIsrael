@@ -4,6 +4,30 @@
 
 @layer {
 
+    .headings {
+        @apply font-bold bg-amber-700 text-white py-3;
+    }
+
+    .regular, .container {
+        @apply bg-amber-100 text-amber-700 text-lg mx-auto;
+    }
+
+    .card-links {
+        @apply uppercase font-extrabold text-3xl tracking-wide text-sm text-amber-100 font-semibold;
+    }
+
+    a .btn {
+        @apply border-2 border-amber-900;
+    }
+
+    .img {
+        @apply object-contain;
+    }
+
+    .split {
+        @apply columns-1 mx-auto md:columns-2;
+    }
+
     .site-title {
         @apply font-bold m-3 uppercase inline-flex hover:text-white transition-all duration-500;
     }
@@ -13,7 +37,7 @@
     }
 
     .footer {
-        @apply bg-amber-900 text-amber-200 font-bold shadow max-w-screen-md z-10 mx-auto inset-x-0 top-0 flex px-2 py-2 justify-between text-center items-center;
+        @apply bg-amber-900 text-amber-200 font-bold shadow z-10 mx-auto inset-x-0 top-0 flex justify-between text-center items-center;
     }
 
     .burger {
@@ -29,27 +53,23 @@
     }
 
     .nav-list {
-        @apply font-semibold z-10 rounded-bl-md flex absolute top-0 right-0 transition-all duration-500 transform translate-x-0 w-1/2 md:w-auto px-3 md:px-0 flex-col md:flex-row -translate-y-full md:translate-y-0 md:mt-1 md:items-center md:mx-1 md:uppercase;
+        @apply bg-amber-900 px-2 py-1 font-semibold z-10 rounded-bl-md flex absolute top-0 right-0 transition-all duration-500 transform translate-x-0 w-1/2 md:w-auto px-3 md:px-0 flex-col md:flex-row -translate-y-full md:translate-y-0 md:mt-1 md:items-center md:mx-1 md:uppercase;
     }
 
     .row {
         @apply flex flex-row;
     }
 
-    .headings {
-        @apply font-bold bg-amber-700 text-white text-lg py-3;
-    }
-
     .h1 {
-        @apply px-3 py-3 text-4xl;
+        @apply font-bold px-3 py-3 text-4xl;
     }
 
     .h2 {
-        @apply px-3 text-3xl;
+        @apply font-bold px-3 text-3xl;
     }
 
     .h3 {
-        @apply px-3 text-2xl;
+        @apply font-bold px-3 text-2xl;
     }
 
     .h4 {
@@ -62,10 +82,6 @@
 
     .h6 {
         @apply px-3 text-sm;
-    }
-
-    .regular, .container {
-        @apply bg-amber-100 text-amber-700 text-lg;
     }
 
     .btn-nav {
@@ -81,11 +97,11 @@
     }
 
     .btn-list {
-        @apply bg-white text-amber-900 rounded border-amber-900 mx-2 my-2;
+        @apply bg-amber-300 text-amber-900 rounded border-2 border-amber-900 mx-2 my-2;
     }
 
-    .btn-list {
-        @apply bg-white text-amber-900 rounded border-amber-900 mx-2 my-2 font-bold text-lg;
+    .btn-listlg {
+        @apply bg-amber-300 text-amber-900 rounded border-amber-900 mx-2 my-2 font-bold text-lg;
     }
 
     .btn-open {
@@ -109,15 +125,15 @@
     }
 
     .form-group {
-        @apply px-3 py-3 flex flex-row;
+        @apply flex flex-row;
     }
 
     .control-label {
-        @apply text-lg font-bold px-3 py-3;
+        @apply text-sm px-2 py-2;
     }
 
     .form-control {
-        @apply text-lg px-3 py-3;
+        @apply text-sm bg-amber-200 px-3 py-2 border-amber-500 shadow;
     }
 
     column-span {
@@ -125,7 +141,7 @@
     }
 
     .btn-save, .btn-danger {
-        @apply text-white rounded;
+        @apply text-white rounded px-1 py-1;
     }
 
     .search-input {
@@ -150,7 +166,7 @@
     display: none;
 }
 [type='submit'].btn-save {
-    @apply bg-green-500 text-white px-2 py-2;
+    @apply bg-green-500 text-white px-1 py-1;
 }
 
 [type='submit'].btn-danger {
