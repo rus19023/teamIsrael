@@ -4,11 +4,11 @@
     ViewData["Title"] = "Meeting Details";
 }
 
-<div class="bg-white shadow overflow-hidden sm:rounded-lg my-12 max-w-screen-md  mx-auto">
+<div class="bg-white shadow overflow-hidden sm:rounded-lg my-12 max-w-screen-md  mx-auto" id="programContainer">
     <div class="px-4 py-5 sm:px-6 flex justify-between">
         <div>
             <h3 class="text-lg leading-6 font-medium text-gray-900">@ViewData["Title"]</h3>
-            <p class="mt-1 max-w-2xl text-sm text-gray-500"> @Html.DisplayFor(model => model.MeetingDate) meeting
+            <p class="mt-1 max-w-2xl text-sm text-gray-500" id="date"> @Html.DisplayFor(model => model.MeetingDate) meeting
                 details.
             </p>
         </div>
@@ -16,6 +16,7 @@
             <div>
                 <a class="btn btn-save" asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
                 <a class="btn btn-list" asp-action="Index">Back to List</a>
+                <a class="btn" id="printPDF" href="#">Print</a>
             </div>
         </div>
     </div>
@@ -87,3 +88,7 @@
         </dl>
     </div>
 </div>
+@section Scripts
+{
+    <script src="~/js/printProgram.js"></script>
+}

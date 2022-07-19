@@ -1,5 +1,32 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model SacramentMeetingPlanner.Models.Meeting
+
 @{
+    ViewData["Title"] = "Print Program";
 }
+<h1>Jackson City Ward</h1>
+<h2> @Html.DisplayFor(model => model.MeetingDate)</h2>
+
+<div class="programContainer">
+    <p>Conducting</p>
+    <p>@Model.Member.FullName</p>
+    
+    <p>Opening Hymn</p>
+    <p>@Model.OpeningHymn</p>
+
+    <p>Invocation</p>
+    <p>@Model.Participants.ElementAt(0).Member.FullName</p>
+    
+    <p>Ward Business</p>
+    <p>@Model.Member.FullName</p>
+    
+    <p>Sacrament Hymn</p>
+    <p>@Model.SacramentHymn</p>
+    
+    <p>Closing Hymn</p>
+    <p>@Model.ClosingHymn</p>
+    
+    <p>Closing Prayer</p>
+    <p>@Model.Participants.ElementAt(1).Member.FullName</p>
+
+</div>
+

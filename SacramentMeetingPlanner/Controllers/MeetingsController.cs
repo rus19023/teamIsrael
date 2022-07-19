@@ -532,9 +532,31 @@ namespace SacramentMeetingPlanner.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        // GET: Meetings/PrintProgram/5
+        public async Task<IActionResult> PrintProgram(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var meeting = await _context.Meetings
+                .Include(m => m.Member)
+                .Include(m => m.Participants.OrderByDescending(p => p.IsPraying).ThenBy(p => p.Order))
+                .ThenInclude(p => p.Member)
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (meeting == null)
+            {
+                return NotFound();
+            }
+
+            return View(meeting);
+        }
         private bool MeetingExists(int id)
         {
             return _context.Meetings.Any(e => e.ID == id);
         }
+        
+        
     }
 }
