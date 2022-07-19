@@ -14,8 +14,7 @@ function rearrangeLayout() {
     var content = document.querySelector("#meetingContent");
     content.classList.add("programContent");
 
-
-    //print();
+    print();
 }
 
 async function print() {
