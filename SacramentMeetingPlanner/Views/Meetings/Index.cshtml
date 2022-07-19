@@ -62,7 +62,6 @@
     <p class="my-4">
         <a class="btn btn-list" asp-action="Create">Add Meeting</a>
     </p>
-
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 ">
         @foreach (var item in Model)
         {
@@ -72,13 +71,13 @@
                         <div class="-m-3 p-3 flex items-start rounded-lg">
                             <div class="ml-4">
                                 <p class="text-xs font-medium text-amber-900 uppercase">meeting date</p>
-                                <p class="mt-1 text-sm">@Html.DisplayFor(modelItem => item.MeetingDate)</p>
+                                <p class="text-xs font-medium text-amber-900 uppercase">Conducting Leader</p>
                             </div>
                         </div>
                         <div class="-m-3 p-3 flex items-start rounded-lg ">
                             <div class="ml-4">
-                                <p class="text-xs font-medium text-amber-900 uppercase">Conducting Leader</p>
                                 <p class="mt-1 text-sm">@Html.DisplayFor(modelItem => item.Member.FullName)</p>
+                                <p class="mt-1 text-sm">@Html.DisplayFor(modelItem => item.MeetingDate)</p>
                             </div>
                         </div>
                     </div>
@@ -122,15 +121,15 @@
                 @Html.DisplayFor(modelItem => item.Member.FullName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                <a class="btn btn-list" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a class="btn btn-list" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a class="btn btn-list" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
-
+<br />
 <br />
 @{
     var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
