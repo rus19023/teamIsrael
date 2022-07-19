@@ -9,6 +9,14 @@
 <h4 class="header h4">New Meeting Info</h4>
 <hr />
 <div class="row">
+    @{
+        if (ViewData["Error"] != null)
+        {
+            <p class="text-danger">@ViewBag.Error</p>
+        }
+    }
+</div>
+<div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -22,6 +30,7 @@
                 <select asp-for="MemberID" class="form-control speakerDropDown" asp-items="ViewBag.MemberID">
                     <option>--Please Choose One--</option>
                 </select>
+                <span asp-validation-for="MemberID"></span>
             </div>
             <div class="form-group">
                 <label asp-for="OpeningHymn" class="control-label"></label>
@@ -32,9 +41,26 @@
             </div>
             <div class="form-group">
                 <label asp-for="Participants" class="control-label">Opening Prayer</label>
-                <select name="prayer1" class="form-control speakerDropDown" asp-items="ViewBag.MemberID">
-                    <option>--Please Choose One--</option>
-                </select>
+                @{
+                    SelectList prayer1Select;
+                    if (ViewData["Prayer1"] != null)
+                    {
+                        prayer1Select = ViewBag.Prayer1;
+                    }
+                    else
+                    {
+                         prayer1Select = ViewBag.MemberID;
+                    }
+                    <select name="prayer1" class="form-control speakerDropDown" asp-items=@prayer1Select>
+                        <option value=-1 >--Please Choose One--</option>
+                    </select>
+                }
+                @{
+                    if (ViewData["Prayer1Error"] != null)
+                    {
+                        <span class="text-danger">@ViewBag.Prayer1Error</span>
+                    }
+                }
             </div>
             <div class="form-group">
                 <label asp-for="SacramentHymn" class="control-label"></label>
@@ -57,16 +83,51 @@
             </div>
             <div class="form-group">
                 <label asp-for="Participants" class="control-label">Closing Prayer</label>
-                <select name="prayer2" class="form-control speakerDropDown" asp-items="ViewBag.MemberID" required>
-                    <option>--Please Choose One--</option>
-                </select>
+                @{
+                    SelectList prayer2Select;
+                    if (ViewData["Prayer2"] != null)
+                    {
+                        prayer2Select = ViewBag.Prayer2;
+                    }
+                    else
+                    {
+                        prayer2Select = ViewBag.MemberID;
+                    }
+                    <select name="prayer2" class="form-control speakerDropDown" asp-items=@prayer2Select>
+                        <option value=-1 >--Please Choose One--</option>
+                    </select>
+                }
+                @{
+                    if (ViewData["Prayer2Error"] != null)
+                    {
+                        <span class="text-danger">@ViewBag.Prayer2Error</span>
+                    }
+                }
             </div>
             <div id="participantsDiv">
                 <label for="numParticipants">Number of Speakers</label>
                 <select id="numParticipants" name="numParticipants">
-                    @for (var i = 0; i < 9; i++)
+                    @if (ViewData["SpeakerIDs"] != null)
                     {
-                        <option value="@i">@i</option>
+                        List<int> speakerIDs = ViewBag.SpeakerIDs;
+                        for (var i = 0; i < 9; i++)
+                        {
+                            if (i == speakerIDs.Count)
+                            {
+                                <option value="@i" selected>@i</option>
+                            }
+                            else
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (var i = 0; i < 9; i++)
+                        {
+                            <option value="@i">@i</option>
+                        }
                     }
                 </select>
             </div>
@@ -75,19 +136,45 @@
                 var idName = $"[{i}].MemberID";
                 var orderName = $"[{i}].Order";
                 var topicName = $"[{i}].Topic";
+                SelectList speakerList;
+                if (ViewData["SpeakerIDs"] != null)
+                {
+                    List<int> speakerIDs = ViewBag.SpeakerIDs;
+                    if (i < speakerIDs.Count)
+                    {
+                        speakerList = new SelectList(ViewBag.Context.Members, "ID", "FullName", speakerIDs[i]);
+                    }
+                    else
+                    {
+                        speakerList = ViewBag.MemberID;
+                    }
+                }
+                else
+                {
+                    speakerList = ViewBag.MemberID;
+                }
 
                 <div class="hidden speakers">
                     <div class="form-group">
                         <label asp-for="Participants" class="control-label">Speaker @(i + 1)</label>
-                        <select name=@idName class="form-control speakerDropDown" asp-items="ViewBag.MemberID" required>
-                            <option>--Please Choose One--</option>
+                        <select name=@idName class="form-control speakerDropDown" asp-items=@speakerList required>
+                            <option value=-1 >--Please Choose One--</option>
                         </select>
-                        <span asp-validation-for="Participants" class="text-danger"></span>
+                        @if (ViewData["SpeakerError"] != null)
+                        {
+                            <span class="text-danger">@ViewBag.SpeakerError</span>
+                        }
+                        
                         <input type="hidden" name=@orderName value=@i />
                     </div>
                     <div class="form-group">
                         <label asp-for="Participants" class="control-label">Topic</label>
-                        <input class="form-control" type="text" name=@topicName required />
+                        <input class="form-control" type="text" name=@topicName />
+                        @if (ViewData["TopicError"] != null)
+                        {
+                            <span class="text-danger">@ViewBag.TopicError</span>
+                        }
+                        
                     </div>
                 </div>
             }

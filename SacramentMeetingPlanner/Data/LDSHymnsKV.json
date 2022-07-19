@@ -1,4 +1,4 @@
-{
+
     [
         {"Name":"1 - The Morning Breaks"},
         {"Name":"2 - The Spirit of God"},
@@ -345,6 +345,5 @@
         {"Name":"338 - America the Beautiful"},
         {"Name":"339 - My Country, ’Tis of Thee"},
         {"Name":"340 - The Star-Spangled Banner"},
-        {"Name":"341 - God Save the King"
+        {"Name":"341 - God Save the King"}
     ]
-}

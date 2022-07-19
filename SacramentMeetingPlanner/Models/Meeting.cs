@@ -36,7 +36,7 @@ namespace SacramentMeetingPlanner.Models
 
         public ICollection<Participant> Participants { get; set; }
 
-        [Display(Name = "Member Name")]
+        [Display(Name = "Conducting Leader")]
         public Member Member { get; set; }
 
     }
