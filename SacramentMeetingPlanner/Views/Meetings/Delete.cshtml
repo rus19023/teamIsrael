@@ -16,10 +16,22 @@
             @Html.DisplayFor(model => model.MeetingDate)
         </dd>
         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Member)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Member.FullName)
+        </dd>
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.OpeningHymn)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.OpeningHymn)
+        </dd>
+        <dt class="col-sm-2">
+            Opening Prayer
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Participants.ElementAt(0).Member.FullName)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.SacramentHymn)
@@ -27,24 +39,62 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.SacramentHymn)
         </dd>
+        @{
+            int speakers = Model.Participants.Count - 2;
+            if (speakers == 0)
+            {
+                <dt class="col-sm-2">
+                    Testimony Meeting
+                </dt>
+                <dd class="col-sm-10">
+                    Open to the Congregation.
+                </dd>
+            }
+            else
+            {
+                int splitSpeakers = -1;
+                if (Model.IntermediateNumber != null)
+                {
+                    splitSpeakers = speakers / 2;
+                }
+                for (int i = 0; i < speakers; i++)
+                {
+                    <dt class="col-sm-2">
+                        Speaker
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Participants.ElementAt(i + 2).Member.FullName)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Participants.ElementAt(i + 2).Topic)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Participants.ElementAt(i + 2).Topic)
+                    </dd>
+                    if (i == splitSpeakers)
+                    {
+                        <dt class = "col-sm-2">
+                            @Html.DisplayNameFor(model => model.IntermediateNumber)
+                        </dt>
+                        <dd class = "col-sm-10">
+                            @Html.DisplayFor(model => model.IntermediateNumber)
+                        </dd>
+                    }
+                }
+            }
+        }
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ClosingHymn)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ClosingHymn)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IntermediateNumber)
+        <dt class="col-sm-2">
+            Closing Prayer
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IntermediateNumber)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Participants.ElementAt(1).Member.FullName)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Member)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Member.FirstName)
-        </dd class>
     </dl>
     
     <form asp-action="Delete">
