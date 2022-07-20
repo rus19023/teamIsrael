@@ -13,12 +13,20 @@
         <label for="search" class="sr-only control-label ">Search</label>
         <div class="relative w-full">
             <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                <svg class="w-5 h-5 text-amber-500 dark:text-amber-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                <svg class="w-5 h-5 text-amber-500 dark:text-amber-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd">
+                    </path>
+                </svg>
             </div>
             <input  name="SearchString" value="@ViewData["CurrentFilter"]"  type="text" id="search" class="search-input" placeholder="Search..." required>
-                </div>
-        <button type="submit" class="btn btn-list"><svg class="mr-2 -ml-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>Search</button>
-        <a asp-action="Index" class="w-36  inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium  bg-transparent rounded-lg border border-amber-700  text-amber-700 focus:ring-1 focus:outline-none focus:ring-slate-300" >Clear Search</a>
+        </div>
+        <button type="submit" class="btn btn-list">
+            <svg class="mr-2 -ml-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
+            </path>
+            </svg>Search
+        </button>
+        <a asp-action="Index" class="w-36 inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium  bg-transparent rounded-lg border border-amber-700  text-amber-700 focus:ring-1 focus:outline-none focus:ring-slate-300">Clear Search</a>
     </form>
 
         
@@ -45,36 +53,44 @@
                         @Html.DisplayFor(modelItem => item.FirstName)
                     </td>
                     <td>
-                        <a class="btn btn-open" asp-action="Edit" asp-route-id="@item.ID">Edit</a> 
-                        <a class="btn btn-open" asp-action="Details" asp-route-id="@item.ID">Details</a>
-                        <a class="btn btn-open" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        @if (item.IsLeader)
+                        {
+                            @Html.DisplayNameFor(modelItem => item.IsLeader)
+                        }
+                        else
+                        {
+                            @Html.Raw("Ward Member");
+                        }
+                    </td>
+                    <td>
+                        <a class="btn btn-list" asp-action="Edit" asp-route-id="@item.ID">Edit</a> 
+                        <a class="btn btn-list" asp-action="Details" asp-route-id="@item.ID">Details</a>
+                        <a class="btn btn-list" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 
-
     @{
         var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
         var nextDisabled = !Model.HasNextPage ? "disabled" : "";
     }
 
-    <a asp-action="Index"
-       asp-route-sortOrder="@ViewData["CurrentSort"]"
-       asp-route-pageNumber="@(Model.PageIndex - 1)"
-       asp-route-currentFilter="@ViewData["CurrentFilter"]"
-       class="btn btn-default @prevDisabled">
-        Previous
-    </a>
-    <a asp-action="Index"
-       asp-route-sortOrder="@ViewData["CurrentSort"]"
-       asp-route-pageNumber="@(Model.PageIndex + 1)"
-       asp-route-currentFilter="@ViewData["CurrentFilter"]"
-       class="btn btn-default @nextDisabled">
-        Next
-    </a>
+        <a asp-action="Index"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@(Model.PageIndex - 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @prevDisabled">
+            Previous
+        </a>
+        <a asp-action="Index"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@(Model.PageIndex + 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @nextDisabled">
+            Next
+        </a>
     </section>
     <section class="right"></section>
-
 </div>

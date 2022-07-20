@@ -16,6 +16,8 @@
 
 <body class="regular">
     <header class="header">
+        <nav class="nav">      
+            <a href="/" class="site-title">Sacrament Meeting Planner  </a> 
         <nav class="nav">
             <a href="/" class="">Sacrament Meeting Planner </a>
             <button id="mobileMenuButton" class="p-3 focus:outline-none md:hidden" title="Open side menu">
@@ -43,15 +45,14 @@
     </header>
     <div class="container px-3 mx-auto">
         <main class="regular">
-            <h2 class="headings h2">@ViewData["Title"] </h2>
+            @*<h2 class="headings h2">@ViewData["Title"] </h2>*@
             @RenderBody()
         </main>
     </div>
 
     <footer class="footer">
         <div class="">
-            &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel <a asp-area=""
-                asp-controller="Home" asp-action="Privacy" class="h6 link">Privacy</a>
+            &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel 
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

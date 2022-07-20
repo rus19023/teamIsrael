@@ -2,32 +2,84 @@
 @{
     ViewData["Title"] = "Meetings List";
 }
+<div class="row">    
+       @* <div class="">
+            <div class=" h5 ">
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Meeting Date</a>
+            </div>
+            <div class=" h5 ">
+              Conducting Leader
+            </div>
+            <div class=" h6 "></div>
+        </div>    
+   
+@foreach (var item in Model) {
+        <div class="row">
+            <div class="h6">
+                @Html.DisplayFor(modelItem => item.MeetingDate)
+            </div>
+            <div class="h5">
+                @Html.DisplayFor(modelItem => item.Member.FullName)
+            </div>
+            <div class="h5">
+                <a class="btn btn-list" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                <a class="btn btn-list" asp-action="Details" asp-route-id="@item.ID">Details</a>
+                <a class="btn btn-list" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </div>
+        </div>
+    }    
+</div>
+*@
 
 <div class="flex flex-col w-full">
+    <!-- Breadcrumb -->
+    <nav class="flex px-5 py-3 mt-4 text-gray-700  bg-amber-200">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <li class="inline-flex items-center">
+                <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 ">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                        </path>
+                    </svg>
+                    Home
+                </a>
+            </li>
+            <li aria-current="page">
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 ">@ViewData["Title"]</span>
+                </div>
+            </li>
+        </ol>
+    </nav>
     <p class="my-4">
         <a class="btn btn-list" asp-action="Create">Add Meeting</a>
     </p>
-
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 ">
         @foreach (var item in Model)
         {
             <div class="w-full overflow-hidden bg-amber-50 rounded-lg shadow-lg">
                 <div class="pt-4">
                     <div class="px-6 mb-2">
-                        <div class="-m-3 p-3 flex items-start rounded-lg">                           
+                        <div class="-m-3 p-3 flex items-start rounded-lg">
                             <div class="ml-4">
                                 <p class="text-xs font-medium text-amber-900 uppercase">meeting date</p>
-                                <p class="mt-1 text-sm">@Html.DisplayFor(modelItem => item.MeetingDate)</p>
+                                <p class="text-xs font-medium text-amber-900 uppercase">Conducting Leader</p>
                             </div>
                         </div>
                         <div class="-m-3 p-3 flex items-start rounded-lg ">
                             <div class="ml-4">
-                                <p class="text-xs font-medium text-amber-900 uppercase">Conducting Leader</p>
                                 <p class="mt-1 text-sm">@Html.DisplayFor(modelItem => item.Member.FullName)</p>
+                                <p class="mt-1 text-sm">@Html.DisplayFor(modelItem => item.MeetingDate)</p>
                             </div>
                         </div>
-
-
                     </div>
 
                     <div class="flex flex-col w-full mt-auto">
@@ -37,7 +89,7 @@
                             <a class="cursor-pointer uppercase text-xs flex flex-row items-center justify-center  font-semibold"
                             asp-action="Details" asp-route-id="@item.ID"> <i
                                 class="fa fa-external-link mr-2"></i>Details</a>
-                            <a class="cursor-pointer  uppercase text-xs flex flex-row items-center justify-center  font-semibold"
+                            <a class="cursor-pointer uppercase text-xs flex flex-row items-center justify-center  font-semibold"
                             asp-action="Delete" asp-route-id="@item.ID"> <i class="fa fa-trash mr-2"></i>Delete</a>
                         </div>
                     </div>
@@ -46,10 +98,43 @@
         }
     </div>
 
-    @{
-        var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-    }
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Meeting Date</a>
+            </th>
+            <th>
+                Conducting Leader
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeetingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Member.FullName)
+            </td>
+            <td>
+                <a class="btn btn-list" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a class="btn btn-list" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a class="btn btn-list" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<br />
+<br />
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
 
     <div class="my-6">
         <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]"
