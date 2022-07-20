@@ -204,6 +204,7 @@ namespace SacramentMeetingPlanner.Controllers
             ViewData["Context"] = _context;
             ViewData["Prayer1"] = new SelectList(_context.Members, "ID", "FullName", prayer1);
             ViewData["Prayer2"] = new SelectList(_context.Members, "ID", "FullName", prayer2);
+            ViewData["Members"] = new SelectList(_context.Members, "ID", "FullName");
 
             List<Member> leaderList = _context.Members.Where(m => m.IsLeader.Equals(true)).ToList();
             ViewData["MemberID"] = new SelectList(leaderList, "ID", "FullName");
