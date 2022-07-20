@@ -38,13 +38,13 @@
 								<div class="mb-2 mx-2">
 									<label class="control-label"  asp-for="MeetingDate">
                                         Meeting Date</label>
-									<input class="" asp-for="MeetingDate"/>
+									<input class="bg-amber-50 border border-amber-300 text-amber-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" asp-for="MeetingDate"/>
                                     <span asp-validation-for="MeetingDate" class="text-danger"></span>
 								</div>
 
 								<div class="mb-2 mx-2 md:ml-2"> 
 									<label class="block mb-2 text-sm font-bold text-amber-700" asp-for="MemberID"></label>      
-									<select class="speakerDropDown control-form" asp-for="MemberID" asp-items="ViewBag.MemberID">
+									<select class="speakerDropDown control-form bg-amber-50 border border-amber-300 text-amber-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" asp-for="MemberID" asp-items="ViewBag.MemberID">
                                         <option>--Select One--</option>   
                                     </select>
                                     <span asp-validation-for="MemberID" class="text-danger"></span>
@@ -75,7 +75,7 @@
                                             {
                                              prayer1Select = ViewBag.Members;
                                             }
-                                            <select name="prayer1" class="form-control speakerDropDown" asp-items=@prayer1Select>
+                                            <select name="prayer1" class="bg-amber-50 border border-amber-300 text-amber-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 speakerDropDown" asp-items=@prayer1Select>
                                                 <option value=-1 >--Select One--</option>
                                             </select>
                                                 }
@@ -110,7 +110,7 @@
 
                             <div id="participantsDiv">
                                 <label for="numParticipants">Number of Speakers</label>
-                                <select id="numParticipants" name="numParticipants">
+                                <select id="numParticipants" class="bg-amber-50 border border-amber-300 text-amber-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5"   name="numParticipants">
 
                                         @for (var i = 0; i < 9; i++)
                                         {
