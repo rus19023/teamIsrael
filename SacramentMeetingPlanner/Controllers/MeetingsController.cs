@@ -88,8 +88,12 @@ namespace SacramentMeetingPlanner.Controllers
         // GET: Meetings/Create
         public IActionResult Create()
         {
-            var membersList = new List<Member>();
-            ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FullName");
+            
+            List<Member> leaderList = _context.Members.Where(m => m.IsLeader.Equals(true)).ToList();
+
+            ViewData["MemberID"] = new SelectList(leaderList, "ID", "FullName");
+
+            ViewData["Members"] = new SelectList(_context.Members, "ID", "FullName");
 
             ViewData["Hymns"] = new SelectList(hymns, "Name", "Name");
 
@@ -200,8 +204,10 @@ namespace SacramentMeetingPlanner.Controllers
             ViewData["Context"] = _context;
             ViewData["Prayer1"] = new SelectList(_context.Members, "ID", "FullName", prayer1);
             ViewData["Prayer2"] = new SelectList(_context.Members, "ID", "FullName", prayer2);
+            ViewData["Members"] = new SelectList(_context.Members, "ID", "FullName");
 
-            ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FullName");
+            List<Member> leaderList = _context.Members.Where(m => m.IsLeader.Equals(true)).ToList();
+            ViewData["MemberID"] = new SelectList(leaderList, "ID", "FullName");
 
             ViewData["Hymns"] = new SelectList(hymns, "Name", "Name");
             return View(meeting);
@@ -255,7 +261,8 @@ namespace SacramentMeetingPlanner.Controllers
 
             ViewData["MemberGeneral"] = new SelectList(_context.Members, "ID", "FullName");
 
-            ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FullName", meeting.MemberID);
+            List<Member> leaderList = _context.Members.Where(m => m.IsLeader.Equals(true)).ToList();
+            ViewData["MemberID"] = new SelectList(leaderList, "ID", "FullName", meeting.MemberID);
             
             ViewData["OpenHymn"] = new SelectList(hymns, "Name", "Name", meeting.OpeningHymn);
             ViewData["SacramentHymn"] = new SelectList(hymns, "Name", "Name", meeting.SacramentHymn);
@@ -338,24 +345,9 @@ namespace SacramentMeetingPlanner.Controllers
 
             ViewData["MemberGeneral"] = new SelectList(_context.Members, "ID", "FullName");
 
-            ViewData["MemberID"] = new SelectList(_context.Members, "ID", "FirstName", meetingToUpdate.MemberID);
+            List<Member> leaderList = _context.Members.Where(m => m.IsLeader.Equals(true)).ToList();
+            ViewData["MemberID"] = new SelectList(leaderList, "ID", "FirstName", meetingToUpdate.MemberID);
 
-            /*
-            for (int i = 0; i < hymns.Count(); i++)
-            {
-                if (hymns[i].Equals(meetingToUpdate.OpeningHymn))
-                {
-                    ViewData["OpenHymn"] = new SelectList(hymns, i);
-                }
-                else if (hymns[i].Equals(meetingToUpdate.SacramentHymn))
-                {
-                    ViewData["SacramentHymn"] = new SelectList(hymns, i);
-                }
-                else if (hymns[i].Equals(meetingToUpdate.ClosingHymn))
-                {
-                    ViewData["CloseHymn"] = new SelectList(hymns, i);
-                }
-            }*/
             ViewData["OpenHymn"] = new SelectList(hymns, "Name", "Name", meetingToUpdate.OpeningHymn);
             ViewData["SacramentHymn"] = new SelectList(hymns, "Name", "Name", meetingToUpdate.SacramentHymn);
             ViewData["CloseHymn"] = new SelectList(hymns, "Name", "Name", meetingToUpdate.ClosingHymn);

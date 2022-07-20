@@ -49,7 +49,7 @@
                     }
                     else
                     {
-                         prayer1Select = ViewBag.MemberID;
+                         prayer1Select = ViewBag.Members;
                     }
                     <select name="prayer1" class="form-control speakerDropDown" asp-items=@prayer1Select>
                         <option value=-1 >--Please Choose One--</option>
@@ -91,7 +91,7 @@
                     }
                     else
                     {
-                        prayer2Select = ViewBag.MemberID;
+                        prayer2Select = ViewBag.Members;
                     }
                     <select name="prayer2" class="form-control speakerDropDown" asp-items=@prayer2Select>
                         <option value=-1 >--Please Choose One--</option>
@@ -146,12 +146,12 @@
                     }
                     else
                     {
-                        speakerList = ViewBag.MemberID;
+                        speakerList = ViewBag.Members;
                     }
                 }
                 else
                 {
-                    speakerList = ViewBag.MemberID;
+                    speakerList = ViewBag.Members;
                 }
 
                 <div class="hidden speakers">
