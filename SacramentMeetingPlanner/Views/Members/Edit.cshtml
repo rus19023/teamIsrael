@@ -4,36 +4,85 @@
     ViewData["Title"] = "Edit Member";
 }
 
-<h4 class="header h4">Member Info</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ID" />
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
+<!-- Breadcrumb -->
+<nav class="flex px-5 py-3 my-4 text-gray-700 border border-amber-300 rounded-lg bg-amber-50">
+    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+        <li class="inline-flex items-center">
+            <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 ">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                    </path>
+                </svg>
+                Home
+            </a>
+        </li>
+        <li>
+            <div class="flex items-center">
+                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <a asp-action="Index"
+                    class="ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 ">Members</a>
             </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
+        </li>
+        <li aria-current="page">
+            <div class="flex items-center">
+                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 ">@ViewData["Title"]</span>
             </div>
-            <div class="form-group">
-                <label asp-for="IsLeader" class="control-label"></label>
-                <input asp-for="IsLeader" class="form-control" type="checkbox"/>
-                <span asp-validation-for="IsLeader" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save Changes" class="btn btn-save" />
-                <a class="btn btn-list" asp-action="Index">Back to List</a>
-            </div>
-        </form>
+        </li>
+    </ol>
+</nav>
+
+
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ID" />
+     <div class="mb-6">
+        <label asp-for="FirstName" class="block mb-2 text-sm font-medium text-amber-900 "></label>
+        <input asp-for="FirstName"
+            class="bg-amber-50 border border-amber-300 text-amber-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 " />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
     </div>
-</div>
+    <div class="mb-6">
+        <label asp-for="LastName" class="block mb-2 text-sm font-medium text-amber-900 "></label>
+        <input asp-for="LastName"
+            class="bg-amber-50 border border-amber-300 text-amber-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+
+    <div class="flex items-start mb-6">
+        <div class="flex items-center h-5">
+            <input asp-for="IsLeader"
+                class="w-4 h-4 bg-amber-50 rounded border border-amber-300 focus:ring-3 focus:ring-amber-300 "
+                type="checkbox" />
+            <span asp-validation-for="IsLeader" class="text-danger"></span>
+        </div>
+        <label asp-for="IsLeader" class="ml-2 text-sm font-medium text-amber-900"></label>
+    </div>
+
+    <div class="mb-6">
+        <input type="submit" value="Save"
+            class="btn text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" />
+        <a class="btn btn-list" asp-action="Index">Back to List</a>
+    </div>
+
+</form>
+
+
+
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

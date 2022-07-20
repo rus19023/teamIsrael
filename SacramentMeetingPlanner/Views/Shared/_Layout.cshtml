@@ -10,55 +10,90 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/output.css" />
-    <link rel="stylesheet" href="~/css/program.css"/>
+    <link rel="stylesheet" href="~/css/program.css" />
 
     <link rel="shortcut icon" href="/img/favicon.ico">
 </head>
 
-<body class="regular">
+<body class="regular relative">
     <header class="header">
-        <nav class="nav">
-            <a href="/" class="">Sacrament Meeting Planner </a>
-            <button id="mobileMenuButton" class="p-3 focus:outline-none md:hidden" title="Open side menu">
-                <!-- SVG For "x" button -->
-                <svg id="mobileMenuButtonClose" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-                <!-- SVG For "Menu burger" button -->
-                <svg id="mobileMenuButtonOpen" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
+        <nav class="container px-3 mx-auto bg-amber-900">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex justify-between">
+                    <div class="flex space-x-7">
+                        <div>
+                            <a href="/" class="flex items-center py-4 px-2">
+                                <span class="font-semibold text-lg text-amber-100">Sacrament Meeting Planner </span>
+                            </a>
+                        </div>
 
-            <!-- List of nav item -->
-            <div id="sideMenuHideOnMobile" class="nav-list">
-                <a class="nav-item text-white" asp-area="" asp-controller="Meetings" asp-action="Create">Add Meeting</a>
-                <a class="nav-item" asp-area="" asp-controller="Members" asp-action="Index">Members</a>
-                <a class="nav-item" asp-area="" asp-controller="Meetings" asp-action="Index">Meetings</a>
-                <a class="nav-item" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </div>
+
+                    <!-- Secondary Navbar items -->
+                    <div class="hidden md:flex items-center space-x-3 ">
+                        <!-- Primary Navbar items -->
+                        <div class="hidden md:flex items-center space-x-4">
+                            <a class="py-4 px-2 text-amber-200 
+                                font-semibold" asp-area="" asp-controller="Meetings" asp-action="Create">Add
+                                Meeting</a>
+                            <a class="py-4 px-2  text-white font-semibold hover:text-white transition duration-300"
+                                asp-area="" asp-controller="Members" asp-action="Index">Members</a>
+                            <a class="py-4 px-2 text-white font-semibold hover:text-amber-200 transition duration-300"
+                                asp-area="" asp-controller="Meetings" asp-action="Index">Meetings</a>
+                            <a class="py-4 px-2 text-white font-semibold hover:text-amber-200 transition duration-300"
+                                asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </div>
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button class="outline-none mobile-menu-button">
+                            <svg class="w-6 h-6 text-amber-200 hover:text-white " x-show="!showMenu" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile menu -->
+            <div class="hidden mobile-menu">
+                <ul class="space-y-6">
+                    <li class="hover:bg-amber-500 hover:text-amber-900 text-white transition duration-300"><a
+                            asp-area="" asp-controller="Meetings" asp-action="Create">Add Meeting</a></li>
+                    <li class="hover:bg-amber-500 hover:text-amber-900  text-white transition duration-300"><a
+                            asp-area="" asp-controller="Members" asp-action="Index">Members</a></li>
+                    <li class="hover:bg-amber-500 hover:text-amber-900  text-white transition duration-300"><a
+                            asp-area="" asp-controller="Meetings" asp-action="Index">Meetings</a></li>
+                    <li class="hover:bg-amber-500 hover:text-amber-900  text-white transition duration-300"> <a
+                            asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                </ul>
             </div>
         </nav>
-
     </header>
     <div class="container px-3 mx-auto">
-        <main class="regular">
-            @*<h2 class="headings h2">@ViewData["Title"] </h2>*@
+        <main class="regular py-16">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="footer">
-        <div class="">
-            &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel 
-        </div>
+    <footer
+        class="bg-amber-900 flex justify-center p-4 text-center text-xs uppercase font-medium text-amber-200 fixed bottom-0 w-full">
+        &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"
+        integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 
