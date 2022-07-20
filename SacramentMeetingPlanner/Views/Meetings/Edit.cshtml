@@ -5,8 +5,240 @@
 @{
     ViewData["Title"] = "Edit Meeting";
 }
-    <h4 class="header h4">Meeting Info</h4>
-<hr />
+    <h4 class="headings h3">Meeting Info</h4>
+    
+<div class="row">
+    @{
+        if (ViewData["Error"] != null)
+        {
+            <p class="text-danger">@ViewBag.Error</p>
+        }
+    }
+</div>
+
+
+
+
+
+<!-- Form Container -->
+		<div class="container mx-auto">
+			<div class="flex justify-center px-4 my-12">
+				<!-- Row -->
+				<div class="w-full xl:w-3/4 lg:w-11/12 flex">
+					<!-- Image Col -->
+					<div	class="w-full h-auto bg-amber-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
+						style="background-image: url('../img/sm4.jpg')"></div>
+					<!-- Form Col -->
+					<div class="w-full lg:w-7/12 bg-amber-600 text-amber-900 p-5 rounded-lg lg:rounded-l-none">
+						<h3 class="pt-4 text-2xl font-bold py-1 text-center text-white">Add a Meeting</h3>
+						<form class="px-4 py-4 pt-6 pb-8 mb-2 mx-2 bg-amber-100 rounded"  asp-action="Edit">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+							<div class="mb-2 mx-2 md:flex md:justify-between">
+
+								<div class="mb-2 mx-2">
+									<label class="control-label"  asp-for="MeetingDate">
+                                        Meeting Date</label>
+									<input class="" asp-for="MeetingDate"/>
+                                    <span asp-validation-for="MeetingDate" class="text-danger"></span>
+								</div>
+
+								<div class="mb-2 mx-2 md:ml-2"> 
+									<label class="block mb-2 text-sm font-bold text-amber-700" asp-for="MemberID"></label>      
+									<select class="speakerDropDown control-form" asp-for="MemberID" asp-items="ViewBag.MemberID">
+                                        <option>--Select One--</option>   
+                                    </select>
+                                    <span asp-validation-for="MemberID" class="text-danger"></span>
+								</div>
+
+							</div>                            
+
+							<div class="mb-2 mx-2 md:flex md:justify-between">
+							    <div class="mb-2 mx-2">
+								    <label class="block mb-2 text-sm font-bold text-amber-700" asp-for="OpeningHymn">
+                                    </label>
+								    <select class="speakerDropDown w-full px-3 py-2 mb-3 text-sm leading-tight text-amber-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"  asp-for="OpeningHymn"  asp-items="ViewBag.OpenHymn">
+                                        <option>--Select One--</option>
+                                    </select>
+                                    <span asp-validation-for="OpeningHymn" class="text-danger"></span>
+							    </div>
+
+								    <div class="mb-2 mx-2 md:mr-2 md:mb-0">
+									    <label class="block mb-2 text-sm font-bold text-amber-700"  asp-for="Participants">
+									    Invocation</label>
+                                        @{
+                                            SelectList prayer1Select;
+                                            if (ViewData["Prayer1"] != null)
+                                            {
+                                                prayer1Select = ViewBag.Prayer1;
+                                            }
+                                            else
+                                            {
+                                             prayer1Select = ViewBag.Members;
+                                            }
+                                            <select name="prayer1" class="form-control speakerDropDown" asp-items=@prayer1Select>
+                                                <option value=-1 >--Select One--</option>
+                                            </select>
+                                                }
+                                            @{
+                                                if (ViewData["Prayer1Error"] != null)
+                                                {
+                                                    <span class="text-danger">@ViewBag.Prayer1Error</span>
+                                                }
+                                            }									
+							        </div>
+
+							</div>
+
+							<div class="mb-2 mx-2 md:flex md:justify-between">
+
+								<div class="md:ml-2">
+									<label class="block mb-2 text-sm font-bold text-amber-700"  asp-for="SacramentHymn">	Sacrament Hymn</label>
+									<select asp-for="SacramentHymn" class="speakerDropDown w-full px-3 py-2 mb-3 text-sm leading-tight text-amber-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" asp-items="ViewBag.SacramentHymn">
+                                        <option>--Select One--</option>
+                                    </select>
+                                    <span asp-validation-for="SacramentHymn" class="text-danger"></span>
+								</div>
+
+								<div class="mb-2 mx-2">
+									<label class="block mb-2 text-sm font-bold text-amber-700"  asp-for="IntermediateNumber">
+                                        </label> 
+									<input class="form-control"  asp-for="IntermediateNumber">
+                                    <span asp-validation-for="IntermediateNumber" class="text-danger">(Optional)</span>
+								</div>
+
+							</div>       
+
+                            <div id="participantsDiv">
+                                <label for="numParticipants">Number of Speakers</label>
+                                <select id="numParticipants" name="numParticipants">
+
+                                        @for (var i = 0; i < 9; i++)
+                                        {
+                                            if (i == (int)ViewData["SpeakerNumber"])
+                                            {
+                                                <option value="@i" selected>@i</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@i">@i</option>
+                                            }
+                                        }
+                                    </select>
+                            </div>
+            @{
+                List<int> indexes = (List<int>)ViewData["Indexes"];
+                for (var i = 0; i < 9; i++)
+                {
+                    var idName = $"[{i}].MemberID";
+                    var orderName = $"[{i}].Order";
+                    var topicName = $"[{i}].Topic";
+                    if (i < (int)ViewData["SpeakerNumber"])
+                    {
+                        var selectList = new
+                            SelectList(ViewBag.Context.Members, "ID", "FullName", Model.Participants.ElementAt(indexes[i]).MemberID);
+
+                        <div class="hidden speakers">
+                            <div class="form-group">
+                                <label asp-for="Participants" class="control-label">Speaker @(i + 1)</label>
+                                <select name=@idName class="form-control speakerDropDown" asp-items=@selectList required></select>
+                                <span asp-validation-for="Participants" class="text-danger"></span>
+                                <input type="hidden" name=@orderName value=@i />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Participants" class="control-label">Topic</label>
+                                <input class=form-control type="text" name=@topicName value="@Model.Participants.ElementAt(indexes[i]).Topic"/>
+                                @{
+                                    if (ViewData["TopicError"] != null)
+                                    {
+                                        <p>@ViewBag.TopicError</p>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="hidden speakers">
+                            <div class="form-group">
+                                <label asp-for="Participants" class="control-label">Speaker @(i + 1)</label>
+                                <select name=@idName class="form-control speakerDropDown" asp-items="ViewBag.MemberGeneral" required></select>
+                                <span asp-validation-for="Participants" class="text-danger"></span>
+                                <input type="hidden" name=@orderName value=@i />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Participants" class="control-label">Topic</label>
+                                <input class=form-control type="text" name=@topicName />
+                                @{
+                                    if (ViewData["TopicError"] != null)
+                                    {
+                                        <p>@ViewBag.TopicError</p>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    }
+                }
+            }
+                                        <br />
+                            <div class="mb-2 mx-2 md:flex md:justify-between">
+
+								<div class="md:ml-2">
+									<label class="block mb-2 text-sm font-bold text-amber-700"  asp-for="ClosingHymn">	Closing Hymn</label>
+									<select asp-for="ClosingHymn" class="speakerDropDown w-full px-3 py-2 mb-3 text-sm leading-tight text-amber-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" asp-items="ViewBag.CloseHymn">
+                                        <option>--Select One--</option>
+                                    </select>
+                                    <span asp-validation-for="ClosingHymn" class="text-danger"></span>
+								</div>
+
+								    <div class="mb-2 mx-2 md:mr-2 md:mb-0">
+									    <label class="block mb-2 text-sm font-bold text-amber-700"  asp-for="Participants">
+									    Benediction</label>
+                                        @{
+                                            SelectList prayer2Select;
+                                            if (ViewData["Prayer2"] != null)
+                                            {
+                                                prayer2Select = ViewBag.Prayer2;
+                                            }
+                                            else
+                                            {
+                                             prayer2Select = ViewBag.Members;
+                                            }
+                                            <select name="prayer2" class="form-control speakerDropDown" asp-items=@prayer2Select>
+                                                <option value=-1 >--Select One--</option>
+                                            </select>
+                                                }
+                                            @{
+                                                if (ViewData["Prayer2Error"] != null)
+                                                {
+                                                    <span class="text-danger">@ViewBag.Prayer2Error</span>
+                                                }
+                                            }									
+							        </div>
+
+							    </div>  
+
+							<div class="mb-6 text-center">
+								<button class="btn btn-save" type="submit">Save Changes</button>
+                                 <a class="btn btn-list" asp-action="Index">Back to List</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+@*
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -120,13 +352,15 @@
                     }
                 }
             }
+            <br />
             <div class="form-group">
                 <input type="submit" value="Save Changes" class="btn btn-save" />
                 <a class="btn btn-list" asp-action="Index">Back to List</a>
             </div>
         </form>
+        <br />
     </div>
-</div>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
