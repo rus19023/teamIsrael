@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 
+@tailwind utilities;
+
 
 .select2-container {
     /* The container where the selectbox is housing*/
@@ -321,13 +323,21 @@
         @apply bg-amber-100 text-amber-700 text-lg mx-auto;
     }
 
-    li { @apply px-3; }
+    li {
+        @apply px-6 font-bold;
+    }
 
     .headings {
         @apply font-bold bg-amber-700 text-white py-3 px-0;
     }
 
-    .card-container {  @apply max-w-lg mx-auto bg-amber-700 text-white rounded-xl shadow-md overflow-hidden md:max-w-2xl; }
+    .card-container {
+        @apply max-w-lg mx-auto bg-amber-700 text-white rounded-xl shadow-md overflow-hidden md:max-w-2xl;
+    }
+
+    .card-img {
+        @apply h-48 w-full object-cover md:h-full md:w-48;
+    }
 
     .card-links {
         @apply uppercase font-extrabold text-3xl tracking-wide text-sm text-amber-100 font-semibold;
@@ -414,7 +424,7 @@
     }
 
     .btn-list {
-        @apply bg-amber-300 text-amber-900 rounded border-2 border-amber-900 mx-2 my-2;
+        @apply bg-amber-300 text-amber-900 rounded border-2 border-amber-900 mx-1 my-3;
     }
 
     .btn-listlg {
@@ -470,6 +480,8 @@
         @apply bg-amber-50 border border-amber-600 text-amber-900 text-sm rounded focus:ring-amber-500 focus:border-amber-500 block w-full pl-10 p-2.5 dark:bg-amber-700 dark:border-amber-600 dark:placeholder-amber-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500;
     }
 
+    .search-input::placeholder { @apply text-amber-300; }
+
     .btn-default {
         @applyw-36 inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium rounded-lg border hover:bg-amber-900 hover:text-white focus:ring-1 focus:outline-none focus:ring-amber-900;
     }
@@ -494,5 +506,3 @@
 [type='submit'].btn-danger {
     @apply bg-red-500 text-white px-2 py-2;
 }
-
-@tailwind utilities;
