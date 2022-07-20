@@ -45,6 +45,16 @@
                         @Html.DisplayFor(modelItem => item.FirstName)
                     </td>
                     <td>
+                        @if (item.IsLeader)
+                        {
+                            @Html.DisplayNameFor(modelItem => item.IsLeader)
+                        }
+                        else
+                        {
+                            @Html.Raw("Ward Member");
+                        }
+                    </td>
+                    <td>
                         <a class="btn btn-open" asp-action="Edit" asp-route-id="@item.ID">Edit</a> 
                         <a class="btn btn-open" asp-action="Details" asp-route-id="@item.ID">Details</a>
                         <a class="btn btn-open" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
