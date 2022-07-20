@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/output.css" />
+    <link rel="stylesheet" href="~/css/program.css"/>
 
     <link rel="shortcut icon" href="/img/favicon.ico">
 </head>
@@ -49,13 +51,13 @@
 
     <footer class="footer">
         <div class="">
-            &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel <a asp-area=""
-                asp-controller="Home" asp-action="Privacy" class="h6 link">Privacy</a>
+            &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel 
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

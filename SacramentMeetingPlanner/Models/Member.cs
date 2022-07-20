@@ -17,6 +17,9 @@ namespace SacramentMeetingPlanner.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        [Display(Name = "Bishopric Member")]
+        public bool IsLeader { get; set; }
+
         [Display(Name = "Member Name")]
         public string FullName
         {

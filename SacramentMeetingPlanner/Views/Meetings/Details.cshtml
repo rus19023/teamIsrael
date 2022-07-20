@@ -28,37 +28,39 @@
   </ol>
 </nav>
 
-<div class="bg-amber-50 shadow overflow-hidden sm:rounded-lg my-12">
-    <div class="flex flex-col sm:flex-row px-4 py-5 sm:px-6  sm:justify-between">
+<div class="bg-amber-50 shadow overflow-hidden sm:rounded-lg my-12" id="programContainer">
+    <div class="flex flex-col sm:flex-row px-4 py-5 sm:px-6  sm:justify-between" id="headingContainer">
         <div>
-            <h3 class="text-lg leading-6 font-medium text-gray-900">@ViewData["Title"]</h3>
-            <p class="mt-1 max-w-2xl text-sm text-gray-500"> @Html.DisplayFor(model => model.MeetingDate)  </p>
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Farm Lake Ward</h3>
+            <p class="mt-1 max-w-2xl text-sm text-gray-500" id="date"> @Html.DisplayFor(model => model.MeetingDate)
+            </p>
         </div>
-        <div class="mt-1 sm:mt-0">
-            <div>
+        <div class="mt-1 sm:mt-0" id="meetingActions">
+            <div id="meetingActions">
                 <a class="btn btn-save" asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
                 <a class="btn btn-list" asp-action="Index">Back to List</a>
+                <a class="btn" id="printPDF" href="#">Print</a>
             </div>
         </div>
     </div>
-    <div class="border-t border-gray-200">
+    <div class="border-t border-gray-200" id="meetingContent">
         <dl>
-            <div class="bg-amber-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <div class="bg-amber-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 programRow">
                 <dt class="text-sm font-medium text-gray-500"> @Html.DisplayNameFor(model => model.Member)</dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">@Html.DisplayFor(model =>
                     model.Member.FullName)</dd>
             </div>
-            <div class="bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <div class="bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 programRow">
                 <dt class="text-sm font-medium text-gray-500"> @Html.DisplayNameFor(model => model.OpeningHymn)</dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">@Html.DisplayFor(model =>
                     model.OpeningHymn)</dd>
             </div>
-            <div class="bg-amber-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <div class="bg-amber-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 programRow">
                 <dt class="text-sm font-medium text-gray-500">Opening Prayer</dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"> @Html.DisplayFor(model =>
                     model.Participants.ElementAt(0).Member.FullName)</dd>
             </div>
-            <div class="bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <div class="bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 programRow">
                 <dt class="text-sm font-medium text-gray-500"> @Html.DisplayNameFor(model => model.SacramentHymn)</dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">@Html.DisplayFor(model =>
                     model.SacramentHymn)</dd>
@@ -67,9 +69,9 @@
                 int speakers = Model.Participants.Count - 2;
                 if (speakers == 0)
                 {
-                    <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 programRow">
                         <dt class="text-sm font-medium text-gray-500">Testimony Meeting</dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Open to the Congregation.</dd>
+                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Open to the Congregation</dd>
                     </div>
                 }
                 else
@@ -81,14 +83,13 @@
                     }
                     for (int i = 0; i < speakers; i++)
                     {
-                        <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 programRow">
                             <dt class="text-sm font-medium text-gray-500">Speaker</dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">@Html.DisplayFor(model =>
                     model.Participants.ElementAt(i + 2).Member.FullName)</dd>
                         </div>
-
-
-                        <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        
+                        <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 topic">
                             <dt class="text-sm font-medium text-gray-500">@Html.DisplayNameFor(model =>
                     model.Participants.ElementAt(i + 2).Topic)</dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"> @Html.DisplayFor(model =>
@@ -96,7 +97,7 @@
                         </div>
                         if (i == splitSpeakers)
                         {
-                            <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 programRow">
                                 <dt class="text-sm font-medium text-gray-500"> @Html.DisplayNameFor(model => model.IntermediateNumber)
                                 </dt>
                                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"> @Html.DisplayFor(model =>
@@ -106,12 +107,12 @@
                     }
                 }
             }
-            <div class="bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <div class="bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 programRow">
                 <dt class="text-sm font-medium text-gray-500"> @Html.DisplayNameFor(model => model.ClosingHymn)</dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">@Html.DisplayFor(model =>
                                                                                  model.ClosingHymn)</dd>
             </div>
-            <div class="bg-amber-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <div class="bg-amber-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 programRow">
                 <dt class="text-sm font-medium text-gray-500">Closing Prayer</dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"> @Html.DisplayFor(model =>
                                                                                   model.Participants.ElementAt(1).Member.FullName)</dd>
@@ -119,3 +120,7 @@
         </dl>
     </div>
 </div>
+@section Scripts
+{
+    <script src="~/js/printProgram.js"></script>
+}
