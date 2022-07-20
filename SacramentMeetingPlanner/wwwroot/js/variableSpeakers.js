@@ -1,4 +1,5 @@
 ﻿var numberSelector = document.querySelector("#numParticipants");
+showDivs(numberSelector.options[numberSelector.selectedIndex].text);
 numberSelector.addEventListener("change", getNumber);
 
 function getNumber() {
