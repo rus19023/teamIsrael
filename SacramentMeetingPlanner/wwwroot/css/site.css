@@ -21,10 +21,6 @@
             @apply relative -m-1;
         }
 
-    .select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered {
-        /*@apply;*/
-    }
-
     .select2-container .select2-selection--multiple {
         @apply box-border overflow-hidden h-4 cursor-pointer block select-none;
     }
@@ -138,7 +134,7 @@
 
 .select2-container--default .select2-selection--single {
     /* Selection bar - Self */
-    @apply p-2 h-10 border-solid border bg-amber-200;
+    @apply py-1 px-1 h-8 border-solid border bg-amber-200;
 }
 
     .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -329,7 +325,7 @@
     }
 
     .headings {
-        @apply font-bold bg-amber-700 text-white py-3 px-0;
+        @apply font-extrabold bg-amber-700 text-white py-3 px-0;
     }
 
     .card-container {
@@ -465,7 +461,7 @@
     }
 
     .form-control, #IntermediateNumber .form-control {
-        @apply text-sm bg-amber-200 px-3 py-1 border-amber-500 rounded shadow;
+        @apply text-sm bg-amber-200 px-3 py-3 border-amber-500 rounded shadow;
     }
     /* { @apply; } */
 
@@ -474,7 +470,7 @@
     }
 
     .btn-save, .btn-danger {
-        @apply text-white rounded px-1 py-1;
+        @apply text-white rounded px-1 py-1 ;
     }
 
     .search-input {
@@ -503,11 +499,11 @@
     display: none;
 }
 [type='submit'].btn-save {
-    @apply bg-green-500 text-white px-1 py-1;
+    @apply bg-green-500 text-white px-1 py-1 hover:bg-white hover:text-green-500;
 }
 
 [type='submit'].btn-danger {
-    @apply bg-red-500 text-white px-2 py-2;
+    @apply bg-red-500 text-white px-2 py-2 hover:bg-white hover:text-red-500;
 }
 
 @tailwind utilities;
