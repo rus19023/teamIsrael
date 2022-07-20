@@ -20,6 +20,14 @@ function rearrangeLayout() {
         row.classList.add("formattedRow");
         row.classList.remove("bg-amber-100");
         row.classList.remove("bg-amber-50");
+        row.classList.remove("even:bg-amber-100");
+        row.classList.remove("odd:bg-amber-50");
+    });
+
+    var topicDivs = document.querySelectorAll(".topic");
+    topicDivs.forEach(topic => {
+        topic.classList.remove("sm:grid");
+        topic.classList.add("noDisplay");
     });
 
     print();
@@ -64,6 +72,12 @@ function resetFormat() {
             rows[i].classList.remove("bg-amber-50");
         }
     }
+
+    var topicDivs = document.querySelectorAll(".topic");
+    topicDivs.forEach(topic => {
+        topic.classList.add("sm:grid");
+        topic.classList.remove("noDisplay");
+    });
     
 
 }

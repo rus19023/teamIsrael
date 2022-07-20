@@ -28,8 +28,8 @@
   </ol>
 </nav>
 
-<div class="bg-amber-50 shadow overflow-hidden sm:rounded-lg my-12">
-    <div class="flex flex-col sm:flex-row px-4 py-5 sm:px-6  sm:justify-between">
+<div class="bg-amber-50 shadow overflow-hidden sm:rounded-lg my-12" id="programContainer">
+    <div class="flex flex-col sm:flex-row px-4 py-5 sm:px-6  sm:justify-between" id="headingContainer">
         <div>
             <h3 class="text-lg leading-6 font-medium text-gray-900">Farm Lake Ward</h3>
             <p class="mt-1 max-w-2xl text-sm text-gray-500" id="date"> @Html.DisplayFor(model => model.MeetingDate)
@@ -69,7 +69,7 @@
                 int speakers = Model.Participants.Count - 2;
                 if (speakers == 0)
                 {
-                    <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 programRow">
                         <dt class="text-sm font-medium text-gray-500">Testimony Meeting</dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Open to the Congregation</dd>
                     </div>
@@ -83,14 +83,13 @@
                     }
                     for (int i = 0; i < speakers; i++)
                     {
-                        <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 programRow">
                             <dt class="text-sm font-medium text-gray-500">Speaker</dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">@Html.DisplayFor(model =>
                     model.Participants.ElementAt(i + 2).Member.FullName)</dd>
                         </div>
-
-
-                        <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        
+                        <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 topic">
                             <dt class="text-sm font-medium text-gray-500">@Html.DisplayNameFor(model =>
                     model.Participants.ElementAt(i + 2).Topic)</dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"> @Html.DisplayFor(model =>
@@ -98,7 +97,7 @@
                         </div>
                         if (i == splitSpeakers)
                         {
-                            <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <div class="even:bg-amber-100 odd:bg-amber-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 programRow">
                                 <dt class="text-sm font-medium text-gray-500"> @Html.DisplayNameFor(model => model.IntermediateNumber)
                                 </dt>
                                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"> @Html.DisplayFor(model =>
