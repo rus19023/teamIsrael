@@ -170,9 +170,20 @@ namespace SacramentMeetingPlanner.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var member = await _context.Members.FindAsync(id);
-            _context.Members.Remove(member);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                _context.Members.Remove(member);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (DbUpdateException ex)
+            {
+                Console.Error.WriteLine(ex.Message);
+                ViewData["ERROR"] = "This member is a participant of a Sacrament Meeting. For record-keeping" +
+                                    " purposes, the member cannot be deleted. We apologize for the inconvenience.";
+            }
+
+            return View(member);
         }
 
         private bool MemberExists(int id)

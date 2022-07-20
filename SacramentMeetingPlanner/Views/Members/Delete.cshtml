@@ -9,7 +9,10 @@
 <br />
 <br />
 <div>    
-
+    @if (ViewData["ERROR"] != null)
+    {
+        <p class="text-danger">@ViewBag.ERROR</p>
+    }
     <div class="w-full overflow-hidden bg-amber-50 rounded-lg shadow-lg">
         <div class="pt-4">
             <div class="px-6 mb-2 flex flex-col">
