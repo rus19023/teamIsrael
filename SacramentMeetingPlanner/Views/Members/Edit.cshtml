@@ -4,7 +4,7 @@
     ViewData["Title"] = "Edit Member";
 }
 
-<h4 class="header h4">Member Info</h4>
+<h4 class="headings h3">Member Info</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -26,11 +26,13 @@
                 <input asp-for="IsLeader" class="form-control" type="checkbox"/>
                 <span asp-validation-for="IsLeader" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
                 <input type="submit" value="Save Changes" class="btn btn-save" />
                 <a class="btn btn-list" asp-action="Index">Back to List</a>
             </div>
         </form>
+        <br />
     </div>
 </div>
 
