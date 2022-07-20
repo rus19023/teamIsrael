@@ -4,7 +4,7 @@ button.addEventListener('click', rearrangeLayout);
 function rearrangeLayout() {
     var program = document.querySelector("#programContainer");
     program.classList.add("programGrid");
-
+    program.classList.remove("bg-amber-50");
 
     var heading = document.querySelector("#headingContainer");
     heading.classList.add("programHeading");
@@ -14,6 +14,13 @@ function rearrangeLayout() {
 
     var content = document.querySelector("#meetingContent");
     content.classList.add("programContent");
+
+    var rows = document.querySelectorAll(".programRow");
+    rows.forEach(row => {
+        row.classList.add("formattedRow");
+        row.classList.remove("bg-amber-100");
+        row.classList.remove("bg-amber-50");
+    });
 
     print();
 }
@@ -32,13 +39,12 @@ async function print() {
 
     };
     html2pdf(element, opt).then(resetFormat);
-
-    //resetFormat();
 }
 
 function resetFormat() {
     var program = document.querySelector("#programContainer");
     program.classList.remove("programGrid");
+    program.classList.add("bg-amber-50");
 
     var heading = document.querySelector("#headingContainer");
     heading.classList.remove("programHeading");
@@ -48,4 +54,16 @@ function resetFormat() {
 
     var content = document.querySelector("#meetingContent");
     content.classList.remove("programContent");
+
+    var rows = document.querySelectorAll(".programRow");
+    for (var i = 0; i < rows.length; i++) {
+        rows[i].classList.remove("formattedRow");
+        if (i % 2 === 0) {
+            rows[i].classList.add("bg-amber-100");
+        } else {
+            rows[i].classList.remove("bg-amber-50");
+        }
+    }
+    
+
 }

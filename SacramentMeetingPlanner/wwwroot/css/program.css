@@ -4,7 +4,8 @@
 }
 
 .programHeading {
-        grid-column-start: 2;
+    grid-column-start: 2;
+ 
 }
 
 .programHeading div {
@@ -19,5 +20,9 @@
 .programContent {
     grid-column-start: 2;
 }
+
+.formattedRow dd{
+    text-align: right;
+ }
 
 

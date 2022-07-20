@@ -1409,10 +1409,6 @@ video {
     flex-direction: row;
   }
 
-  .sm\:justify-between {
-    justify-content: space-between;
-  }
-
   .sm\:gap-4 {
     gap: 1rem;
   }
