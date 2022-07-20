@@ -16,8 +16,6 @@ function showDivs(number) {
         }
         i++;
     });
-
-
 }
 
 

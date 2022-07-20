@@ -6,7 +6,7 @@
     ViewData["Title"] = "Add Meeting";
 }
 
-<h4 class="header h4">New Meeting Info</h4>
+<h4 class="h4">New Meeting Info</h4>
 <hr />
 <div class="row">
     @{
@@ -70,7 +70,7 @@
                 <span asp-validation-for="SacramentHymn" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IntermediateNumber" class="control-label"></label> (Optional)
+                <label asp-for="IntermediateNumber" class="control-label"></label><span class="control-label">(Optional)</span> 
                 <input asp-for="IntermediateNumber" class="form-control" />
                 <span asp-validation-for="IntermediateNumber" class="text-danger"></span>
             </div>
