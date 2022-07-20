@@ -19,8 +19,7 @@ function rearrangeLayout() {
 
 async function print() {
     var date = document.querySelector("#date").innerHTML;
-    var simpleDate = date.split(" ")[1];
-    var filename = "Program - " + simpleDate;
+    var filename = "Program - " + date;
 
     var element = document.querySelector('#programContainer');
     var opt = {
@@ -30,13 +29,22 @@ async function print() {
             orientation: "landscape"
         }
 
-};
-    html2pdf(element, opt);
+    };
+    html2pdf(element, opt).then(resetFormat);
 
     //resetFormat();
 }
 
 function resetFormat() {
     var program = document.querySelector("#programContainer");
-    program.classList.remove("program-grid");
+    program.classList.remove("programGrid");
+
+    var heading = document.querySelector("#headingContainer");
+    heading.classList.remove("programHeading");
+
+    var actions = document.querySelector("#meetingActions");
+    actions.classList.remove("noDisplay");
+
+    var content = document.querySelector("#meetingContent");
+    content.classList.remove("programContent");
 }
