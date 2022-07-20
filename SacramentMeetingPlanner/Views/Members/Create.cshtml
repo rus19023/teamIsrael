@@ -4,36 +4,64 @@
     ViewData["Title"] = "Add Member";
 }
 
-<h4 class="header h4">New Member Info</h4>
-<hr />
+<h4 class="headings h4">New Member Info</h4>
+
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IsLeader" class="control-label"></label>
-                <input asp-for="IsLeader" class="form-control" type="checkbox"/>
-                <span asp-validation-for="IsLeader" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-            <div class="form-group">
-                <input type="submit" value="Save Member" class="btn btn-save" />
-                <a class="btn btn-list" asp-action="Index">Back to List</a>
-            </div>
-            </div>
-        </form>
-    </div>
+    @{
+        if (ViewData["Error"] != null)
+        {
+            <p class="text-danger">@ViewBag.Error</p>
+        }
+    }
 </div>
+
+
+
+<!-- Form Container -->
+		<div class="container mx-auto">
+			<div class="flex justify-center px-4 my-12">
+				<!-- Row -->
+				<div class="w-full xl:w-3/4 lg:w-11/12 flex">
+					<!-- Image Col -->
+					<div	class="w-full h-auto bg-amber-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
+						style="background-image: url('../img/sm7.jpg')"></div>
+					<!-- Form Col -->
+					<div class="w-full lg:w-7/12 bg-amber-600 text-amber-900 p-5 rounded-lg lg:rounded-l-none">
+						<h3 class="pt-4 py-4 text-2xl font-bold py-1 text-center text-white">Add a Member</h3>
+						<form class="px-4 pt-6 pb-8 mb-2 mx-2 bg-amber-100 rounded"  asp-action="Create"/>
+
+							<div class="mb-2 mx-2 md:flex md:justify-between">
+
+								<div class="mb-2 mx-2">
+									<label class="block mb-2 text-sm font-bold text-amber-700"  asp-for="FirstName"></label>
+									<input class="form-control" asp-for="FirstName"/>
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+								</div>
+
+								<div class="mb-2 mx-2">
+									<label class="block mb-2 text-sm font-bold text-amber-700"  asp-for="LastName"></label>
+									<input class="form-control" asp-for="LastName"/>
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+								</div>
+
+							</div>     
+
+							<div class="mb-6 text-center">
+
+                                <div class="form-group">
+                                    <label asp-for="IsLeader" class="control-label"></label>
+                                    <input asp-for="IsLeader" class="form-control" type="checkbox"/>
+                                    <span asp-validation-for="IsLeader" class="text-danger"></span>
+                                </div>
+								<br />
+								<button class="btn btn-save"" type="submit">Save Member</button>
+                                 <a class="btn btn-list" asp-action="Index">Back to List</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

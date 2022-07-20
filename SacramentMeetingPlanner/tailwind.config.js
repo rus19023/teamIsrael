@@ -2,7 +2,7 @@ module.exports = {
     content: [
         './Views/**/*.cshtml'
     ],
-  theme: {
+    theme: {
     extend: {},
   },
   plugins: [],
