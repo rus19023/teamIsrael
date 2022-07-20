@@ -1,10 +1,6 @@
 @tailwind base;
 @tailwind components;
 
-.card-img {
-    @apply h-48 w-full object-cover md:h-full md:w-48;
-}
-
 .select2-container {
     /* The container where the selectbox is housing*/
     @apply relative box-border align-middle inline-block m-0 mb-2;
@@ -324,7 +320,9 @@
         @apply bg-amber-100 text-amber-700 text-lg mx-auto;
     }
 
-    ul { @apply mt-3 list-disc; }
+    ul {
+        @apply mt-3 list-disc;
+    }
 
     li {
         @apply px-6 font-bold;
@@ -338,6 +336,10 @@
         @apply max-w-lg mx-auto bg-amber-700 text-white rounded-xl shadow-md overflow-hidden md:max-w-2xl;
     }
 
+    .card-img {
+        @apply h-48 w-full object-cover md:h-full md:w-48;
+    }
+
     .card-links {
         @apply uppercase font-extrabold text-3xl tracking-wide text-sm text-amber-100 font-semibold;
     }
@@ -346,7 +348,7 @@
         @apply border-solid border-amber-900;
     }
 
-   .img {
+    .img {
         @apply object-contain;
     }
 
@@ -423,7 +425,7 @@
     }
 
     .btn-list {
-        @apply bg-amber-300 text-amber-900 rounded border-2 border-amber-900 px-1 py-1 mx-2 my-2;
+        @apply bg-amber-300 text-amber-900 rounded border-2 border-amber-900 px-2 py-2 mx-2 my-2;
     }
 
     .btn-listlg {
@@ -451,15 +453,19 @@
     }
 
     .form-group {
-        @apply flex flex-row;
+        @apply mb-4 md:mr-2 md:mb-0;
     }
 
     .control-label {
         @apply text-sm px-2 py-2 font-bold;
     }
 
+    .control-form {
+        @apply w-full px-3 mx-3 py-2 text-sm leading-tight text-amber-700 border rounded shadow appearance-none focus:outline-none;
+    }
+
     .form-control, #IntermediateNumber .form-control {
-        @apply text-sm bg-amber-200 px-3 py-2 border-amber-500 rounded shadow;
+        @apply text-sm bg-amber-200 px-3 py-1 border-amber-500 rounded shadow;
     }
     /* { @apply; } */
 
@@ -475,7 +481,9 @@
         @apply bg-amber-50 border border-amber-600 text-amber-900 text-sm rounded focus:ring-amber-500 focus:border-amber-500 block w-full pl-10 p-2.5 dark:bg-amber-700 dark:border-amber-600 dark:placeholder-amber-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500;
     }
 
-    .search-input::placeholder { @apply text-amber-100 px-9; }
+        .search-input::placeholder {
+            @apply text-amber-100 px-9;
+        }
 
     .btn-default {
         @applyw-36 inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium rounded-lg border hover:bg-amber-900 hover:text-white focus:ring-1 focus:outline-none focus:ring-amber-900;
