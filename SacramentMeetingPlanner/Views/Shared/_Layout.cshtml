@@ -1,53 +1,62 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Sacrament Meeting Planner</title>
-     <link rel="stylesheet" href="~/css/output.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/css/output.css" />
     <link rel="shortcut icon" href="/img/favicon.ico">
 </head>
 
 <body class="regular">
     <header class="header">
         <nav class="nav">      
-            <a href="/" class="">Sacrament Meeting Planner  </a>      
+            <a href="/" class="site-title">Sacrament Meeting Planner  </a> 
+        <nav class="nav">
+            <a href="/" class="">Sacrament Meeting Planner </a>
             <button id="mobileMenuButton" class="p-3 focus:outline-none md:hidden" title="Open side menu">
-              <!-- SVG For "x" button -->
-                <svg id="mobileMenuButtonClose" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-              <!-- SVG For "Menu burger" button -->
-                <svg id="mobileMenuButtonOpen" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <!-- SVG For "x" button -->
+                <svg id="mobileMenuButtonClose" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <!-- SVG For "Menu burger" button -->
+                <svg id="mobileMenuButtonOpen" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-      
-          <!-- List of nav item -->
+
+            <!-- List of nav item -->
             <div id="sideMenuHideOnMobile" class="nav-list">
-                     <a class="nav-item text-white" asp-area="" asp-controller="Meetings" asp-action="Create">Add Meeting</a>
-                    <a class="nav-item" asp-area="" asp-controller="Members" asp-action="Index">Members</a>
-                    <a class="nav-item" asp-area="" asp-controller="Meetings" asp-action="Index">Meetings</a>
-                    <a class="nav-item" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>      
-    </nav>
+                <a class="nav-item text-white" asp-area="" asp-controller="Meetings" asp-action="Create">Add Meeting</a>
+                <a class="nav-item" asp-area="" asp-controller="Members" asp-action="Index">Members</a>
+                <a class="nav-item" asp-area="" asp-controller="Meetings" asp-action="Index">Meetings</a>
+                <a class="nav-item" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </nav>
 
     </header>
-    <div class="container px-3">
+    <div class="container px-3 mx-auto">
         <main class="regular">
-            <h2 class="headings h2">@ViewData["Title"] </h2>
+            @*<h2 class="headings h2">@ViewData["Title"] </h2>*@
             @RenderBody()
         </main>
     </div>
 
     <footer class="footer">
         <div class="">
-            &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel <a asp-area="" asp-controller="Home" asp-action="Privacy" class="h6 link">Privacy</a>
+            &copy; 2022 - Sacrament Meeting Planner - BYU-I, Spring 2022, Section 02, Team Israel 
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-        <script src="https://cdn.tailwindcss.com"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

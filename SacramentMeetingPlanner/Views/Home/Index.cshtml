@@ -1,8 +1,21 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Welcome to the Sacrament Meeting Planner";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<br />
+<div class="max-w-lg mx-auto bg-amber-500 text-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+  <div class="md:flex">
+    <div class="md:shrink-0">
+      <img class="h-48 w-full object-cover md:h-full md:w-48" src="~/img/sacrament_meetings.jpeg" alt="Church members sitting in chapel while sacrament is passed with child in foreground taking a cup of water">
+    </div>
+    <div class="p-8">
+      <a class="card-links" href="./Meeting/Index/">Find a Meeting</a>
+      <br />
+      <a class="card-links" asp-action="./Meeting/Create/">Add Meeting</a>
+      <br />
+      <a class="card-links" asp-action="./Member/Create/">Add Member</a>
+      <br />
+    </div>
+  </div>
+</div>
+<br />
 </div>
