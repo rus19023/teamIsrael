@@ -1,12 +1,9 @@
 ﻿@model SacramentMeetingPlanner.Models.Member
 
 @{
-    ViewData["Title"] = "Edit Member";
+    ViewData["Title"] = "Members";
+    ViewData["PageTitle"] = "Edit Member";
 }
-
-<h4 class="headings h3">Member Info</h4>
-
-
 
 <!-- Form Container -->
 		<div class="container mx-auto">
@@ -60,5 +57,5 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
