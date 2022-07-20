@@ -5,6 +5,7 @@ function rearrangeLayout() {
     var program = document.querySelector("#programContainer");
     program.classList.add("programGrid");
 
+
     var heading = document.querySelector("#headingContainer");
     heading.classList.add("programHeading");
 
