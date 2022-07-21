@@ -5,8 +5,6 @@
     ViewData["PageTitle"] = "Add Member";
 }
 
-<h4 class="headings h4">New Member Info</h4>
-
 <div class="row">
     @{
         if (ViewData["Error"] != null)
@@ -22,11 +20,12 @@
 				<!-- Row -->
 				<div class="w-full xl:w-3/4 lg:w-11/12 flex">
 					<!-- Image Col -->
-					<div	class="w-full h-auto bg-amber-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
-						style="background-image: url('../img/sm7.jpg')"></div>
+					<div	class=""> 
+						<img class="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg" src="../img/sm7.jpg" alt="Female church member taking a cup of water">
+					</div>
 					<!-- Form Col -->
 					<div class="w-full lg:w-7/12 bg-amber-600 text-amber-900 p-5 rounded-lg lg:rounded-l-none">
-						<h3 class="pt-4 py-4 text-2xl font-bold py-1 text-center text-white">Add a Member</h3>
+						<h3 class="pt-4 py-4 text-2xl font-bold py-4 text-center text-white">Add a Member</h3>
 						<form class="px-4 pt-6 pb-8 mb-2 mx-2 bg-amber-100 rounded"  asp-action="Create">
 
 							<div class="mb-2 mx-2 md:flex md:justify-between">
