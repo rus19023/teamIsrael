@@ -4,7 +4,7 @@ button.addEventListener('click', rearrangeLayout);
 function rearrangeLayout() {
     var program = document.querySelector("#programContainer");
     program.classList.add("programGrid");
-    program.classList.remove("bg-amber-50");
+    program.classList.remove("bg-amber-100");
 
     var heading = document.querySelector("#headingContainer");
     heading.classList.add("programHeading");
@@ -52,7 +52,7 @@ async function print() {
 function resetFormat() {
     var program = document.querySelector("#programContainer");
     program.classList.remove("programGrid");
-    program.classList.add("bg-amber-50");
+    program.classList.add("bg-amber-100");
 
     var heading = document.querySelector("#headingContainer");
     heading.classList.remove("programHeading");
